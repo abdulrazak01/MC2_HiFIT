@@ -45,16 +45,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     var selectedSecs = 20
     
     
-    lazy var messageLabel: UILabel = {
-        let label = UILabel(frame:CGRect.zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 24.0, weight: UIFont.Weight.light)
-        label.textColor = UIColor.black
-        label.textAlignment = .center
-        label.text = ""
-        
-        return label
-    }()
+   
     
     
     override func viewDidLoad() {
@@ -67,15 +58,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.alpha = 0.5
 
         
-        
-        view.addSubview(messageLabel)
-        
-        var constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
-        self.view.addConstraint(constraintCenter)
-        constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
-        self.view.addConstraint(constraintCenter)
-        
-        messageLabel.isHidden = true
+      
         counterView.isHidden = false
     }
     
@@ -116,7 +99,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     @IBAction func startTimer(_ sender: UIButton) {
         
         
-        messageLabel.isHidden = true
+       
         counterView.isHidden = false
         
         stopBtn.isEnabled = true
