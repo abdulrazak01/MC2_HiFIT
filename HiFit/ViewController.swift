@@ -1,10 +1,11 @@
 //
 //  ViewController.swift
-//  CountdownTimer
+//  HiFIT
 //
 //  Created by Abdul Razak on 2020-05-11.
 //  Copyright © 2020 Abdul Razak. All rights reserved.
 //
+
 
 
 import UIKit
