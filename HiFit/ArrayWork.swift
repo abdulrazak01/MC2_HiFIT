@@ -17,6 +17,7 @@ class ArayWork{
         list.append(workout(image: "pushup", WorkText: "Push Up"))
         
          list.append(workout(image: "jump", WorkText: "Jump Up"))
+        list.append(workout(image: "situp", WorkText: "Sit Up"))
     }
     
 }
