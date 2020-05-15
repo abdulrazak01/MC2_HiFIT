@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  CountdownTimer
+//  HiFIT
 //
 //  Created by Abdul Razak on 2020-05-11.
 //  Copyright © 2020 Abdul Razak. All rights reserved.
@@ -17,6 +17,7 @@ class ArayWork{
         list.append(workout(image: "pushup", WorkText: "Push Up"))
         
          list.append(workout(image: "jump", WorkText: "Jump Up"))
+        list.append(workout(image: "situp", WorkText: "Sit Up"))
     }
     
 }

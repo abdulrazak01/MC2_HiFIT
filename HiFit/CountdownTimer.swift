@@ -53,6 +53,7 @@ class CountdownTimer {
     
     public func pause() {
         timer.invalidate()
+        countdownSound?.pause()
     }
     
     public func stop() {

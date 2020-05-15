@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  CountdownTimer
+//  HiFIT
 //
 //  Created by Abdul Razak on 2020-05-11.
 //  Copyright © 2020 Abdul Razak. All rights reserved.
@@ -140,7 +140,7 @@ class ProgressBar: UIView, CAAnimationDelegate {
         animation.delegate = self
         animation.isRemovedOnCompletion = false
         animation.isAdditive = true
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = CAMediaTimingFillMode.forwards
         fgProgressLayer.add(animation, forKey: "strokeEnd")
         animationDidStart = true
         
