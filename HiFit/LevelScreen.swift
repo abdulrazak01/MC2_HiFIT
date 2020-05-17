@@ -19,8 +19,21 @@ class LevelScreen : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        levelBeginner.layer.cornerRadius = 15
-        levelIntermediate.layer.cornerRadius = 15
-        levelAdvanced.layer.cornerRadius = 15
+        let buttonSelectorRadius:CGFloat = 20
+        
+        levelBeginner.layer.cornerRadius = buttonSelectorRadius
+        levelIntermediate.layer.cornerRadius = buttonSelectorRadius
+        levelAdvanced.layer.cornerRadius = buttonSelectorRadius
+        
+        
+        // Button Normal State
+        levelBeginner.setBackgroundImage(#imageLiteral(resourceName: "BeginnerBg"), for: .normal)
+        levelIntermediate.setBackgroundImage(#imageLiteral(resourceName: "IntermediateBg"), for: .normal)
+        levelAdvanced.setBackgroundImage(#imageLiteral(resourceName: "AdvancedBg"), for: .normal)
+        
+        
+        levelBeginner.clipsToBounds = true
+        levelIntermediate.clipsToBounds = true
+        levelAdvanced.clipsToBounds = true
     }
 }
