@@ -52,7 +52,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        updateUI()
         countdownTimer.delegate = self
         countdownTimer.setTimer(minutes: 0, seconds: selectedSecs)
         progressBar.setProgressBar(minutes: 0, seconds: selectedSecs)
