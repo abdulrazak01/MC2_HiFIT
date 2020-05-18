@@ -32,6 +32,12 @@ class ProgressBar: UIView, CAAnimationDelegate {
         loadFgProgressBar()
     }
     
+    override class func classFallbacksForKeyedArchiver() -> [String] {
+        <#code#>
+    }
+    
+    FDA
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadBgProgressBar()
