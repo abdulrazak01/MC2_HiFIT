@@ -220,15 +220,15 @@
                                     <constraint firstAttribute="height" constant="48" id="Xgo-6g-t7T"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title Work" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y03-BO-wkn">
-                                <rect key="frame" x="97" y="127" width="220" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title Work" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="40" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y03-BO-wkn">
+                                <rect key="frame" x="80" y="127" width="258" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeG-2K-SOl">
-                                <rect key="frame" x="189" y="74" width="30" height="21"/>
+                                <rect key="frame" x="178" y="74" width="56" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -244,7 +244,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLx-Py-ezc">
                                 <rect key="frame" x="32" y="608" width="362" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <mutableString key="text">1.Tuck chin into chest, lift chin upward as far as possible 2. Repeat for 10 seconds 3. Lower left ear towards left shoulder and then the other side.  4. Repeat for 10 seconds 5. Turn your chin laterally towards left shoulder and rotate towards right shoulder 6. Repeat till end of duration</mutableString>
+                                <string key="text">1.Tuck chin into chest, lift chin upward as far as possible 2. Repeat for 10 seconds 3. Lower left ear towards left shoulder and then the other side.  4. Repeat for 10 seconds 5. Turn your chin laterally towards left shoulder and rotate towards right shoulder 6. Repeat till end of duration</string>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
