@@ -280,6 +280,24 @@
             </objects>
             <point key="canvasLocation" x="231.8840579710145" y="147.32142857142856"/>
         </scene>
+        <!--Result-->
+        <scene sceneID="tjE-5k-Oed">
+            <objects>
+                <viewController id="LT7-zF-G0e" customClass="Result" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hch-36-e78"/>
+                        <viewControllerLayoutGuide type="bottom" id="4io-BJ-IG9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xAc-0e-ifL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P4b-cH-nVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064" y="147"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="hFr-Q4-P3u"/>
