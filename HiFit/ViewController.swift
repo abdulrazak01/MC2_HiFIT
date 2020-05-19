@@ -39,26 +39,30 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
   
     lazy var countdownTimer: CountdownTimer = {
+        
         let countdownTimer = CountdownTimer()
         return countdownTimer
     }()
     
     
     
-    var selectedSecs = 4
-    
+
+     var selectedSecs = 6
+   
+
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+      
+     
         updateExercise()
         updateUI()
         countdownTimer.delegate = self
+     
         
-        countdownTimer.setTimer(minutes: 0, seconds: selectedSecs)
-        progressBar.setProgressBar(minutes: 0, seconds: selectedSecs)
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
 
@@ -88,7 +92,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         //counterView.isHidden = true
         //messageLabel.isHidden = false
         
-        seconds.text = String(selectedSecs)
+       
         countdownTimerDidStart = false
         //stopBtn.isEnabled = false
         //stopBtn.alpha = 0.5
@@ -105,7 +109,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     @IBAction func startTimer(_ sender: UIButton) {
         
         
-       
+      
+      
         counterView.isHidden = false
         
         stopBtn.isEnabled = true
@@ -128,10 +133,12 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     }
     
     @IBAction func NumberExer(_ sender: Any) {
-        exerciseNumber += 1
-        updateExercise()
+      
+       
+      exerciseNumber += 1
+       updateExercise()
         
-    }
+   }
     
     func updateExercise(){
         if exerciseNumber <= allExercise.list.count - 1{
@@ -140,6 +147,11 @@ class ViewController: UIViewController, CountdownTimerDelegate {
             titleWork.text = allExercise.list[exerciseNumber].exercise
             typeWork.text = allExercise.list[exerciseNumber].typeExercise
             promptWork.text = allExercise.list[exerciseNumber].prompt
+            
+            countdownTimer.setTimer(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
+            progressBar.setProgressBar(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
+           
+           
    updateUI()
         }
     }
@@ -152,6 +164,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     
     @IBAction func stopTimer(_ sender: UIButton) {
+        
         countdownTimer.stop()
         progressBar.stop()
         countdownTimerDidStart = false
@@ -161,8 +174,9 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     }
     
     
+    }
     
 
 
-}
+
 

@@ -15,7 +15,8 @@ protocol CountdownTimerDelegate:class {
 }
 
 class CountdownTimer {
-    
+   //let allExercise = ArayWork()
+     //    var exerciseNumber: Int = 0
     weak var delegate: CountdownTimerDelegate?
     
     fileprivate var seconds = 0.0
@@ -36,19 +37,23 @@ class CountdownTimer {
     public func setTimer( minutes:Int, seconds:Int) {
         
         
-        let minutesToSeconds = minutes * 60
-        let secondsToSeconds = seconds
+        //let minutesToSeconds = minutes * 60
+        //let secondsToSeconds = seconds
         
-        let seconds = secondsToSeconds + minutesToSeconds 
+        // let seconds = secondsToSeconds + minutesToSeconds
+         
         self.seconds = Double(seconds)
         self.duration = Double(seconds)
         
         delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
     }
     
+   
     
     public func start() {
+        
         runTimer()
+        
     }
     
     public func pause() {
@@ -69,7 +74,7 @@ class CountdownTimer {
     
     @objc fileprivate func updateTimer(){
         
-        
+       
         if duration < 0.0 {
             timer.invalidate()
             timerDone()
