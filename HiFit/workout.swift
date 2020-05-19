@@ -13,12 +13,16 @@ import Foundation
 class workout {
     var workoutImage: String = ""
     var exercise: String = ""
+    var prompt: String = ""
+    var typeExercise: String = ""
     
-    init(image : String, WorkText: String){
+    
+    init(image : String, WorkText: String, promptText: String, typeText: String){
         
         workoutImage = image
         exercise = WorkText
-        
+        prompt = promptText
+        typeExercise = typeText
         
     }
 

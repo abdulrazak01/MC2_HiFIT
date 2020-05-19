@@ -28,7 +28,9 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     @IBOutlet weak var stopBtn: UIButton!
     @IBOutlet weak var startBtn: UIButton!
     
-   
+    @IBOutlet weak var promptWork: UILabel!
+    @IBOutlet weak var typeWork: UILabel!
+    
     let allExercise = ArayWork()
     var exerciseNumber: Int = 0
 
@@ -43,17 +45,18 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     
     
-    var selectedSecs = 20
+    var selectedSecs = 4
     
-    
-   
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        updateExercise()
         updateUI()
         countdownTimer.delegate = self
+        
         countdownTimer.setTimer(minutes: 0, seconds: selectedSecs)
         progressBar.setProgressBar(minutes: 0, seconds: selectedSecs)
         stopBtn.isEnabled = false
@@ -78,12 +81,13 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
     }
     
-   
+
     
     func countdownTimerDone() {
-        
+       
         //counterView.isHidden = true
         //messageLabel.isHidden = false
+        
         seconds.text = String(selectedSecs)
         countdownTimerDidStart = false
         //stopBtn.isEnabled = false
@@ -126,18 +130,26 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     @IBAction func NumberExer(_ sender: Any) {
         exerciseNumber += 1
         updateExercise()
+        
     }
     
     func updateExercise(){
         if exerciseNumber <= allExercise.list.count - 1{
+            
             imageWorkout.image = UIImage(named:(allExercise.list[exerciseNumber].workoutImage))
             titleWork.text = allExercise.list[exerciseNumber].exercise
-            updateUI()
+            typeWork.text = allExercise.list[exerciseNumber].typeExercise
+            promptWork.text = allExercise.list[exerciseNumber].prompt
+   updateUI()
         }
     }
     func updateUI(){
+       
         NumExercise.text = "\(exerciseNumber + 1)/\(allExercise.list.count)"
+        
+       
     }
+    
     
     @IBAction func stopTimer(_ sender: UIButton) {
         countdownTimer.stop()
