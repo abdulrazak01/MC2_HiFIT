@@ -53,7 +53,12 @@ class ArayWork{
         
         list.append(workout(image: "situp", WorkText: "Reverse Lunge with Right Leg", promptText:
                                               "1. Stand with feet shoulder-width apart 2. Step your right foot behind bending your knees 3. Push through the heel of right foot to stand up 4. Repeat", typeText: "Exercise"))
-
+        
+        list.append(workout(image: "situp", WorkText: "Rest", promptText:
+        "", typeText: "Rest"))
+        
+        list.append(workout(image: "situp", WorkText: "Shoulder Circles", promptText:
+        "", typeText: "Cool Down"))
         
     }
     
