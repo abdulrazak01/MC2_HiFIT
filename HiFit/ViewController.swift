@@ -31,7 +31,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     @IBOutlet weak var promptWork: UILabel!
     @IBOutlet weak var typeWork: UILabel!
     
-    let allExercise = ArayWork()
+    let allExercise = ArrayWork()
     var exerciseNumber: Int = 0
 
     
