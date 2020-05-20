@@ -10,6 +10,7 @@
 		3D910A1F246B856200B27D6D /* ArrayWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D910A1E246B856200B27D6D /* ArrayWork.swift */; };
 		3D910A21246B85A100B27D6D /* workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D910A20246B85A100B27D6D /* workout.swift */; };
 		91D57C99246E9EA90047DF44 /* LevelScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D57C98246E9EA90047DF44 /* LevelScreen.swift */; };
+		91ECEAF22474D2DA007535AD /* Beginner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEAF12474D2DA007535AD /* Beginner.swift */; };
 		B66EF1D91EA9E6E300649824 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66EF1D81EA9E6E300649824 /* CustomColors.swift */; };
 		B66EF1DC1EA9E75C00649824 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66EF1DB1EA9E75C00649824 /* CountdownTimer.swift */; };
 		B66EF1DE1EA9E76500649824 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66EF1DD1EA9E76500649824 /* ProgressBar.swift */; };
@@ -25,6 +26,7 @@
 		3D910A20246B85A100B27D6D /* workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workout.swift; sourceTree = "<group>"; };
 		75AA709624705B1900AD09B0 /* Speech.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Speech.playground; path = ../../HiFit/HiFit/Speech.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		91D57C98246E9EA90047DF44 /* LevelScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelScreen.swift; sourceTree = "<group>"; };
+		91ECEAF12474D2DA007535AD /* Beginner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beginner.swift; sourceTree = "<group>"; };
 		B66EF1D81EA9E6E300649824 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		B66EF1DB1EA9E75C00649824 /* CountdownTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 		B66EF1DD1EA9E76500649824 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				B6C7B6FA1EA8DB9F008B31A6 /* ViewController.swift */,
 				91D57C98246E9EA90047DF44 /* LevelScreen.swift */,
+				91ECEAF12474D2DA007535AD /* Beginner.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91ECEAF22474D2DA007535AD /* Beginner.swift in Sources */,
 				B6C7B6FB1EA8DB9F008B31A6 /* ViewController.swift in Sources */,
 				3D910A21246B85A100B27D6D /* workout.swift in Sources */,
 				B66EF1DC1EA9E75C00649824 /* CountdownTimer.swift in Sources */,
