@@ -156,8 +156,21 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         }
     }
     func updateUI(){
-       
-        NumExercise.text = "\(exerciseNumber + 1)/\(allExercise.list.count)"
+         if typeWork.text == "Warm Up" {
+            self.NumExercise.text = "1 Of 1"
+        }
+        else if typeWork.text == "Exercise" {
+            
+            NumExercise.text = "\(allExercise.list[exerciseNumber].Num + 1) Of \(7)"
+        }
+        else if typeWork.text == "Rest" {
+           
+            NumExercise.text = "\(allExercise.list[exerciseNumber].Num + 1) Of \(7)"
+        }
+         else if typeWork.text == "Cool Down" {
+            self.NumExercise.text = "1 Of 1"
+        }
+        //NumExercise.text = "\(exerciseNumber + 1)/\(allExercise.list.count)"
         
        
     }

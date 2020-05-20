@@ -17,9 +17,10 @@ class workout {
     var typeExercise: String = ""
     var time: String = ""
     var goTime: Int
+    var Num: Int
     
     
-    init(image : String, WorkText: String, promptText: String, typeText: String, timerr: String, goTimer: Int){
+    init(image : String, WorkText: String, promptText: String, typeText: String, timerr: String, goTimer: Int, Numb: Int){
         
         workoutImage = image
         exercise = WorkText
@@ -27,7 +28,7 @@ class workout {
         typeExercise = typeText
         time = timerr
         goTime = goTimer
-        
+        Num = Numb
     }
 
 }

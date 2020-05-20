@@ -24,8 +24,8 @@ class Beginner : UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    let viewController = segue.destination as! LevelScreen
-        viewController.beginTitle = self.TitleBegin.text!
+    //let viewController = segue.destination as! LevelScreen
+       // viewController.beginTitle = self.TitleBegin.text!
     }
     
     
