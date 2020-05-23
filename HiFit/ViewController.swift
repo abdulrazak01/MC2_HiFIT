@@ -146,8 +146,32 @@ class ViewController: UIViewController, CountdownTimerDelegate {
             imageWorkout.image = UIImage(named:(allExercise.list[exerciseNumber].workoutImage))
             titleWork.text = allExercise.list[exerciseNumber].exercise
             typeWork.text = allExercise.list[exerciseNumber].typeExercise
-            promptWork.text = allExercise.list[exerciseNumber].prompt
+//            promptWork.text = allExercise.list[exerciseNumber].prompt
             
+            // Exercise Prompts
+            let promptString = allExercise.list[exerciseNumber].prompt
+            let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)
+            
+            var filteredPromptArray: [String] = []
+            for item in promptArray {
+                if item != "" {
+                    filteredPromptArray.append(item)
+                }
+            }
+            
+            // Display Exercise Prompt Individually
+            var count = 0
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: {t in
+                print(filteredPromptArray[count])
+                self.promptWork.text = filteredPromptArray[count]
+                count += 1
+                
+                if count == filteredPromptArray.count-1 {
+                    t.invalidate()
+                }
+            })
+            
+            // Countdown Timer
             countdownTimer.setTimer(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
             progressBar.setProgressBar(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
            
@@ -190,6 +214,14 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     }
     
 
-
+extension String {
+    func split(usingRegex pattern: String) -> [String] {
+        //### Crashes when you pass invalid `pattern`
+        let regex = try! NSRegularExpression(pattern: pattern)
+        let matches = regex.matches(in: self, range: NSRange(0..<utf16.count))
+        let ranges = [startIndex..<startIndex] + matches.map{Range($0.range, in: self)!} + [endIndex..<endIndex]
+        return (0...matches.count).map {String(self[ranges[$0].upperBound..<ranges[$0+1].lowerBound])}
+    }
+}
 
 
