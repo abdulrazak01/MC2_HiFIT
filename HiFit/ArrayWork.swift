@@ -15,7 +15,7 @@ class ArrayWork{
     
     init(){
         list.append(workout(image: "pushup", WorkText: "Neck Mobility", promptText:
-            "1.Tuck chin into chest, lift chin upward as far as possible 2. Repeat for 10 seconds 3. Lower left ear towards left shoulder and then the other side. 4. Repeat for 10 seconds 5. Turn your chin laterally towards left shoulder and rotate towards right shoulder 6. Repeat till end of duration", typeText: "Warm Up", timerr: "30", goTimer: 30, Numb: 1))
+            "1. Tuck chin into chest, lift chin upward as far as possible 2. Repeat for 10 seconds 3. Lower left ear towards left shoulder and then the other side. 4. Repeat for 10 seconds 5. Turn your chin laterally towards left shoulder and rotate towards right shoulder 6. Repeat till end of duration", typeText: "Warm Up", timerr: "30", goTimer: 30, Numb: 1))
         
         list.append(workout(image: "jump", WorkText: "Arm Swings", promptText:
             "1. Feet slightly wider than shoulder-width apart 2. Knees slightly bent 3. Swing both arms continuously to an overhead position 4. Then forward, down and back 5. Repeat for 15 seconds 6. Swing both arms to sides then cross them in front of chest 7. Repeat for 15 seconds", typeText: "Exercise", timerr: "20", goTimer: 20, Numb: 0))
