@@ -9,6 +9,7 @@
 
 
 import UIKit
+import AVFoundation
 import AudioToolbox
 
 
@@ -161,9 +162,26 @@ class ViewController: UIViewController, CountdownTimerDelegate {
             
             // Display Exercise Prompt Individually
             var count = 0
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: {t in
+            let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {t in
+                
+                // FIXME: Something wrong when it comes to rest
+                //if filteredPromptArray.isEmpty {
+                //    filteredPromptArray[count].append("rest")
+                //}
+                
                 print(filteredPromptArray[count])
                 self.promptWork.text = filteredPromptArray[count]
+                
+                // Voice Prompt
+                // TODO: What to do if audio didn't finish instruction and exercise completed
+                // TODO: if no text to utter (Rest) to continue without speech
+                /*
+                let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
+                speechUtterance.rate = 0.45
+                speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                speechSynthesizer.speak(speechUtterance)
+                 */
                 count += 1
                 
                 if count == filteredPromptArray.count-1 {
