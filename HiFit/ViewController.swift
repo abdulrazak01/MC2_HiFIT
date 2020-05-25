@@ -15,7 +15,7 @@ import AudioToolbox
 
 class ViewController: UIViewController, CountdownTimerDelegate {
 
-    //MARK - Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var progressBar: ProgressBar!
    
@@ -32,7 +32,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     @IBOutlet weak var promptWork: UILabel!
     @IBOutlet weak var typeWork: UILabel!
     
-    let allExercise = ArrayWork()
+    let allExercise = ArrayWork()   // Import list of exercises
     var exerciseNumber: Int = 0
 
     
@@ -117,12 +117,12 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.isEnabled = true
         stopBtn.alpha = 1.0
         
-        if !countdownTimerDidStart{
+        // MARK: Exercise Start
+        if !countdownTimerDidStart {
             countdownTimer.start()
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("PAUSE",for: .normal)
-     
         }
         
         else{
@@ -143,43 +143,37 @@ class ViewController: UIViewController, CountdownTimerDelegate {
             if item != "" {
                 filteredPromptArray.append(item)
             }
+            if allExercise.list[exerciseNumber].typeExercise == "Rest" {
+                filteredPromptArray.append("Rest for 30 seconds")
+            }
         }
+        
+//        print(filteredPromptArray)
         
         // Display Exercise Prompt Individually
         var count = 0
         let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
+        
+        // FIXME: Out of index error appear during Rest, but if shorten exercise duration it can appear after Rest
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
-            
-            // FIXME: Something wrong when it comes to rest
-//            if filteredPromptArray.isEmpty {
-//                filteredPromptArray[count].append("rest")
-//            }
-            
-            if filteredPromptArray[0].isEmpty {
-                t.invalidate()
-            }
-            
-//            print(filteredPromptArray[count])
             self.promptWork.text = filteredPromptArray[count]
-            
+
             // Voice Prompt
             // TODO: What to do if audio didn't finish instruction and exercise completed
-            // TODO: if no text to utter (Rest) to continue without speech
             
             let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
+            
             speechUtterance.rate = 0.45
             speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
             speechSynthesizer.speak(speechUtterance)
              
             count += 1
             
-            // Program crash because rest array is empty
-
-            if count == filteredPromptArray.count-1 || count == 0 {
+            if count == filteredPromptArray.count-1 {
                 t.invalidate()
             }
         })
- 
+        
     }
     
     @IBAction func NumberExer(_ sender: Any) {
