@@ -20,13 +20,13 @@ class workout {
     var Num: Int
     
     
-    init(image : String, WorkText: String, promptText: String, typeText: String, timerr: String, goTimer: Int, Numb: Int){
+    init(image : String, WorkText: String, promptText: String, typeText: String, timer: String, goTimer: Int, Numb: Int){
         
         workoutImage = image
         exercise = WorkText
         prompt = promptText
         typeExercise = typeText
-        time = timerr
+        time = timer
         goTime = goTimer
         Num = Numb
     }
