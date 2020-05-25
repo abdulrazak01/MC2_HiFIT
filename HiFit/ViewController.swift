@@ -109,7 +109,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     @IBAction func startTimer(_ sender: UIButton) {
         
-        
+        // Maybe flag to start timer, hasTimerStart = true it'll continue as normal, if hadTimerStart = false, it'll change to true and timer start automatically
       
       
         counterView.isHidden = false
@@ -131,6 +131,55 @@ class ViewController: UIViewController, CountdownTimerDelegate {
             countdownTimerDidStart = false
             startBtn.setTitle("RESUME",for: .normal)
         }
+        
+        // MARK: - Exercise Prompts
+        // Convert text prompt of type String into Array:[String]
+        
+        let promptString = allExercise.list[exerciseNumber].prompt
+        let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
+        
+        var filteredPromptArray: [String] = []  // generate array consist of individual prompts
+        for item in promptArray {
+            if item != "" {
+                filteredPromptArray.append(item)
+            }
+        }
+        
+        // Display Exercise Prompt Individually
+        var count = 0
+        let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
+            
+            // FIXME: Something wrong when it comes to rest
+//            if filteredPromptArray.isEmpty {
+//                filteredPromptArray[count].append("rest")
+//            }
+            
+            if filteredPromptArray[0].isEmpty {
+                t.invalidate()
+            }
+            
+//            print(filteredPromptArray[count])
+            self.promptWork.text = filteredPromptArray[count]
+            
+            // Voice Prompt
+            // TODO: What to do if audio didn't finish instruction and exercise completed
+            // TODO: if no text to utter (Rest) to continue without speech
+            
+            let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
+            speechUtterance.rate = 0.45
+            speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            speechSynthesizer.speak(speechUtterance)
+             
+            count += 1
+            
+            // Program crash because rest array is empty
+
+            if count == filteredPromptArray.count-1 || count == 0 {
+                t.invalidate()
+            }
+        })
+ 
     }
     
     @IBAction func NumberExer(_ sender: Any) {
@@ -149,45 +198,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
             typeWork.text = allExercise.list[exerciseNumber].typeExercise
 //            promptWork.text = allExercise.list[exerciseNumber].prompt
             
-            // Exercise Prompts
-            let promptString = allExercise.list[exerciseNumber].prompt
-            let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)
-            
-            var filteredPromptArray: [String] = []
-            for item in promptArray {
-                if item != "" {
-                    filteredPromptArray.append(item)
-                }
-            }
-            
-            // Display Exercise Prompt Individually
-            var count = 0
-            let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
-            Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {t in
-                
-                // FIXME: Something wrong when it comes to rest
-                //if filteredPromptArray.isEmpty {
-                //    filteredPromptArray[count].append("rest")
-                //}
-                
-                print(filteredPromptArray[count])
-                self.promptWork.text = filteredPromptArray[count]
-                
-                // Voice Prompt
-                // TODO: What to do if audio didn't finish instruction and exercise completed
-                // TODO: if no text to utter (Rest) to continue without speech
-                /*
-                let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
-                speechUtterance.rate = 0.45
-                speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                speechSynthesizer.speak(speechUtterance)
-                 */
-                count += 1
-                
-                if count == filteredPromptArray.count-1 {
-                    t.invalidate()
-                }
-            })
+
             
             // Countdown Timer
             countdownTimer.setTimer(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
