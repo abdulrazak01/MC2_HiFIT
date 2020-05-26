@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F6k-br-mtq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sRZ-tN-LjJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -77,6 +77,9 @@
                                 <rect key="frame" x="352" y="58" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SettingsIcon"/>
+                                <connections>
+                                    <segue destination="PS5-tB-fBC" kind="show" id="sU3-3Z-Wlj"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You can do your workout by choosing one of these level options that fits you." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Op5-rd-Ivy">
                                 <rect key="frame" x="26" y="184" width="361" height="44"/>
@@ -150,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkm-1K-xFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-611.59420289855075" y="147.32142857142856"/>
+            <point key="canvasLocation" x="-865" y="147"/>
         </scene>
         <!--Intermediate-->
         <scene sceneID="ALi-xt-p6b">
@@ -160,7 +163,7 @@
                         <viewControllerLayoutGuide type="top" id="gDc-lL-LIb"/>
                         <viewControllerLayoutGuide type="bottom" id="uBk-tF-ixl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YM0-g9-0KT">
+                    <view key="view" contentMode="scaleToFill" id="YM0-g9-0KT" customClass="inter">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -169,7 +172,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt; Workouts"/>
                                 <connections>
-                                    <segue destination="F6k-br-mtq" kind="show" identifier="IntermToMain" id="T0P-5Y-iCk"/>
+                                    <segue destination="sRZ-tN-LjJ" kind="show" identifier="IntermToMain" id="T0P-5Y-iCk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WS-wm-vQK">
@@ -221,13 +224,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Utf-GS-BkC"/>
                     <connections>
-                        <outlet property="Times" destination="NlJ-dS-kRH" id="RcM-WY-PT7"/>
-                        <outlet property="TitleInterm" destination="2WS-wm-vQK" id="mJM-dr-PLm"/>
+                        <outlet property="Times" destination="NlJ-dS-kRH" id="pux-WR-XkN"/>
+                        <outlet property="TitleBegin" destination="2WS-wm-vQK" id="oAa-hE-0UK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1g-Y5-k59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="-510"/>
+            <point key="canvasLocation" x="67" y="-588"/>
         </scene>
         <!--Beginner-->
         <scene sceneID="VAI-6Y-HMH">
@@ -246,7 +249,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt; Workouts"/>
                                 <connections>
-                                    <segue destination="F6k-br-mtq" kind="show" identifier="BeginToMain" id="h0M-t6-dVl"/>
+                                    <segue destination="sRZ-tN-LjJ" kind="show" identifier="BeginToMain" id="h0M-t6-dVl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOG-sp-Qyx">
@@ -304,7 +307,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtQ-vn-hXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.521739130434788" y="146.65178571428569"/>
+            <point key="canvasLocation" x="67" y="147"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="rki-LW-q5m">
+            <objects>
+                <viewController title="Settings" id="PS5-tB-fBC" customClass="Settings" customModule="HiFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ylL-G0-xml"/>
+                        <viewControllerLayoutGuide type="bottom" id="pcI-2D-ylE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ca2-mR-ONo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ug9-if-Yt5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ln6-gj-sh7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-865" y="889"/>
         </scene>
         <!--Advanced-->
         <scene sceneID="TAf-Fg-qxZ">
@@ -323,7 +345,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt; Workouts"/>
                                 <connections>
-                                    <segue destination="F6k-br-mtq" kind="show" identifier="AdvnToMain" id="ZZ8-9n-L1X"/>
+                                    <segue destination="sRZ-tN-LjJ" kind="show" identifier="AdvnToMain" id="ZZ8-9n-L1X"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doL-Xa-tZJ">
@@ -375,13 +397,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="A7U-9u-wrf"/>
                     <connections>
-                        <outlet property="Times" destination="7pP-UM-WD6" id="82K-wh-wR7"/>
-                        <outlet property="TitleAdvanced" destination="doL-Xa-tZJ" id="Lmt-Gj-T8N"/>
+                        <outlet property="Times" destination="7pP-UM-WD6" id="AiZ-Ci-PwR"/>
+                        <outlet property="TitleBegin" destination="doL-Xa-tZJ" id="h9E-fk-Xoz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LH-F6-H1L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="809"/>
+            <point key="canvasLocation" x="67" y="889"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ujl-fr-RKY">
@@ -445,7 +467,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="JD6-so-ztW">
-                                <rect key="frame" x="159.5" y="160" width="95" height="48"/>
+                                <rect key="frame" x="159.5" y="204" width="95" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIi-6g-6P1">
                                         <rect key="frame" x="0.0" y="0.0" width="39" height="48"/>
@@ -539,7 +561,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYW-vh-pSD" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770" y="147"/>
+            <point key="canvasLocation" x="1472" y="147"/>
         </scene>
         <!--Result-->
         <scene sceneID="tjE-5k-Oed">
@@ -557,12 +579,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4b-cH-nVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501" y="147"/>
+            <point key="canvasLocation" x="2410.144927536232" y="146.65178571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t1l-SU-6cZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sRZ-tN-LjJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ufG-Rc-1gZ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bch-Zb-Ynz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="F6k-br-mtq" kind="relationship" relationship="rootViewController" id="pKZ-Re-u48"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oek-fa-f8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1755" y="147"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="X4l-Lz-CBO"/>
-        <segue reference="T0P-5Y-iCk"/>
+        <segue reference="ZZ8-9n-L1X"/>
+        <segue reference="EAs-vh-Lac"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AdvancedBg" width="361" height="123"/>

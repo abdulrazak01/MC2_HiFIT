@@ -1,15 +1,15 @@
 //
-//  Beginner.swift
+//  Advanced.swift
 //  HiFit
 //
-//  Created by Muhammad Syabran on 20/05/20.
+//  Created by Omar Tan Johan Tan on 26/05/20.
 //  Copyright © 2020 AbdulRazak. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class Beginner : UIViewController {
+class Advanced : UIViewController {
     
     @IBOutlet weak var TitleBegin: UILabel!
     @IBOutlet weak var Times: UILabel!

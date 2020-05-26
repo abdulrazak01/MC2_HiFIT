@@ -35,6 +35,7 @@ class LevelScreen : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.topItem?.title = "Workout Levels"
         
         let buttonSelectorRadius:CGFloat = 20
         
@@ -59,6 +60,21 @@ class LevelScreen : UIViewController {
         ExercisesIntermLabel?.text = IntermTimes
         ExercisesAdvnLabel?.text = AdvnTimes
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is Beginner {
@@ -66,7 +82,6 @@ class LevelScreen : UIViewController {
             vc?.titleLabel = beginTitle
             vc?.exerciseTime = BeginTimes
         }
-            /*
         else if segue.destination is Intermediate {
             let vc = segue.destination as? Intermediate
             vc?.titleLabel = IntermTitle
@@ -77,7 +92,6 @@ class LevelScreen : UIViewController {
             vc?.titleLabel = AdvnTitle
             vc?.exerciseTime = AdvnTimes
         }
- */
     }
     
 }
