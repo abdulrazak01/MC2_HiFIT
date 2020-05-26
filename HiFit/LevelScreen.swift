@@ -18,12 +18,10 @@ class LevelScreen : UIViewController {
     @IBOutlet weak var BeginLabel: UILabel!
     
     var beginTitle: String = ""
-    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        level()
         
         let buttonSelectorRadius:CGFloat = 20
         
@@ -40,10 +38,6 @@ class LevelScreen : UIViewController {
         levelIntermediate.clipsToBounds = true
         levelAdvanced.clipsToBounds = true
         
-        BeginLabel?.text = "\(beginTitle)"
-    }
-    func level() {
-        let Level = defaults.value(forKey: self.beginTitle) as? String ?? ""
-        BeginLabel.text = Level
+        BeginLabel?.text = beginTitle
     }
 }
