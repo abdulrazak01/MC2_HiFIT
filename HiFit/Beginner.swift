@@ -19,7 +19,7 @@ class Beginner : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         TitleBegin?.text = titleLabel
         Times?.text = exerciseTime
         
