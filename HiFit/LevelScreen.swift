@@ -66,6 +66,7 @@ class LevelScreen : UIViewController {
             vc?.titleLabel = beginTitle
             vc?.exerciseTime = BeginTimes
         }
+            /*
         else if segue.destination is Intermediate {
             let vc = segue.destination as? Intermediate
             vc?.titleLabel = IntermTitle
@@ -76,6 +77,7 @@ class LevelScreen : UIViewController {
             vc?.titleLabel = AdvnTitle
             vc?.exerciseTime = AdvnTimes
         }
+ */
     }
     
 }
