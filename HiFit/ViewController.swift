@@ -152,16 +152,11 @@ class ViewController: UIViewController, CountdownTimerDelegate {
             filteredPromptArray.append(item)
             }
         }
-        
-//        print(filteredPromptArray)
-        
+                
         // Display Exercise Prompt Individually
         var count = 0
         let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
-        
-        // FIXME: Out of index error appear during Rest, but if shorten exercise duration it can appear after Rest
-        
-       
+                
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
             self.promptWork.text = filteredPromptArray[count]
 
