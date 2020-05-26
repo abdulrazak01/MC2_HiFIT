@@ -48,7 +48,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     
 
-     var selectedSecs = 6
+     var selectedSecs = 0
    
 
 
@@ -140,11 +140,16 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
         var filteredPromptArray: [String] = []  // generate array consist of individual prompts
         for item in promptArray {
-            if item != "" {
+            if item != ""{
                 filteredPromptArray.append(item)
             }
-            if allExercise.list[exerciseNumber].typeExercise == "Rest" {
+           if allExercise.list[exerciseNumber].typeExercise == "Rest" {
                 filteredPromptArray.append("Rest for 30 seconds")
+            filteredPromptArray.append(item)
+            }
+            if allExercise.list[exerciseNumber].typeExercise == "Cool Down" {
+                filteredPromptArray.append("Relax and chill")
+            filteredPromptArray.append(item)
             }
         }
         
@@ -155,6 +160,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
         
         // FIXME: Out of index error appear during Rest, but if shorten exercise duration it can appear after Rest
+        
+       
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
             self.promptWork.text = filteredPromptArray[count]
 
@@ -173,7 +180,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
                 t.invalidate()
             }
         })
-        
+            
     }
     
     @IBAction func NumberExer(_ sender: Any) {
@@ -217,7 +224,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
          else if typeWork.text == "Cool Down" {
             self.NumExercise.text = "1 Of 1"
         }
-        //NumExercise.text = "\(exerciseNumber + 1)/\(allExercise.list.count)"
+       // NumExercise.text = "\(exerciseNumber + 1)/\(allExercise.list.count)"
         
        
     }

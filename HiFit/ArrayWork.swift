@@ -10,7 +10,7 @@
 import Foundation
 
 let warmUpDuration:Int = 30
-let exerciseDuration:Int = 20
+let exerciseDuration:Int = 30
 let restDuration:Int = 40
 let coolDownDuration:Int = 30
 
@@ -54,7 +54,7 @@ class ArrayWork{
             "1. Stand with feet shoulder-width apart 2. Step your left foot behind bending your knees 3. Push through the heel of left foot to stand up 4. Repea", typeText: "Exercise", timer: "\(exerciseDuration)", goTimer: exerciseDuration, Numb: 5))
         
         list.append(workout(image: "situp", WorkText: "Rest", promptText:
-            "", typeText: "Rest", timer: "\(restDuration)", goTimer: restDuration, Numb: 5))
+            "1. Rest for 30 seconds 2. Relax position 3. Enjoy Your Rest", typeText: "Rest", timer: "\(restDuration)", goTimer: restDuration, Numb: 5))
         
         list.append(workout(image: "situp", WorkText: "Reverse Lunge with Right Leg", promptText:
             "1. Stand with feet shoulder-width apart 2. Step your right foot behind bending your knees 3. Push through the heel of right foot to stand up 4. Repeat", typeText: "Exercise", timer: "\(exerciseDuration)", goTimer: exerciseDuration, Numb: 6))
