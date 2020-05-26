@@ -28,8 +28,8 @@
                                     <segue destination="vyh-1Z-HBJ" kind="show" identifier="BeginnerSegue" id="wSa-mF-mc2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="beginner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydd-8c-1M9">
-                                <rect key="frame" x="56" y="268" width="117" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydd-8c-1M9">
+                                <rect key="frame" x="56" y="268" width="286" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -50,8 +50,8 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="intermediate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKk-dX-IX7">
-                                <rect key="frame" x="56" y="406" width="167" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKk-dX-IX7">
+                                <rect key="frame" x="56" y="406" width="286" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -92,8 +92,8 @@
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="advanced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAT-bt-07l">
-                                <rect key="frame" x="56" y="544" width="129" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAT-bt-07l">
+                                <rect key="frame" x="56" y="544" width="286" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -137,7 +137,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="9ME-Yg-r5b"/>
                     <connections>
+                        <outlet property="AdvancedLabel" destination="JAT-bt-07l" id="Fld-KS-qb1"/>
                         <outlet property="BeginLabel" destination="ydd-8c-1M9" id="DfD-o5-HiP"/>
+                        <outlet property="ExercisesAdvnLabel" destination="9hi-rU-Q2F" id="er0-7V-KVl"/>
+                        <outlet property="ExercisesBeginnerLabel" destination="4xA-2W-Cag" id="LYL-HI-dhF"/>
+                        <outlet property="ExercisesIntermLabel" destination="tmH-I7-oK2" id="08T-El-FYh"/>
+                        <outlet property="IntermediateLabel" destination="eKk-dX-IX7" id="zZa-Di-sZp"/>
                         <outlet property="levelAdvanced" destination="6vc-y7-Dg0" id="K19-Ic-095"/>
                         <outlet property="levelBeginner" destination="m4p-xr-zyQ" id="RbA-id-9vq"/>
                         <outlet property="levelIntermediate" destination="f3A-ho-7Cv" id="TZj-UP-XtY"/>
@@ -147,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="-611.59420289855075" y="147.32142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Intermediate-->
         <scene sceneID="ALi-xt-p6b">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="af1-dk-GPv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Intermediate" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="af1-dk-GPv" customClass="Intermediate" customModule="HiFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gDc-lL-LIb"/>
                         <viewControllerLayoutGuide type="bottom" id="uBk-tF-ixl"/>
@@ -215,6 +220,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Utf-GS-BkC"/>
+                    <connections>
+                        <outlet property="Times" destination="NlJ-dS-kRH" id="RcM-WY-PT7"/>
+                        <outlet property="TitleInterm" destination="2WS-wm-vQK" id="mJM-dr-PLm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1g-Y5-k59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,6 +298,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9MI-bI-W9g"/>
                     <connections>
+                        <outlet property="Times" destination="3iw-1c-89M" id="RgI-O4-q8E"/>
                         <outlet property="TitleBegin" destination="fOG-sp-Qyx" id="gUx-De-c2R"/>
                     </connections>
                 </viewController>
@@ -296,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="56.521739130434788" y="146.65178571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Advanced-->
         <scene sceneID="TAf-Fg-qxZ">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="oXl-TF-dk8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Advanced" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oXl-TF-dk8" customClass="Advanced" customModule="HiFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cqn-pd-5Ff"/>
                         <viewControllerLayoutGuide type="bottom" id="dZw-ep-76y"/>
@@ -364,6 +374,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="A7U-9u-wrf"/>
+                    <connections>
+                        <outlet property="Times" destination="7pP-UM-WD6" id="82K-wh-wR7"/>
+                        <outlet property="TitleAdvanced" destination="doL-Xa-tZJ" id="Lmt-Gj-T8N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LH-F6-H1L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -547,8 +561,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h1L-vW-UyI"/>
-        <segue reference="h0M-t6-dVl"/>
+        <segue reference="X4l-Lz-CBO"/>
+        <segue reference="T0P-5Y-iCk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AdvancedBg" width="361" height="123"/>
