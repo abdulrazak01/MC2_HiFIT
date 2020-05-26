@@ -71,6 +71,11 @@ class LevelScreen : UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
+        
+        // Show navigation bar background
+        // self.navigationController?.navigationBar.setBackgroundImage(nil, for:.default)
+        // self.navigationController?.navigationBar.shadowImage = nil
+        // self.navigationController?.navigationBar.layoutIfNeeded()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
