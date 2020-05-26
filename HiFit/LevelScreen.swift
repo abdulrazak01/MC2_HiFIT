@@ -16,14 +16,25 @@ class LevelScreen : UIViewController {
     @IBOutlet weak var levelIntermediate: UIButton!
     @IBOutlet weak var levelAdvanced: UIButton!
     @IBOutlet weak var BeginLabel: UILabel!
+    @IBOutlet weak var IntermediateLabel: UILabel!
+    @IBOutlet weak var AdvancedLabel: UILabel!
+    @IBOutlet weak var ExercisesBeginnerLabel: UILabel!
+    @IBOutlet weak var ExercisesIntermLabel: UILabel!
+    @IBOutlet weak var ExercisesAdvnLabel: UILabel!
     
-    var beginTitle: String = ""
-    let defaults = UserDefaults.standard
+    
+    var beginTitle: String = "Beginner"
+    var BeginTimes: String = "10 Exercises, 10:00 Minutes"
+    
+    var IntermTitle: String = "Intermediate"
+    var IntermTimes: String = "17 Exercises, 20:00 Minutes"
+    
+    var AdvnTitle: String = "Advanced"
+    var AdvnTimes: String = "25 Exercises, 30:00 Minutes"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        level()
         
         let buttonSelectorRadius:CGFloat = 20
         
@@ -40,10 +51,31 @@ class LevelScreen : UIViewController {
         levelIntermediate.clipsToBounds = true
         levelAdvanced.clipsToBounds = true
         
-        BeginLabel?.text = "\(beginTitle)"
+        BeginLabel?.text = beginTitle
+        IntermediateLabel?.text = IntermTitle
+        AdvancedLabel?.text = AdvnTitle
+        
+        ExercisesBeginnerLabel?.text = BeginTimes
+        ExercisesIntermLabel?.text = IntermTimes
+        ExercisesAdvnLabel?.text = AdvnTimes
     }
-    func level() {
-        let Level = defaults.value(forKey: self.beginTitle) as? String ?? ""
-        BeginLabel.text = Level
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is Beginner {
+            let vc = segue.destination as? Beginner
+            vc?.titleLabel = beginTitle
+            vc?.exerciseTime = BeginTimes
+        }
+        else if segue.destination is Intermediate {
+            let vc = segue.destination as? Intermediate
+            vc?.titleLabel = IntermTitle
+            vc?.exerciseTime = IntermTimes
+        }
+        else if segue.destination is Advanced {
+            let vc = segue.destination as? Advanced
+            vc?.titleLabel = AdvnTitle
+            vc?.exerciseTime = AdvnTimes
+        }
     }
+    
 }

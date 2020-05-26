@@ -12,21 +12,16 @@ import UIKit
 class Beginner : UIViewController {
     
     @IBOutlet weak var TitleBegin: UILabel!
+    @IBOutlet weak var Times: UILabel!
     
-    var titleLabel: String = "Beginner"
-    
+    var titleLabel: String = ""
+    var exerciseTime: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TitleBegin?.text = "\(titleLabel)"
-
+        TitleBegin?.text = titleLabel
+        Times?.text = exerciseTime
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //let viewController = segue.destination as! LevelScreen
-       // viewController.beginTitle = self.TitleBegin.text!
-    }
-    
     
 }
