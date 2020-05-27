@@ -13,6 +13,7 @@ class Advanced : UIViewController {
     
     @IBOutlet weak var TitleBegin: UILabel!
     @IBOutlet weak var Times: UILabel!
+    @IBOutlet weak var ButtonStart: UIButton!
     
     var titleLabel: String = ""
     var exerciseTime: String = ""
@@ -22,7 +23,10 @@ class Advanced : UIViewController {
 
         TitleBegin?.text = titleLabel
         Times?.text = exerciseTime
+     
+        let buttonSelectorRadius:CGFloat = 20
         
+        ButtonStart.layer.cornerRadius = buttonSelectorRadius
     }
     
 }
