@@ -32,23 +32,11 @@ class Settings : UIViewController {
             day.layer.backgroundColor = nil
             day.setTitleColor(#colorLiteral(red: 0.5176470588, green: 0.5176470588, blue: 0.5411764706, alpha: 1), for: .normal)
             
-            // TODO: Need to figure out how to make button into toggle and on state
-            
-            /*
-            day.setTitleColor(.red, for: .selected)
-            day.setTitleColor(.blue, for: .highlighted)
-            
-            if day.isSelected {
-                day.layer.backgroundColor = #colorLiteral(red: 0.3058823529, green: 0.6941176471, blue: 0.3215686275, alpha: 1)
-                day.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-            }
- */
+            // TODO: Need to figure out how to make button into toggle and style "on" state
+            sundayButton.applyGradient(colors: [ #colorLiteral(red: 0.5098039216, green: 0.8431372549, blue: 0.5254901961, alpha: 1) , #colorLiteral(red: 0.3058823529, green: 0.6941176471, blue: 0.3215686275, alpha: 1) ], radius: buttonRadius)
+            sundayButton.setTitleColor(.systemBackground, for: .normal)
+            sundayButton.layer.borderWidth = 0
         }
-        
-//        self.navigationController?.navigationBar.setBackgroundImage(nil, for:.default)
-//        self.navigationController?.navigationBar.shadowImage = nil
-//        self.navigationController?.navigationBar.layoutIfNeeded()
-        print("Hello World")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,5 +46,22 @@ class Settings : UIViewController {
          self.navigationController?.navigationBar.setBackgroundImage(nil, for:.default)
          self.navigationController?.navigationBar.shadowImage = nil
          self.navigationController?.navigationBar.layoutIfNeeded()
+    }
+}
+
+extension UIButton
+{
+    func applyGradient(colors: [CGColor], radius: CGFloat = 0)
+    {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.cornerRadius = radius
+        gradientLayer.colors = colors
+        
+        // Configure gradient direction https://www.appcoda.com/cagradientlayer/
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        
+        gradientLayer.frame = self.bounds
+        self.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
