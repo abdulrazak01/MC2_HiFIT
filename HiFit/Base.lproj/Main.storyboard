@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sRZ-tN-LjJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sRZ-tN-LjJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -323,6 +323,9 @@
                                                                         <state key="normal" title="M">
                                                                             <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="daysButtonsTouched:" destination="PS5-tB-fBC" eventType="touchUpInside" id="bOF-Il-e64"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02a-48-3Oq">
                                                                         <rect key="frame" x="54" y="0.0" width="48" height="48"/>
@@ -334,6 +337,9 @@
                                                                         <state key="normal" title="T">
                                                                             <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="daysButtonsTouched:" destination="PS5-tB-fBC" eventType="touchUpInside" id="ZGH-8X-BOG"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfn-dl-Nbi">
                                                                         <rect key="frame" x="108" y="0.0" width="48" height="48"/>
@@ -345,6 +351,9 @@
                                                                         <state key="normal" title="W">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="daysButtonsTouched:" destination="PS5-tB-fBC" eventType="touchUpInside" id="in5-7B-BH4"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpV-ff-vLv">
                                                                         <rect key="frame" x="162" y="0.0" width="48" height="48"/>
@@ -356,6 +365,9 @@
                                                                         <state key="normal" title="T">
                                                                             <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="daysButtonsTouched:" destination="PS5-tB-fBC" eventType="touchUpInside" id="rkK-LD-tbC"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tum-4U-um7">
                                                                         <rect key="frame" x="216" y="0.0" width="48" height="48"/>
@@ -367,6 +379,9 @@
                                                                         <state key="normal" title="F">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="daysButtonsTouched:" destination="PS5-tB-fBC" eventType="touchUpInside" id="RD3-Vt-rv9"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UY6-VN-6Fo">
                                                                         <rect key="frame" x="270" y="0.0" width="48" height="48"/>
@@ -378,6 +393,9 @@
                                                                         <state key="normal" title="S">
                                                                             <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="daysButtonsTouched:" destination="PS5-tB-fBC" eventType="touchUpInside" id="XwL-Ps-5uX"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTq-sM-qAm">
                                                                         <rect key="frame" x="324" y="0.0" width="48" height="48"/>
@@ -389,6 +407,9 @@
                                                                         <state key="normal" title="S">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="daysButtonsTouched:" destination="PS5-tB-fBC" eventType="touchUpInside" id="kYq-V4-wi4"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>

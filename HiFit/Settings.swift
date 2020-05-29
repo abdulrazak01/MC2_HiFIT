@@ -19,10 +19,10 @@ class Settings : UIViewController {
     @IBOutlet weak var saturdayButton: UIButton!
     @IBOutlet var daysButtons: [UIButton]!
     
+    private let buttonRadius:CGFloat = 10
+    
     override func viewDidLoad() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let buttonRadius:CGFloat = 10
         
         for day in daysButtons {
             print(day.currentTitle!)
@@ -31,11 +31,6 @@ class Settings : UIViewController {
             day.layer.borderWidth = 1
             day.layer.backgroundColor = nil
             day.setTitleColor(#colorLiteral(red: 0.5176470588, green: 0.5176470588, blue: 0.5411764706, alpha: 1), for: .normal)
-            
-            // TODO: Need to figure out how to make button into toggle and style "on" state
-            sundayButton.applyGradient(colors: [ #colorLiteral(red: 0.5098039216, green: 0.8431372549, blue: 0.5254901961, alpha: 1) , #colorLiteral(red: 0.3058823529, green: 0.6941176471, blue: 0.3215686275, alpha: 1) ], radius: buttonRadius)
-            sundayButton.setTitleColor(.systemBackground, for: .normal)
-            sundayButton.layer.borderWidth = 0
         }
     }
     
@@ -46,6 +41,22 @@ class Settings : UIViewController {
          self.navigationController?.navigationBar.setBackgroundImage(nil, for:.default)
          self.navigationController?.navigationBar.shadowImage = nil
          self.navigationController?.navigationBar.layoutIfNeeded()
+    }
+    
+    @IBAction func daysButtonsTouched(_ sender: UIButton) {
+        sender.setTitleColor(.systemBackground, for: .selected)
+
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.layer.borderWidth = 0
+            sender.layer.backgroundColor = UIColor.systemGreen.cgColor  // fallback for gradient
+            sender.tintColor = UIColor.clear
+            sender.applyGradient(colors: [ #colorLiteral(red: 0.5098039216, green: 0.8431372549, blue: 0.5254901961, alpha: 1) , #colorLiteral(red: 0.3058823529, green: 0.6941176471, blue: 0.3215686275, alpha: 1) ], radius: buttonRadius)
+        } else {
+            sender.layer.borderWidth = 1
+            sender.layer.backgroundColor = nil
+            sender.layer.sublayers!.remove(at: 1)   // this not stable, cause crash if trigger repeatedly
+        }
     }
 }
 
