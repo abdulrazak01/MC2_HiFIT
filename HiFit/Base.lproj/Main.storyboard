@@ -913,7 +913,7 @@
                                     <constraint firstAttribute="height" constant="25" id="Xgo-6g-t7T"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Work" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="40" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y03-BO-wkn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Work" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y03-BO-wkn">
                                 <rect key="frame" x="20" y="135" width="374" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="7FW-MH-axJ"/>
@@ -922,7 +922,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeG-2K-SOl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeG-2K-SOl">
                                 <rect key="frame" x="192.5" y="81" width="29.5" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="d0p-zk-NQB"/>
@@ -931,7 +931,7 @@
                                 <color key="textColor" red="0.2156862745" green="0.65098039220000004" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktu-O4-Wq9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktu-O4-Wq9">
                                 <rect key="frame" x="20" y="108" width="374" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="30h-zc-21r"/>
@@ -1077,7 +1077,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h1L-vW-UyI"/>
+        <segue reference="EAs-vh-Lac"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SettingsIcon" width="35" height="35"/>
