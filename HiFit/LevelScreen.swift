@@ -22,43 +22,80 @@ class LevelScreen : UIViewController {
     @IBOutlet weak var ExercisesIntermLabel: UILabel!
     @IBOutlet weak var ExercisesAdvnLabel: UILabel!
     
-    
+    @IBOutlet var buttonLevels: [UIButton]!
+        
     var beginTitle: String = "Beginner"
-    var BeginTimes: String = "10 Exercises, 10:00 Minutes"
+    var BeginTimes: String = "16:00 minutes minimum"
     
     var IntermTitle: String = "Intermediate"
-    var IntermTimes: String = "17 Exercises, 20:00 Minutes"
+    var IntermTimes: String = "18:00 minutes minimum"
     
     var AdvnTitle: String = "Advanced"
-    var AdvnTimes: String = "25 Exercises, 30:00 Minutes"
+    var AdvnTimes: String = "21:00 minutes minimum"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.topItem?.title = "Workout Levels"
+
+        /*
+         Thanks the following resource for helping rounded edge drop shadow and Sketch to XCode shadow
+         - Rounded Edge and Drop Shadow
+         https://stackoverflow.com/questions/4754392/uiview-with-rounded-corners-and-drop-shadow
+         - Sketch to XCode shadow
+         https://stackoverflow.com/questions/34269399/how-to-control-shadow-spread-and-blur
+         */
+        for level in buttonLevels {
+            // add shadow subview to the base view
+            let shadowView = UIView()
+            shadowView.backgroundColor = UIColor.clear
+            shadowView.layer.shadowColor = UIColor.black.cgColor
+            shadowView.layer.shadowOffset = CGSize(width: 0, height: 2)
+            shadowView.layer.shadowOpacity = 0.2
+            shadowView.layer.shadowRadius = 15 / 2.0    // Sketch Blur / 2.0
+            shadowView.layer.shadowPath = nil
+            
+            // rasterize shadow
+            shadowView.layer.shadowPath = UIBezierPath(roundedRect: level.bounds, cornerRadius: 20).cgPath
+            shadowView.layer.shouldRasterize = true
+            shadowView.layer.rasterizationScale = UIScreen.main.scale
+            
+            level.addSubview(shadowView)
+
+            // add button subview to overlay the shadow view
+            let borderView = UIView()
+            borderView.frame = level.bounds
+            borderView.layer.cornerRadius = 20
+            borderView.layer.masksToBounds = true
+            shadowView.addSubview(borderView)
+
+            // add content for button subview
+            let borderViewContent = UIImageView()
+            borderViewContent.image = UIImage(named: "ButtonBg")
+            borderViewContent.frame = borderView.bounds
+            borderView.addSubview(borderViewContent)
+        }
         
-        let buttonSelectorRadius:CGFloat = 20
-        
-        levelBeginner.layer.cornerRadius = buttonSelectorRadius
-        levelIntermediate.layer.cornerRadius = buttonSelectorRadius
-        levelAdvanced.layer.cornerRadius = buttonSelectorRadius
-        
-        // Button Normal State
-        levelBeginner.setBackgroundImage(#imageLiteral(resourceName: "BeginnerBg"), for: .normal)
-        levelIntermediate.setBackgroundImage(#imageLiteral(resourceName: "IntermediateBg"), for: .normal)
-        levelAdvanced.setBackgroundImage(#imageLiteral(resourceName: "AdvancedBg"), for: .normal)
-        
-        levelBeginner.clipsToBounds = true
-        levelIntermediate.clipsToBounds = true
-        levelAdvanced.clipsToBounds = true
-        
+        // TODO: Are we using this code? Line 80-82
         BeginLabel?.text = beginTitle
         IntermediateLabel?.text = IntermTitle
         AdvancedLabel?.text = AdvnTitle
+
+        // Workout Levels Descriptions
+        func levelText(labelText: String, color: UIColor) -> NSAttributedString {
+            let timeSymbolAttachment = NSTextAttachment()
+            timeSymbolAttachment.image = UIImage(systemName: "timer",
+                                                 withConfiguration: UIImage.SymbolConfiguration(weight: .bold))?.withTintColor(color)
+            let label = NSMutableAttributedString(string: "")
+            label.append(NSAttributedString(attachment: timeSymbolAttachment))
+            label.append(NSAttributedString(string: " \(labelText)"))
+            
+            return label
+        }
         
-        ExercisesBeginnerLabel?.text = BeginTimes
-        ExercisesIntermLabel?.text = IntermTimes
-        ExercisesAdvnLabel?.text = AdvnTimes
+        ExercisesBeginnerLabel?.attributedText = levelText(labelText: BeginTimes, color: #colorLiteral(red: 0.1411764706, green: 0.6156862745, blue: 0.831372549, alpha: 1))
+        ExercisesIntermLabel?.attributedText = levelText(labelText: IntermTimes, color: #colorLiteral(red: 0.3176470588, green: 0.7019607843, blue: 0.3333333333, alpha: 1))
+        ExercisesAdvnLabel?.attributedText = levelText(labelText: AdvnTimes, color: #colorLiteral(red: 0.9450980392, green: 0.2392156863, blue: 0.2823529412, alpha: 1))
     }
     
     override func viewWillAppear(_ animated: Bool) {
