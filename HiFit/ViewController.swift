@@ -35,6 +35,10 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     let allExercise = ArrayWork()   // Import list of exercises
     var exerciseNumber: Int = 0
 
+    @IBAction func shareButton(_ sender: Any) {
+        
+        
+    }
     
     var countdownTimerDidStart = false
     
