@@ -15,7 +15,7 @@ let restDuration:Int = 40
 let coolDownDuration:Int = 30
 
 class ArrayWork{
-    
+     
     var list = [workout]()
     
     init(){
