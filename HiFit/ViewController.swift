@@ -91,10 +91,19 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
     }
     
-
+    func display(){
+                   
+              
+               let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                          let secondVc = storyboard.instantiateViewController(withIdentifier: "Result") as! Result
+               present(secondVc, animated: true)
+                
+           
+          
+       }
     
     func countdownTimerDone() {
-       
+       display()
         //counterView.isHidden = true
         //messageLabel.isHidden = false
         
