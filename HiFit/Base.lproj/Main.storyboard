@@ -1029,10 +1029,12 @@
                     <connections>
                         <outlet property="NumExercise" destination="OeG-2K-SOl" id="ucX-7T-MXo"/>
                         <outlet property="counterView" destination="JD6-so-ztW" id="9zs-1H-bZW"/>
+                        <outlet property="greenBtn" destination="VMa-Sh-BxQ" id="umz-wF-T1i"/>
                         <outlet property="imageWorkout" destination="iGf-Fe-hAu" id="xbB-5P-TZW"/>
                         <outlet property="minutes" destination="EIi-6g-6P1" id="cTw-pZ-sHC"/>
                         <outlet property="progressBar" destination="MKx-9W-6cu" id="hK3-71-oNC"/>
                         <outlet property="promptWork" destination="aLx-Py-ezc" id="1eT-jf-3Lh"/>
+                        <outlet property="redBtn" destination="JOz-FS-sDu" id="0rG-eR-Usy"/>
                         <outlet property="seconds" destination="Z0j-b3-M7M" id="Xn5-Jf-Xg9"/>
                         <outlet property="startBtn" destination="X3V-lG-KuK" id="L8V-rc-agT"/>
                         <outlet property="stopBtn" destination="I25-Vf-NfT" id="VJ3-Kn-TJg"/>
@@ -1161,8 +1163,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h1L-vW-UyI"/>
         <segue reference="Q5W-g1-hpG"/>
+        <segue reference="h1L-vW-UyI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SettingsIcon" width="35" height="35"/>
