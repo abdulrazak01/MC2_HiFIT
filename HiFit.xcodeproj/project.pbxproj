@@ -13,6 +13,7 @@
 		75397687247D154400BA06D2 /* Intermediate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397686247D154400BA06D2 /* Intermediate.swift */; };
 		75397689247D156100BA06D2 /* Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397688247D156100BA06D2 /* Advanced.swift */; };
 		7539768B247D1B7200BA06D2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539768A247D1B7200BA06D2 /* Settings.swift */; };
+		910503B1248504F0001F2DE5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910503B0248504F0001F2DE5 /* TableViewCell.swift */; };
 		91D57C99246E9EA90047DF44 /* LevelScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D57C98246E9EA90047DF44 /* LevelScreen.swift */; };
 		91ECEAF22474D2DA007535AD /* Beginner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEAF12474D2DA007535AD /* Beginner.swift */; };
 		B66EF1D91EA9E6E300649824 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66EF1D81EA9E6E300649824 /* CustomColors.swift */; };
@@ -33,6 +34,7 @@
 		75397688247D156100BA06D2 /* Advanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advanced.swift; sourceTree = "<group>"; };
 		7539768A247D1B7200BA06D2 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		75AA709624705B1900AD09B0 /* Speech.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Speech.playground; path = ../../HiFit/HiFit/Speech.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		910503B0248504F0001F2DE5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		91D57C98246E9EA90047DF44 /* LevelScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelScreen.swift; sourceTree = "<group>"; };
 		91ECEAF12474D2DA007535AD /* Beginner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beginner.swift; sourceTree = "<group>"; };
 		B66EF1D81EA9E6E300649824 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				B66EF1D51EA9E57500649824 /* Controller */,
 				B66EF1DA1EA9E6FE00649824 /* Utils */,
 				B66EF1D31EA9E54700649824 /* Supporting files */,
+				910503B0248504F0001F2DE5 /* TableViewCell.swift */,
 			);
 			path = HiFit;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				91ECEAF22474D2DA007535AD /* Beginner.swift in Sources */,
 				B6C7B6FB1EA8DB9F008B31A6 /* ViewController.swift in Sources */,
 				3D910A21246B85A100B27D6D /* workout.swift in Sources */,
+				910503B1248504F0001F2DE5 /* TableViewCell.swift in Sources */,
 				B66EF1DC1EA9E75C00649824 /* CountdownTimer.swift in Sources */,
 				3D910A1F246B856200B27D6D /* ArrayWork.swift in Sources */,
 				7539768B247D1B7200BA06D2 /* Settings.swift in Sources */,
