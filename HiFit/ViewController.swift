@@ -74,6 +74,22 @@ class ViewController: UIViewController, CountdownTimerDelegate {
         
       
         counterView.isHidden = false
+        
+        redBtn.layer.backgroundColor = UIColor.systemBackground.cgColor // resets Storyboard Red to SystemColor
+        
+        let subLayerBorder = CALayer()
+        subLayerBorder.frame = redBtn.layer.bounds
+        subLayerBorder.cornerRadius = 42
+        subLayerBorder.backgroundColor = UIColor.systemBackground.cgColor
+        subLayerBorder.borderColor = #colorLiteral(red: 0.7607843137, green: 0, blue: 0.06666666667, alpha: 1)
+        subLayerBorder.borderWidth = 1
+        redBtn.layer.insertSublayer(subLayerBorder, at: 0)
+
+        let gradient = CAGradientLayer()
+        gradient.cornerRadius = 39
+        gradient.frame = CGRect(x: 3, y: 3, width: 78, height: 78)
+        gradient.colors = [ #colorLiteral(red: 1, green: 0.4, blue: 0.5019607843, alpha: 1).cgColor, #colorLiteral(red: 0.9019607843, green: 0.02745098039, blue: 0.1019607843, alpha: 1).cgColor ]
+        redBtn.layer.insertSublayer(gradient, at: 1)
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -252,5 +268,3 @@ extension String {
         return (0...matches.count).map {String(self[ranges[$0].upperBound..<ranges[$0+1].lowerBound])}
     }
 }
-
-
