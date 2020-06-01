@@ -67,6 +67,4 @@ extension Beginner: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
- // Do Something Here Later
 }
