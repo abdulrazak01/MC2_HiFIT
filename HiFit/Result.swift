@@ -11,8 +11,9 @@ import UIKit
 class Result: UIViewController {
 
     let allExercise = ArrayWork()
- 
- 
+    
+    //var modals = [ResultExercises]()
+     
     @IBOutlet weak var tblView: UITableView!
  
     
@@ -26,15 +27,17 @@ class Result: UIViewController {
         tblView.delegate = self
        tblView.dataSource = self
         
-     /*   guard let vc = storyboard?.instantiateViewController(identifier: "add") as? ViewController else {
+       /* guard let vc = storyboard?.instantiateViewController(identifier: "add") as? ViewController else {
                    return
                }
         
-        vc.completion = { WorkText, typeText in
+        vc.completion = { workText, typeText in
               DispatchQueue.main.async {
-                  let new = ResultExercises(WorkText: WorkText, typeText: typeText)
-                  self.models.append(new)
+                let new = ResultExercises(workText: workText, typeText: typeText)
+                  self.modals.append(new)
                   self.tblView.reloadData()
+                
+               
         }
        
     } */
@@ -72,8 +75,7 @@ extension Result:UITableViewDataSource{
 
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! makeTableViewCell
-        if allExercise.list[indexPath.row].typeExercise == "Warm Up"{
-        
+        if self.allExercise.self.list[indexPath.row].Status == "On" {
         cell.lblW?.text = allExercise.list[indexPath.row].exercise
         cell.lblT.text = allExercise.list[indexPath.row].typeExercise
        
@@ -81,9 +83,11 @@ extension Result:UITableViewDataSource{
         return cell
         }
         return UITableViewCell()
+        }
+    
       }
     
-}
+
 
 class makeTableViewCell: UITableViewCell{
  
@@ -92,6 +96,14 @@ class makeTableViewCell: UITableViewCell{
     
     
 }
+
+
+/*struct ResultExercises {
+    let workText: String
+    let typeText: String
+   
+    
+} */
 
 
 

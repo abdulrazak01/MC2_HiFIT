@@ -9,7 +9,7 @@
 
 import Foundation
 
-let warmUpDuration:Int = 2
+let warmUpDuration:Int = 30
 let exerciseDuration:Int = 30
 let restDuration:Int = 40
 let coolDownDuration:Int = 30
@@ -21,13 +21,13 @@ class ArrayWork{
     init(){
         // MARK: - Neck Mobility
         list.append(workout(image: "pushup", WorkText: "Neck Mobility", promptText:
-            "1. Tuck chin into chest, lift chin upward as far as possible 2. Repeat for 10 seconds 3. Lower left ear towards left shoulder and then the other side. 4. Repeat for 10 seconds 5. Turn your chin laterally towards left shoulder and rotate towards right shoulder 6. Repeat till end of duration", typeText: "Warm Up", timer: "\(warmUpDuration)", goTimer: warmUpDuration, Numb: 1,Statuss: "Off"))
+            "1. Tuck chin into chest, lift chin upward as far as possible 2. Repeat for 10 seconds 3. Lower left ear towards left shoulder and then the other side. 4. Repeat for 10 seconds 5. Turn your chin laterally towards left shoulder and rotate towards right shoulder 6. Repeat till end of duration", typeText: "Warm Up", timer: "\(warmUpDuration)", goTimer: warmUpDuration, Numb: 1,Statuss: "On"))
         
         // MARK: - Jumping Jacks
         list.append(workout(image: "jump", WorkText: "Jumping Jacks", promptText:
-            "1. Stand with legs straight and arm by your sides 2. Jump up and spread feet beyond hip-width apart 3. Bring arms above head 4. Jump again, lower arm, bring legs together 5. Return to starting position", typeText: "Exercise", timer: "\(exerciseDuration)", goTimer: exerciseDuration, Numb: 0,Statuss: "Off"))
+            "1. Stand with legs straight and arm by your sides 2. Jump up and spread feet beyond hip-width apart 3. Bring arms above head 4. Jump again, lower arm, bring legs together 5. Return to starting position", typeText: "Exercise", timer: "\(exerciseDuration)", goTimer: exerciseDuration, Numb: 0,Statuss: "On"))
         list.append(workout(image: "situp", WorkText: "Rest", promptText:
-            "", typeText: "Rest", timer: "\(restDuration)", goTimer: restDuration, Numb: 0,Statuss: "Off"))
+            "", typeText: "Rest", timer: "\(restDuration)", goTimer: restDuration, Numb: 0,Statuss: "On"))
         
         // MARK: - Push Up
         list.append(workout(image: "situp", WorkText: "Push Up", promptText:
