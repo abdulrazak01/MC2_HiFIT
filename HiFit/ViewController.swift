@@ -57,6 +57,24 @@ class ViewController: UIViewController, CountdownTimerDelegate {
 
     
     
+    fileprivate func buttonStyle(button: UIButton, borderColor: CGColor, startGradientColor: UIColor, endGradientColor: UIColor) {
+        button.layer.backgroundColor = UIColor.systemBackground.cgColor // resets Storyboard Button Color to SystemBackgroundColor
+        
+        let border = CALayer()
+        border.frame = button.layer.bounds
+        border.cornerRadius = 42
+        border.backgroundColor = UIColor.systemBackground.cgColor
+        border.borderColor = borderColor
+        border.borderWidth = 1
+        button.layer.insertSublayer(border, at: 0)
+        
+        let gradient = CAGradientLayer()
+        gradient.cornerRadius = 39
+        gradient.frame = CGRect(x: 3, y: 3, width: 78, height: 78)
+        gradient.colors = [ startGradientColor.cgColor, endGradientColor.cgColor ]
+        button.layer.insertSublayer(gradient, at: 1)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -75,21 +93,8 @@ class ViewController: UIViewController, CountdownTimerDelegate {
       
         counterView.isHidden = false
         
-        redBtn.layer.backgroundColor = UIColor.systemBackground.cgColor // resets Storyboard Red to SystemColor
-        
-        let subLayerBorder = CALayer()
-        subLayerBorder.frame = redBtn.layer.bounds
-        subLayerBorder.cornerRadius = 42
-        subLayerBorder.backgroundColor = UIColor.systemBackground.cgColor
-        subLayerBorder.borderColor = #colorLiteral(red: 0.7607843137, green: 0, blue: 0.06666666667, alpha: 1)
-        subLayerBorder.borderWidth = 1
-        redBtn.layer.insertSublayer(subLayerBorder, at: 0)
-
-        let gradient = CAGradientLayer()
-        gradient.cornerRadius = 39
-        gradient.frame = CGRect(x: 3, y: 3, width: 78, height: 78)
-        gradient.colors = [ #colorLiteral(red: 1, green: 0.4, blue: 0.5019607843, alpha: 1).cgColor, #colorLiteral(red: 0.9019607843, green: 0.02745098039, blue: 0.1019607843, alpha: 1).cgColor ]
-        redBtn.layer.insertSublayer(gradient, at: 1)
+        buttonStyle(button: redBtn, borderColor: #colorLiteral(red: 0.7607843137, green: 0, blue: 0.06666666667, alpha: 1), startGradientColor: #colorLiteral(red: 1, green: 0.4, blue: 0.5019607843, alpha: 1), endGradientColor: #colorLiteral(red: 0.9019607843, green: 0.02745098039, blue: 0.1019607843, alpha: 1))
+        buttonStyle(button: greenBtn, borderColor: #colorLiteral(red: 0.4862745098, green: 0.7294117647, blue: 0.262745098, alpha: 1), startGradientColor: #colorLiteral(red: 0.6039215686, green: 0.8784313725, blue: 0.2274509804, alpha: 1), endGradientColor: #colorLiteral(red: 0.3333333333, green: 0.6, blue: 0.09019607843, alpha: 1))
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
