@@ -11,7 +11,7 @@
 import UIKit
 import AVFoundation
 import AudioToolbox
-
+import Lottie
 
 class ViewController: UIViewController, CountdownTimerDelegate {
 
@@ -31,6 +31,7 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     @IBOutlet weak var promptWork: UILabel!
     @IBOutlet weak var typeWork: UILabel!
+    @IBOutlet weak var animationView: AnimationView!
     
     @IBOutlet weak var redBtn: UIButton!
     @IBOutlet weak var greenBtn: UIButton!
@@ -217,13 +218,18 @@ class ViewController: UIViewController, CountdownTimerDelegate {
     
     func updateExercise(){
         if exerciseNumber <= allExercise.list.count - 1{
-            
+            // MARK: Change Exercise Image
             imageWorkout.image = UIImage(named:(allExercise.list[exerciseNumber].workoutImage))
             titleWork.text = allExercise.list[exerciseNumber].exercise
             typeWork.text = allExercise.list[exerciseNumber].typeExercise
 //            promptWork.text = allExercise.list[exerciseNumber].prompt
             
-
+            let animation = Animation.named(allExercise.list[exerciseNumber].animation)
+            animationView.animation = animation
+            animationView.contentMode = .scaleAspectFit
+            animationView.loopMode = .loop
+            animationView.animationSpeed = 1
+            animationView.play()
             
             // Countdown Timer
             countdownTimer.setTimer(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
