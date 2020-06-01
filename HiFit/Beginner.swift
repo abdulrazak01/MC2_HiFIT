@@ -17,12 +17,21 @@ class Beginner : UIViewController {
     @IBOutlet weak var ButtonStart: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    struct List {
+        var img: String
+        var name: String
+    }
+    
+    let exercisesList = [
+        List(img: "pushup", name: "Push Up"),
+        List(img: "situp", name: "Sit Up"),
+        List(img: "jump", name: "Jump")
+    ]
     
     var titleLabel: String = ""
     var exerciseTime: String = ""
     var descripts: String = "This is beginner level workout are create for who never or just begin to do workout."
     
-    let exercisesList = ["pushup","situp","jump"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +58,12 @@ extension Beginner: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         
         let title = exercisesList[indexPath.row]
-        cell.labelTitle.text = title
+            cell.labelTitle?.text = title.name
+            cell.imageWorkout?.image = UIImage(named: title.img)
+// if want to use detail text
+//            cell.detailTextLabel?.text = title.img
+            
+
         
         return cell
     }

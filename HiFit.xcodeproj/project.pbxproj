@@ -13,7 +13,6 @@
 		75397687247D154400BA06D2 /* Intermediate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397686247D154400BA06D2 /* Intermediate.swift */; };
 		75397689247D156100BA06D2 /* Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397688247D156100BA06D2 /* Advanced.swift */; };
 		7539768B247D1B7200BA06D2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539768A247D1B7200BA06D2 /* Settings.swift */; };
-
 		7576A609248508CA0027994B /* Rest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7576A608248508CA0027994B /* Rest.json */; };
 		7587129F2482DBE500D27FF9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7587129E2482DBE500D27FF9 /* Lottie */; };
 		758712AB2482DC7900D27FF9 /* Jumping Jack.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A12482DC7900D27FF9 /* Jumping Jack.json */; };
@@ -26,9 +25,7 @@
 		758712B22482DC7900D27FF9 /* Shoulder Stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A82482DC7900D27FF9 /* Shoulder Stretch.json */; };
 		758712B32482DC7900D27FF9 /* Half Push Ups.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A92482DC7900D27FF9 /* Half Push Ups.json */; };
 		758712B42482DC7900D27FF9 /* NeckMobility.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712AA2482DC7900D27FF9 /* NeckMobility.json */; };
-
 		910503B1248504F0001F2DE5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910503B0248504F0001F2DE5 /* TableViewCell.swift */; };
-
 		91D57C99246E9EA90047DF44 /* LevelScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D57C98246E9EA90047DF44 /* LevelScreen.swift */; };
 		91ECEAF22474D2DA007535AD /* Beginner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEAF12474D2DA007535AD /* Beginner.swift */; };
 		B66EF1D91EA9E6E300649824 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66EF1D81EA9E6E300649824 /* CustomColors.swift */; };
@@ -169,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B66EF1D81EA9E6E300649824 /* CustomColors.swift */,
+				910503B0248504F0001F2DE5 /* TableViewCell.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -199,7 +197,6 @@
 				B66EF1D51EA9E57500649824 /* Controller */,
 				B66EF1DA1EA9E6FE00649824 /* Utils */,
 				B66EF1D31EA9E54700649824 /* Supporting files */,
-				910503B0248504F0001F2DE5 /* TableViewCell.swift */,
 			);
 			path = HiFit;
 			sourceTree = "<group>";
