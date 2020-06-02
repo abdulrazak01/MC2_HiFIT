@@ -116,9 +116,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-          startTimer(startBtn)
-    }
+   
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
@@ -267,6 +265,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             countdownTimer.setTimer(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
             progressBar.setProgressBar(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
             //self.list[exerciseNumber].self.Status = "On"
+            
+             startTimer(startBtn)
             
             //workT.text = allExercise.list[exerciseNumber].exercise
             //typeT.text = allExercise.list[exerciseNumber].typeExercise
