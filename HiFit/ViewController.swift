@@ -116,6 +116,9 @@ class ViewController: UIViewController, CountdownTimerDelegate{
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+          startTimer(startBtn)
+    }
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
@@ -304,71 +307,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
     }
-    func startNow(){
-     
-              
-                   
-                  // MARK: Exercise Start
-       if !countdownTimerDidStart {
-                  countdownTimer.start()
-                  progressBar.start()
-                  countdownTimerDidStart = true
-                  startBtn.setTitle("PAUSE",for: .normal)
-              }
-              
-              else{
-                  countdownTimer.pause()
-                  progressBar.pause()
-                  countdownTimerDidStart = false
-                  startBtn.setTitle("RESUME",for: .normal)
-              }
-                  
-                  
-                  // MARK: - Exercise Prompts
-                  // Convert text prompt of type String into Array:[String]
-                  
-                  let promptString = allExercise.list[exerciseNumber].prompt
-                  let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
-                  
-                  var filteredPromptArray: [String] = []  // generate array consist of individual prompts
-                  for item in promptArray {
-                      if item != ""{
-                          filteredPromptArray.append(item)
-                      }
-                     if allExercise.list[exerciseNumber].typeExercise == "Rest" {
-                          filteredPromptArray.append("Rest for 30 seconds")
-                      filteredPromptArray.append(item)
-                      }
-                      if allExercise.list[exerciseNumber].typeExercise == "Cool Down" {
-                          filteredPromptArray.append("Relax and chill")
-                      filteredPromptArray.append(item)
-                      }
-                  }
-                          
-                  // Display Exercise Prompt Individually
-                  var count = 0
-                  let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
-                          
-                  Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
-                      self.promptWork.text = filteredPromptArray[count]
-
-                      // Voice Prompt
-                      // TODO: What to do if audio didn't finish instruction and exercise completed
-                      
-                      let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
-                      
-                      speechUtterance.rate = 0.45
-                      speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                      speechSynthesizer.speak(speechUtterance)
-                       
-                      count += 1
-                      
-                      if count == filteredPromptArray.count-1 {
-                          t.invalidate()
-                      }
-                  })
-                 
-       }
+    
     
     }
     
