@@ -174,7 +174,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         counterView.isHidden = false
         
         stopBtn.isEnabled = true
-    
+        stopBtn.alpha = 1.0
         
         // MARK: Exercise Start
         if !countdownTimerDidStart {
