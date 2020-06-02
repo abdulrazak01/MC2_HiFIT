@@ -23,9 +23,12 @@ class Beginner : UIViewController {
     }
     
     let exercisesList = [
-        List(img: "pushup", name: "Push Up"),
-        List(img: "situp", name: "Sit Up"),
-        List(img: "jump", name: "Jump")
+        List(img: "NeckMobility", name: "Neck Mobility"),
+        List(img: "SumoSquat", name: "Sumo Squats"),
+        List(img: "JumpingJacks", name: "Jumping Jacks"),
+        List(img: "PushUps", name: "Push Ups"),
+        List(img: "AirSwimming", name: "Air Swimming"),
+        List(img: "ShoulderStretch", name: "ShoulderStretch")
     ]
     
     var titleLabel: String = ""

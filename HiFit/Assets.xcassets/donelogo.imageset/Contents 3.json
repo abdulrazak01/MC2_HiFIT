@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "sit-up-icon.png",
+      "filename" : "donelogo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "donelogo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "donelogo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
