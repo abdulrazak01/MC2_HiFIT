@@ -50,7 +50,7 @@ class ProgressBar: UIView, CAAnimationDelegate {
         fgProgressLayer.backgroundColor = UIColor.clear.cgColor
         fgProgressLayer.fillColor = nil
         fgProgressLayer.strokeColor = UIColor.black.cgColor
-        fgProgressLayer.lineWidth = 4.0
+        fgProgressLayer.lineWidth = 5.0
         fgProgressLayer.strokeStart = 0.0
         fgProgressLayer.strokeEnd = 0.0
         
@@ -64,8 +64,8 @@ class ProgressBar: UIView, CAAnimationDelegate {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.locations = [0.0, 1.0]
-        let colorTop: AnyObject = CustomColor.lime.cgColor
-        let colorBottom: AnyObject = CustomColor.summerSky.cgColor
+        let colorTop: AnyObject = #colorLiteral(red: 0.4078431373, green: 0.8235294118, blue: 0.9450980392, alpha: 1).cgColor
+        let colorBottom: AnyObject = #colorLiteral(red: 0.2156862745, green: 0.6509803922, blue: 0.8705882353, alpha: 1).cgColor
         let arrayOfColors: [AnyObject] = [colorTop, colorBottom]
         gradientLayer.colors = arrayOfColors
         
@@ -83,7 +83,7 @@ class ProgressBar: UIView, CAAnimationDelegate {
         bgProgressLayer.backgroundColor = UIColor.clear.cgColor
         bgProgressLayer.fillColor = nil
         bgProgressLayer.strokeColor = UIColor.black.cgColor
-        bgProgressLayer.lineWidth = 4.0
+        bgProgressLayer.lineWidth = 5.0
         bgProgressLayer.strokeStart = 0.0
         bgProgressLayer.strokeEnd = 1.0
         

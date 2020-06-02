@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,18 @@
 		75397687247D154400BA06D2 /* Intermediate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397686247D154400BA06D2 /* Intermediate.swift */; };
 		75397689247D156100BA06D2 /* Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397688247D156100BA06D2 /* Advanced.swift */; };
 		7539768B247D1B7200BA06D2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539768A247D1B7200BA06D2 /* Settings.swift */; };
+		7576A609248508CA0027994B /* Rest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7576A608248508CA0027994B /* Rest.json */; };
+		7587129F2482DBE500D27FF9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7587129E2482DBE500D27FF9 /* Lottie */; };
+		758712AB2482DC7900D27FF9 /* Jumping Jack.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A12482DC7900D27FF9 /* Jumping Jack.json */; };
+		758712AC2482DC7900D27FF9 /* Jump Squat.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A22482DC7900D27FF9 /* Jump Squat.json */; };
+		758712AD2482DC7900D27FF9 /* Push Ups.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A32482DC7900D27FF9 /* Push Ups.json */; };
+		758712AE2482DC7900D27FF9 /* Sumo Squat.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A42482DC7900D27FF9 /* Sumo Squat.json */; };
+		758712AF2482DC7900D27FF9 /* Pike Push Ups.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A52482DC7900D27FF9 /* Pike Push Ups.json */; };
+		758712B02482DC7900D27FF9 /* Air Swimming.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A62482DC7900D27FF9 /* Air Swimming.json */; };
+		758712B12482DC7900D27FF9 /* Plank.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A72482DC7900D27FF9 /* Plank.json */; };
+		758712B22482DC7900D27FF9 /* Shoulder Stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A82482DC7900D27FF9 /* Shoulder Stretch.json */; };
+		758712B32482DC7900D27FF9 /* Half Push Ups.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A92482DC7900D27FF9 /* Half Push Ups.json */; };
+		758712B42482DC7900D27FF9 /* NeckMobility.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712AA2482DC7900D27FF9 /* NeckMobility.json */; };
 		910503B1248504F0001F2DE5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910503B0248504F0001F2DE5 /* TableViewCell.swift */; };
 		91D57C99246E9EA90047DF44 /* LevelScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D57C98246E9EA90047DF44 /* LevelScreen.swift */; };
 		91ECEAF22474D2DA007535AD /* Beginner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECEAF12474D2DA007535AD /* Beginner.swift */; };
@@ -33,6 +45,17 @@
 		75397686247D154400BA06D2 /* Intermediate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intermediate.swift; sourceTree = "<group>"; };
 		75397688247D156100BA06D2 /* Advanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advanced.swift; sourceTree = "<group>"; };
 		7539768A247D1B7200BA06D2 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		7576A608248508CA0027994B /* Rest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Rest.json; sourceTree = "<group>"; };
+		758712A12482DC7900D27FF9 /* Jumping Jack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Jumping Jack.json"; sourceTree = "<group>"; };
+		758712A22482DC7900D27FF9 /* Jump Squat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Jump Squat.json"; sourceTree = "<group>"; };
+		758712A32482DC7900D27FF9 /* Push Ups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Push Ups.json"; sourceTree = "<group>"; };
+		758712A42482DC7900D27FF9 /* Sumo Squat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sumo Squat.json"; sourceTree = "<group>"; };
+		758712A52482DC7900D27FF9 /* Pike Push Ups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Pike Push Ups.json"; sourceTree = "<group>"; };
+		758712A62482DC7900D27FF9 /* Air Swimming.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Air Swimming.json"; sourceTree = "<group>"; };
+		758712A72482DC7900D27FF9 /* Plank.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Plank.json; sourceTree = "<group>"; };
+		758712A82482DC7900D27FF9 /* Shoulder Stretch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Shoulder Stretch.json"; sourceTree = "<group>"; };
+		758712A92482DC7900D27FF9 /* Half Push Ups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Half Push Ups.json"; sourceTree = "<group>"; };
+		758712AA2482DC7900D27FF9 /* NeckMobility.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NeckMobility.json; sourceTree = "<group>"; };
 		75AA709624705B1900AD09B0 /* Speech.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Speech.playground; path = ../../HiFit/HiFit/Speech.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		910503B0248504F0001F2DE5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		91D57C98246E9EA90047DF44 /* LevelScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelScreen.swift; sourceTree = "<group>"; };
@@ -54,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7587129F2482DBE500D27FF9 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,9 +93,28 @@
 			name = ArrayWorkout;
 			sourceTree = "<group>";
 		};
+		758712A02482DC5600D27FF9 /* Exercise Animations */ = {
+			isa = PBXGroup;
+			children = (
+				7576A608248508CA0027994B /* Rest.json */,
+				758712A62482DC7900D27FF9 /* Air Swimming.json */,
+				758712A92482DC7900D27FF9 /* Half Push Ups.json */,
+				758712A22482DC7900D27FF9 /* Jump Squat.json */,
+				758712A12482DC7900D27FF9 /* Jumping Jack.json */,
+				758712AA2482DC7900D27FF9 /* NeckMobility.json */,
+				758712A52482DC7900D27FF9 /* Pike Push Ups.json */,
+				758712A72482DC7900D27FF9 /* Plank.json */,
+				758712A32482DC7900D27FF9 /* Push Ups.json */,
+				758712A82482DC7900D27FF9 /* Shoulder Stretch.json */,
+				758712A42482DC7900D27FF9 /* Sumo Squat.json */,
+			);
+			name = "Exercise Animations";
+			sourceTree = "<group>";
+		};
 		B66EF1D31EA9E54700649824 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				758712A02482DC5600D27FF9 /* Exercise Animations */,
 				B6C7B6F81EA8DB9F008B31A6 /* AppDelegate.swift */,
 				B6C7B6FF1EA8DB9F008B31A6 /* Assets.xcassets */,
 				B6C7B7041EA8DB9F008B31A6 /* Info.plist */,
@@ -123,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B66EF1D81EA9E6E300649824 /* CustomColors.swift */,
+				910503B0248504F0001F2DE5 /* TableViewCell.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -153,7 +197,6 @@
 				B66EF1D51EA9E57500649824 /* Controller */,
 				B66EF1DA1EA9E6FE00649824 /* Utils */,
 				B66EF1D31EA9E54700649824 /* Supporting files */,
-				910503B0248504F0001F2DE5 /* TableViewCell.swift */,
 			);
 			path = HiFit;
 			sourceTree = "<group>";
@@ -174,6 +217,9 @@
 			dependencies = (
 			);
 			name = HiFit;
+			packageProductDependencies = (
+				7587129E2482DBE500D27FF9 /* Lottie */,
+			);
 			productName = CountdownTimer;
 			productReference = B6C7B6F51EA8DB9F008B31A6 /* HiFit.app */;
 			productType = "com.apple.product-type.application";
@@ -190,7 +236,6 @@
 				TargetAttributes = {
 					B6C7B6F41EA8DB9F008B31A6 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = CR42C4ETD5;
 						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
@@ -205,6 +250,9 @@
 				Base,
 			);
 			mainGroup = B6C7B6EC1EA8DB9F008B31A6;
+			packageReferences = (
+				7587129D2482DBE500D27FF9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = B6C7B6F61EA8DB9F008B31A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -219,9 +267,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758712B42482DC7900D27FF9 /* NeckMobility.json in Resources */,
+				758712AB2482DC7900D27FF9 /* Jumping Jack.json in Resources */,
+				758712B22482DC7900D27FF9 /* Shoulder Stretch.json in Resources */,
+				758712B02482DC7900D27FF9 /* Air Swimming.json in Resources */,
 				B6C7B7031EA8DB9F008B31A6 /* LaunchScreen.storyboard in Resources */,
+				758712AE2482DC7900D27FF9 /* Sumo Squat.json in Resources */,
+				758712B32482DC7900D27FF9 /* Half Push Ups.json in Resources */,
+				758712B12482DC7900D27FF9 /* Plank.json in Resources */,
+				758712AF2482DC7900D27FF9 /* Pike Push Ups.json in Resources */,
+				7576A609248508CA0027994B /* Rest.json in Resources */,
+				758712AC2482DC7900D27FF9 /* Jump Squat.json in Resources */,
 				B6C7B7001EA8DB9F008B31A6 /* Assets.xcassets in Resources */,
 				B6C7B6FE1EA8DB9F008B31A6 /* Main.storyboard in Resources */,
+				758712AD2482DC7900D27FF9 /* Push Ups.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +363,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -363,6 +423,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -377,7 +438,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -386,10 +448,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CR42C4ETD5;
+				DEVELOPMENT_TEAM = H7722R6MM3;
 				INFOPLIST_FILE = HiFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.enterthesource.HiFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -400,10 +465,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CR42C4ETD5;
+				DEVELOPMENT_TEAM = H7722R6MM3;
 				INFOPLIST_FILE = HiFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.enterthesource.HiFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -432,6 +500,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7587129D2482DBE500D27FF9 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7587129E2482DBE500D27FF9 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7587129D2482DBE500D27FF9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B6C7B6ED1EA8DB9F008B31A6 /* Project object */;
 }

@@ -11,7 +11,7 @@
 import UIKit
 import AVFoundation
 import AudioToolbox
-
+import Lottie
 
 class ViewController: UIViewController, CountdownTimerDelegate{
 
@@ -33,7 +33,14 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     @IBOutlet weak var typeT: UITextField!
     @IBOutlet weak var promptWork: UILabel!
     @IBOutlet weak var typeWork: UILabel!
+
     //public var completion: ((String, String) -> Void)?
+
+    @IBOutlet weak var animationView: AnimationView!
+    
+    @IBOutlet weak var redBtn: UIButton!
+    @IBOutlet weak var greenBtn: UIButton!
+
     
     let allExercise = ArrayWork()   // Import list of exercises
     var exerciseNumber: Int = 0
@@ -62,6 +69,24 @@ class ViewController: UIViewController, CountdownTimerDelegate{
 
     
     
+    fileprivate func buttonStyle(button: UIButton, borderColor: CGColor, startGradientColor: UIColor, endGradientColor: UIColor) {
+        button.layer.backgroundColor = UIColor.systemBackground.cgColor // resets Storyboard Button Color to SystemBackgroundColor
+        
+        let border = CALayer()
+        border.frame = button.layer.bounds
+        border.cornerRadius = 42
+        border.backgroundColor = UIColor.systemBackground.cgColor
+        border.borderColor = borderColor
+        border.borderWidth = 1
+        button.layer.insertSublayer(border, at: 0)
+        
+        let gradient = CAGradientLayer()
+        gradient.cornerRadius = 39
+        gradient.frame = CGRect(x: 3, y: 3, width: 78, height: 78)
+        gradient.colors = [ startGradientColor.cgColor, endGradientColor.cgColor ]
+        button.layer.insertSublayer(gradient, at: 1)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //startNow()
@@ -81,7 +106,12 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
         
       
+
+        counterView.isHidden = false
         
+        buttonStyle(button: redBtn, borderColor: #colorLiteral(red: 0.7607843137, green: 0, blue: 0.06666666667, alpha: 1), startGradientColor: #colorLiteral(red: 1, green: 0.4, blue: 0.5019607843, alpha: 1), endGradientColor: #colorLiteral(red: 0.9019607843, green: 0.02745098039, blue: 0.1019607843, alpha: 1))
+        buttonStyle(button: greenBtn, borderColor: #colorLiteral(red: 0.4862745098, green: 0.7294117647, blue: 0.262745098, alpha: 1), startGradientColor: #colorLiteral(red: 0.6039215686, green: 0.8784313725, blue: 0.2274509804, alpha: 1), endGradientColor: #colorLiteral(red: 0.3333333333, green: 0.6, blue: 0.09019607843, alpha: 1))
+
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -215,13 +245,18 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     
     func updateExercise(){
         if exerciseNumber <= allExercise.list.count - 1{
-            
+            // MARK: Change Exercise Image
             imageWorkout.image = UIImage(named:(allExercise.list[exerciseNumber].workoutImage))
             titleWork.text = allExercise.list[exerciseNumber].exercise
             typeWork.text = allExercise.list[exerciseNumber].typeExercise
 //            promptWork.text = allExercise.list[exerciseNumber].prompt
             
-
+            let animation = Animation.named(allExercise.list[exerciseNumber].animation)
+            animationView.animation = animation
+            animationView.contentMode = .scaleAspectFit
+            animationView.loopMode = .loop
+            animationView.animationSpeed = 1
+            animationView.play()
             
             // Countdown Timer
             countdownTimer.setTimer(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
@@ -347,5 +382,3 @@ extension String {
         return (0...matches.count).map {String(self[ranges[$0].upperBound..<ranges[$0+1].lowerBound])}
     }
 }
-
-
