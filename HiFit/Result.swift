@@ -15,7 +15,7 @@ class Result: UIViewController {
     //var modals = [ResultExercises]()
      
     @IBOutlet weak var tblView: UITableView!
- 
+    @IBOutlet weak var imgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
