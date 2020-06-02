@@ -418,7 +418,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U3-ed-jZw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="-88" width="414" height="930"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lG9-3o-ZvR">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="916"/>
@@ -1204,7 +1204,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4b-cH-nVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1802.8985507246377" y="146.65178571428569"/>
+            <point key="canvasLocation" x="829" y="-545"/>
+        </scene>
+        <!--Motivation-->
+        <scene sceneID="52o-aM-D5t">
+            <objects>
+                <viewController id="UTA-g7-Llq" customClass="Motivation" customModule="HiFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yDs-Ph-jcR"/>
+                        <viewControllerLayoutGuide type="bottom" id="0WF-kB-iDO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EiB-Kn-XFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4n-fa-Xtw">
+                                <rect key="frame" x="57" y="691" width="300" height="64"/>
+                                <color key="backgroundColor" red="0.25681117180000002" green="0.66110742089999996" blue="0.87453889849999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="70R-B4-jnN"/>
+                                    <constraint firstAttribute="height" constant="64" id="E1D-5d-ADm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Share" image="square.and.arrow.up" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="regular"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beachMan" translatesAutoresizingMaskIntoConstraints="NO" id="wWw-3r-i8P">
+                                <rect key="frame" x="17" y="79" width="380" height="571"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="571" id="45D-1a-NgM"/>
+                                    <constraint firstAttribute="width" constant="380" id="C9i-Rs-pMK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJz-XE-KQU">
+                                <rect key="frame" x="57" y="770" width="300" height="64"/>
+                                <color key="backgroundColor" red="0.25681117180000002" green="0.66110742089999996" blue="0.87453889849999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="VeK-hA-W7C"/>
+                                    <constraint firstAttribute="height" constant="64" id="luO-uY-1qe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="F6k-br-mtq" kind="show" id="ZJ8-NZ-R4m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wWw-3r-i8P" firstAttribute="top" secondItem="EiB-Kn-XFZ" secondAttribute="top" constant="79" id="6ty-7R-v98"/>
+                            <constraint firstItem="SJz-XE-KQU" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="QUs-ek-67i"/>
+                            <constraint firstItem="wWw-3r-i8P" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="i6b-xD-fJx"/>
+                            <constraint firstItem="SJz-XE-KQU" firstAttribute="top" secondItem="P4n-fa-Xtw" secondAttribute="bottom" constant="15" id="jh9-u1-SMb"/>
+                            <constraint firstItem="P4n-fa-Xtw" firstAttribute="top" secondItem="wWw-3r-i8P" secondAttribute="bottom" constant="41" id="sKg-ii-wkp"/>
+                            <constraint firstItem="P4n-fa-Xtw" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="yny-Oh-Vpj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOv-zv-U2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t1l-SU-6cZ">
@@ -1228,10 +1293,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="h1L-vW-UyI"/>
-        <segue reference="Q5W-g1-hpG"/>
+        <segue reference="ZJ8-NZ-R4m"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SettingsIcon" width="35" height="35"/>
+        <image name="beachMan" width="1626.5" height="1084"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="pushup" width="900" height="520"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

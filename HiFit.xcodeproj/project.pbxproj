@@ -13,6 +13,7 @@
 		75397687247D154400BA06D2 /* Intermediate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397686247D154400BA06D2 /* Intermediate.swift */; };
 		75397689247D156100BA06D2 /* Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397688247D156100BA06D2 /* Advanced.swift */; };
 		7539768B247D1B7200BA06D2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539768A247D1B7200BA06D2 /* Settings.swift */; };
+		7558FEBB2486BE3000EEAD5A /* Motivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558FEBA2486BE3000EEAD5A /* Motivation.swift */; };
 		7576A609248508CA0027994B /* Rest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7576A608248508CA0027994B /* Rest.json */; };
 		7587129F2482DBE500D27FF9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7587129E2482DBE500D27FF9 /* Lottie */; };
 		758712AB2482DC7900D27FF9 /* Jumping Jack.json in Resources */ = {isa = PBXBuildFile; fileRef = 758712A12482DC7900D27FF9 /* Jumping Jack.json */; };
@@ -45,6 +46,7 @@
 		75397686247D154400BA06D2 /* Intermediate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intermediate.swift; sourceTree = "<group>"; };
 		75397688247D156100BA06D2 /* Advanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advanced.swift; sourceTree = "<group>"; };
 		7539768A247D1B7200BA06D2 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		7558FEBA2486BE3000EEAD5A /* Motivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.swift; sourceTree = "<group>"; };
 		7576A608248508CA0027994B /* Rest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Rest.json; sourceTree = "<group>"; };
 		758712A12482DC7900D27FF9 /* Jumping Jack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Jumping Jack.json"; sourceTree = "<group>"; };
 		758712A22482DC7900D27FF9 /* Jump Squat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Jump Squat.json"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		B66EF1D51EA9E57500649824 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7558FEBA2486BE3000EEAD5A /* Motivation.swift */,
 				B6C7B6FA1EA8DB9F008B31A6 /* ViewController.swift */,
 				91D57C98246E9EA90047DF44 /* LevelScreen.swift */,
 				91ECEAF12474D2DA007535AD /* Beginner.swift */,
@@ -296,6 +299,7 @@
 				91ECEAF22474D2DA007535AD /* Beginner.swift in Sources */,
 				B6C7B6FB1EA8DB9F008B31A6 /* ViewController.swift in Sources */,
 				3D910A21246B85A100B27D6D /* workout.swift in Sources */,
+				7558FEBB2486BE3000EEAD5A /* Motivation.swift in Sources */,
 				910503B1248504F0001F2DE5 /* TableViewCell.swift in Sources */,
 				B66EF1DC1EA9E75C00649824 /* CountdownTimer.swift in Sources */,
 				3D910A1F246B856200B27D6D /* ArrayWork.swift in Sources */,
