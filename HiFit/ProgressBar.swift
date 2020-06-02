@@ -65,7 +65,7 @@ class ProgressBar: UIView, CAAnimationDelegate {
         gradientLayer.frame = bounds
         gradientLayer.locations = [0.0, 1.0]
         let colorTop: AnyObject = #colorLiteral(red: 0.4078431373, green: 0.8235294118, blue: 0.9450980392, alpha: 1).cgColor
-        let colorBottom: AnyObject = #colorLiteral(red: 0.2156862745, green: 0.6509803922, blue: 0.8705882353, alpha: 1).cgColor
+        let colorBottom: AnyObject = #colorLiteral(red: 0, green: 0.4666666667, blue: 0.7254901961, alpha: 1).cgColor
         let arrayOfColors: [AnyObject] = [colorTop, colorBottom]
         gradientLayer.colors = arrayOfColors
         
@@ -96,8 +96,8 @@ class ProgressBar: UIView, CAAnimationDelegate {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.locations = [0.0, 1.0]
-        let colorTop: AnyObject = CustomColor.flipside.cgColor
-        let colorBottom: AnyObject = CustomColor.flipside.cgColor
+        let colorTop: AnyObject = #colorLiteral(red: 0.9058823529, green: 0.9058823529, blue: 0.9058823529, alpha: 1).cgColor
+        let colorBottom: AnyObject = #colorLiteral(red: 0.9058823529, green: 0.9058823529, blue: 0.9058823529, alpha: 1).cgColor
         let arrayOfColors: [AnyObject] = [colorTop, colorBottom]
         gradientLayer.colors = arrayOfColors
         
