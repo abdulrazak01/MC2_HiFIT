@@ -204,6 +204,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
     }
     
+    let speechSynthesizer = AVSpeechSynthesizer()
     public func prompt() {
         // MARK: - Exercise Prompts
         // Convert text prompt of type String into Array:[String]
@@ -224,8 +225,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
         // Display Exercise Prompt Individually
         var count = 0
-        let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
         
+        // Initialise voice
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
             self.promptWork.text = filteredPromptArray[count]
             
@@ -236,7 +237,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             
             speechUtterance.rate = 0.45
             speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            speechSynthesizer.speak(speechUtterance)
+            self.speechSynthesizer.speak(speechUtterance)
             
             count += 1
             
@@ -303,6 +304,9 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         // NumExercise.text = "\(exerciseNumber + 1)/\(allExercise.list.count)"
         
         
+    }
+    @IBAction func skipToResult(_ sender: AnyObject) {
+        speechSynthesizer.stopSpeaking(at: .immediate)  // FIXME: Not Working
     }
     
     

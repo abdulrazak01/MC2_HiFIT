@@ -1058,6 +1058,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Skip to Result (Demo Only)"/>
                                 <connections>
+                                    <action selector="skipToResult:" destination="HrL-Be-TaV" eventType="touchUpInside" id="YPm-he-6xI"/>
                                     <segue destination="UTA-g7-Llq" kind="show" id="3vx-Ff-nSD"/>
                                 </connections>
                             </button>
