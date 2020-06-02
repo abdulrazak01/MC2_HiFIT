@@ -61,12 +61,12 @@ extension Beginner: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         
         let title = exercisesList[indexPath.row]
-            cell.labelTitle?.text = title.name
-            cell.imageWorkout?.image = UIImage(named: title.img)
-// if want to use detail text
-//            cell.detailTextLabel?.text = title.img
-            
-
+        cell.labelTitle?.text = title.name
+        cell.imageWorkout?.image = UIImage(named: title.img)
+        // if want to use detail text
+        //            cell.detailTextLabel?.text = title.img
+        
+        
         
         return cell
     }

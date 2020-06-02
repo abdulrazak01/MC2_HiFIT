@@ -23,7 +23,7 @@ class LevelScreen : UIViewController {
     @IBOutlet weak var ExercisesAdvnLabel: UILabel!
     
     @IBOutlet var buttonLevels: [UIButton]!
-        
+    
     var beginTitle: String = "Beginner"
     var BeginTimes: String = "16:00 minutes minimum"
     
@@ -37,7 +37,7 @@ class LevelScreen : UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.topItem?.title = "Workout Levels"
-
+        
         /*
          Thanks the following resource for helping rounded edge drop shadow and Sketch to XCode shadow
          - Rounded Edge and Drop Shadow
@@ -61,14 +61,14 @@ class LevelScreen : UIViewController {
             shadowView.layer.rasterizationScale = UIScreen.main.scale
             
             level.addSubview(shadowView)
-
+            
             // add button subview to overlay the shadow view
             let borderView = UIView()
             borderView.frame = level.bounds
             borderView.layer.cornerRadius = 20
             borderView.layer.masksToBounds = true
             shadowView.addSubview(borderView)
-
+            
             // add content for button subview
             let borderViewContent = UIImageView()
             borderViewContent.image = UIImage(named: "ButtonBg")
@@ -80,7 +80,7 @@ class LevelScreen : UIViewController {
         BeginLabel?.text = beginTitle
         IntermediateLabel?.text = IntermTitle
         AdvancedLabel?.text = AdvnTitle
-
+        
         // Workout Levels Descriptions
         func levelText(labelText: String, color: UIColor) -> NSAttributedString {
             let timeSymbolAttachment = NSTextAttachment()
@@ -100,7 +100,7 @@ class LevelScreen : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         
@@ -114,10 +114,10 @@ class LevelScreen : UIViewController {
         // self.navigationController?.navigationBar.shadowImage = nil
         // self.navigationController?.navigationBar.layoutIfNeeded()
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }

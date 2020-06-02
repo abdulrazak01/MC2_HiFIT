@@ -32,7 +32,7 @@ class ProgressBar: UIView, CAAnimationDelegate {
         loadFgProgressBar()
     }
     
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadBgProgressBar()

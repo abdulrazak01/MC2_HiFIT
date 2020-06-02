@@ -15,8 +15,8 @@ protocol CountdownTimerDelegate:class {
 }
 
 class CountdownTimer {
-   //let allExercise = ArayWork()
-     //    var exerciseNumber: Int = 0
+    //let allExercise = ArayWork()
+    //    var exerciseNumber: Int = 0
     weak var delegate: CountdownTimerDelegate?
     
     fileprivate var seconds = 0.0
@@ -27,13 +27,13 @@ class CountdownTimer {
         return timer
     }()
     private let countdownSound: AVAudioPlayer? = {
-           if let sound = NSDataAsset(name: "Sounds/currentExerciseEnd") {
-               if let audio = try? AVAudioPlayer(data: sound.data) {
-                   return audio
-               }
-           }
-           return nil
-       }()
+        if let sound = NSDataAsset(name: "Sounds/currentExerciseEnd") {
+            if let audio = try? AVAudioPlayer(data: sound.data) {
+                return audio
+            }
+        }
+        return nil
+    }()
     public func setTimer( minutes:Int, seconds:Int) {
         
         
@@ -41,14 +41,14 @@ class CountdownTimer {
         //let secondsToSeconds = seconds
         
         // let seconds = secondsToSeconds + minutesToSeconds
-         
+        
         self.seconds = Double(seconds)
         self.duration = Double(seconds)
         
         delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
     }
     
-   
+    
     
     public func start() {
         
@@ -74,22 +74,22 @@ class CountdownTimer {
     
     @objc fileprivate func updateTimer(){
         
-       
+        
         if duration < 0.0 {
             timer.invalidate()
             timerDone()
             
-             
+            
         }
-      if duration < 5 {
-          countdownSound?.play()
-        duration -= 0.01
-                   delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
-      }
+        if duration < 5 {
+            countdownSound?.play()
+            duration -= 0.01
+            delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
+        }
         else {
             duration -= 0.01
             delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
-         
+            
         }
     }
     

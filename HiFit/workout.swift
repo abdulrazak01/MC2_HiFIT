@@ -20,10 +20,10 @@ class workout {
     var Num: Int
     var Status: String = ""
     var animation: String
-
+    
     
     init(image : String, WorkText: String, promptText: String, typeText: String, timer: String, goTimer: Int, Numb: Int, animationName : String, Statuss: String){
-
+        
         
         workoutImage = image
         exercise = WorkText
@@ -35,5 +35,5 @@ class workout {
         Status = Statuss
         animation = animationName
     }
-
+    
 }

@@ -14,11 +14,11 @@ import AudioToolbox
 import Lottie
 
 class ViewController: UIViewController, CountdownTimerDelegate{
-
+    
     // MARK: - Outlets
     
     @IBOutlet weak var progressBar: ProgressBar!
-   
+    
     @IBOutlet weak var NumExercise: UILabel!
     @IBOutlet weak var titleWork: UILabel!
     
@@ -33,19 +33,19 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     @IBOutlet weak var typeT: UITextField!
     @IBOutlet weak var promptWork: UILabel!
     @IBOutlet weak var typeWork: UILabel!
-
+    
     //public var completion: ((String, String) -> Void)?
-
+    
     @IBOutlet weak var animationView: AnimationView!
     
     @IBOutlet weak var redBtn: UIButton!
     @IBOutlet weak var greenBtn: UIButton!
-
+    
     
     let allExercise = ArrayWork()   // Import list of exercises
     var exerciseNumber: Int = 0
     //var list = [workout]()
-   
+    
     @IBAction func shareButton(_ sender: Any) {
         
         
@@ -53,7 +53,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     
     var countdownTimerDidStart = false
     
-  
+    
     lazy var countdownTimer: CountdownTimer = {
         
         let countdownTimer = CountdownTimer()
@@ -62,11 +62,11 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     
     
     
-
-     var selectedSecs = 0
-   
-
-
+    
+    var selectedSecs = 0
+    
+    
+    
     
     
     fileprivate func buttonStyle(button: UIButton, borderColor: CGColor, startGradientColor: UIColor, endGradientColor: UIColor) {
@@ -91,38 +91,38 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         super.viewDidLoad()
         //startNow()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
- stopBtn.isEnabled = true
-       
-    
+        stopBtn.isEnabled = true
+        
+        
         //workT.delegate = self
         //typeT.delegate = self
         updateExercise()
         updateUI()
         countdownTimer.delegate = self
-    
-      
+        
+        
         
         stopBtn.isEnabled = true
         // Rojak version was set to false, maybe need to change 
         // stopBtn.isEnabled = false		
-//        stopBtn.alpha = 0.5
+        //        stopBtn.alpha = 0.5
         
-      
-
+        
+        
         counterView.isHidden = false
         
         buttonStyle(button: redBtn, borderColor: #colorLiteral(red: 0.7607843137, green: 0, blue: 0.06666666667, alpha: 1), startGradientColor: #colorLiteral(red: 1, green: 0.4, blue: 0.5019607843, alpha: 1), endGradientColor: #colorLiteral(red: 0.9019607843, green: 0.02745098039, blue: 0.1019607843, alpha: 1))
         buttonStyle(button: greenBtn, borderColor: #colorLiteral(red: 0.4862745098, green: 0.7294117647, blue: 0.262745098, alpha: 1), startGradientColor: #colorLiteral(red: 0.6039215686, green: 0.8784313725, blue: 0.2274509804, alpha: 1), endGradientColor: #colorLiteral(red: 0.3333333333, green: 0.6, blue: 0.09019607843, alpha: 1))
-
+        
     }
     
-   
+    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
     
     
-  
+    
     
     func countdownTime(time: (minutes: String, seconds: String)) {
         
@@ -132,28 +132,28 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     }
     
     func display(){
-       /* if let workText = workT.text , !workText.isEmpty ,
-            let typeText = typeT.text, !typeText.isEmpty{
-              
-           
-            //completion?(workText,typeText)
-               
-                
-           
-        }*/
+        /* if let workText = workT.text , !workText.isEmpty ,
+         let typeText = typeT.text, !typeText.isEmpty{
+         
+         
+         //completion?(workText,typeText)
+         
+         
+         
+         }*/
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                      let secondVc = storyboard.instantiateViewController(withIdentifier: "Result") as! Result
+        let secondVc = storyboard.instantiateViewController(withIdentifier: "Result") as! Result
         present(secondVc, animated: true)
-       }
+    }
     
     func countdownTimerDone() {
-      
+        
         //display()
         //counterView.isHidden = true
         //messageLabel.isHidden = false
         stopBtn.isEnabled = true
-       
+        
         countdownTimerDidStart = false
         //stopBtn.isEnabled = false
         //stopBtn.alpha = 0.5
@@ -164,18 +164,18 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
     }
     
-   
-   
+    
+    
     
     @IBAction func startTimer(_ sender: UIButton) {
         
         // Maybe flag to start timer, hasTimerStart = true it'll continue as normal, if hadTimerStart = false, it'll change to true and timer start automatically
-      
-      
+        
+        
         
         
         stopBtn.isEnabled = true
-       
+        
         
         // MARK: Exercise Start
         if !countdownTimerDidStart {
@@ -184,7 +184,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
         }
-        
+            
         else{
             countdownTimer.pause()
             progressBar.pause()
@@ -193,16 +193,16 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         }
         
         prompt()
-            
+        
     }
     
     @IBAction func NumberExer(_ sender: Any) {
-      
-       
-      exerciseNumber += 1
-       updateExercise()
         
-   }
+        
+        exerciseNumber += 1
+        updateExercise()
+        
+    }
     
     public func prompt() {
         // MARK: - Exercise Prompts
@@ -216,19 +216,19 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             if item != ""{
                 filteredPromptArray.append(item)
             }
-           if allExercise.list[exerciseNumber].typeExercise == "Rest" {
-            filteredPromptArray.append("Rest for \(allExercise.list[exerciseNumber].goTime) seconds")
-            filteredPromptArray.append(item)
+            if allExercise.list[exerciseNumber].typeExercise == "Rest" {
+                filteredPromptArray.append("Rest for \(allExercise.list[exerciseNumber].goTime) seconds")
+                filteredPromptArray.append(item)
             }
         }
-                
+        
         // Display Exercise Prompt Individually
-         var count = 0
+        var count = 0
         let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
-                
+        
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
             self.promptWork.text = filteredPromptArray[count]
-
+            
             // Voice Prompt
             // TODO: What to do if audio didn't finish instruction and exercise completed
             
@@ -237,7 +237,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             speechUtterance.rate = 0.45
             speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
             speechSynthesizer.speak(speechUtterance)
-             
+            
             count += 1
             
             if count == filteredPromptArray.count-1 {
@@ -252,11 +252,11 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
         if exerciseNumber <= allExercise.list.count - 1{
             // MARK: Change Exercise Image
-           
+            
             imageWorkout.image = UIImage(named:(allExercise.list[exerciseNumber].workoutImage))
             titleWork.text = allExercise.list[exerciseNumber].exercise
             typeWork.text = allExercise.list[exerciseNumber].typeExercise
-//            promptWork.text = allExercise.list[exerciseNumber].prompt
+            //            promptWork.text = allExercise.list[exerciseNumber].prompt
             
             let animation = Animation.named(allExercise.list[exerciseNumber].animation)
             animationView.animation = animation
@@ -271,22 +271,22 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             progressBar.setProgressBar(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
             //self.list[exerciseNumber].self.Status = "On"
             
-             
+            
             
             //workT.text = allExercise.list[exerciseNumber].exercise
             //typeT.text = allExercise.list[exerciseNumber].typeExercise
-          
-           startTimer(startBtn)
-           
-           
-   updateUI()
+            
+            startTimer(startBtn)
+            
+            
+            updateUI()
             
         }
     }
     func updateUI(){
         
         
-         if typeWork.text == "Warm Up" {
+        if typeWork.text == "Warm Up" {
             self.NumExercise.text = "1 Of 1"
         }
         else if typeWork.text == "Exercise" {
@@ -294,15 +294,15 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             NumExercise.text = "\(allExercise.list[exerciseNumber].Num + 1) Of \(7)"
         }
         else if typeWork.text == "Rest" {
-           
+            
             NumExercise.text = "\(allExercise.list[exerciseNumber].Num + 1) Of \(7)"
         }
-         else if typeWork.text == "Cool Down" {
+        else if typeWork.text == "Cool Down" {
             self.NumExercise.text = "1 Of 1"
         }
-       // NumExercise.text = "\(exerciseNumber + 1)/\(allExercise.list.count)"
+        // NumExercise.text = "\(exerciseNumber + 1)/\(allExercise.list.count)"
         
-       
+        
     }
     
     
@@ -318,8 +318,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     }
     
     
-    }
-    
+}
+
 
 extension String {
     func split(usingRegex pattern: String) -> [String] {

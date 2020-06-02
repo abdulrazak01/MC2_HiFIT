@@ -37,14 +37,14 @@ class Settings : UIViewController {
         super.viewWillAppear(animated)
         
         // Show navigation bar background
-         self.navigationController?.navigationBar.setBackgroundImage(nil, for:.default)
-         self.navigationController?.navigationBar.shadowImage = nil
-         self.navigationController?.navigationBar.layoutIfNeeded()
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for:.default)
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.layoutIfNeeded()
     }
     
     @IBAction func daysButtonsTouched(_ sender: UIButton) {
         sender.setTitleColor(.systemBackground, for: .selected)
-
+        
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             sender.layer.borderWidth = 0
@@ -63,17 +63,17 @@ class Settings : UIViewController {
 extension UIButton
 {
     /**
-    # Apply Gradient
+     # Apply Gradient
      UIButton Extension to make applying gradient a breeze
      
      Check out [AppCoda](https://www.appcoda.com/cagradientlayer/) for gradient direction info
      
      - Parameters:
-       - colors: Minimum 2 colors
-       - radius: Optional
-       - startGradient: Optional, range: 0.0 - 1.0
-       - endGradient: Optional, range: 0.0 - 1.0
-    */
+     - colors: Minimum 2 colors
+     - radius: Optional
+     - startGradient: Optional, range: 0.0 - 1.0
+     - endGradient: Optional, range: 0.0 - 1.0
+     */
     func applyGradient(colors: [CGColor], radius:CGFloat = 0, startGradient:CGPoint = CGPoint(x: 0.5, y: 0.0), endGradient:CGPoint = CGPoint(x: 0.5, y: 1.0))
     {
         // check first if there is already a gradient layer to avoid adding more than one
@@ -84,7 +84,7 @@ extension UIButton
             gradientLayer.startPoint = startGradient
             gradientLayer.endPoint = endGradient
             gradientLayer.frame = bounds
-        // if not found create a new gradient layer
+            // if not found create a new gradient layer
         } else {
             let gradientLayer = CAGradientLayer()
             gradientLayer.name = "gradient"
@@ -101,27 +101,27 @@ extension UIButton
 extension UIView
 {
     /**
-    # Apply Gradient
+     # Apply Gradient
      UIButton Extension to make applying gradient a breeze
      
      Check out [AppCoda](https://www.appcoda.com/cagradientlayer/) for gradient direction info
      
      - Parameters:
-       - colors: Minimum 2 colors
-       - radius: Optional
-       - startGradient: Optional, range: 0.0 - 1.0
-       - endGradient: Optional, range: 0.0 - 1.0
-    */
+     - colors: Minimum 2 colors
+     - radius: Optional
+     - startGradient: Optional, range: 0.0 - 1.0
+     - endGradient: Optional, range: 0.0 - 1.0
+     */
     func applyGradients(colors: [CGColor], radius:CGFloat = 0, startGradient:CGPoint = CGPoint(x: 0.5, y: 0.0), endGradient:CGPoint = CGPoint(x: 0.5, y: 1.0))
     {
-    
-            let gradientLayer = CAGradientLayer()
-            gradientLayer.cornerRadius = radius
-            gradientLayer.colors = colors
-            gradientLayer.startPoint = startGradient
-            gradientLayer.endPoint = endGradient
-            gradientLayer.frame = bounds
-            layer.insertSublayer(gradientLayer, at: 0)
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.cornerRadius = radius
+        gradientLayer.colors = colors
+        gradientLayer.startPoint = startGradient
+        gradientLayer.endPoint = endGradient
+        gradientLayer.frame = bounds
+        layer.insertSublayer(gradientLayer, at: 0)
         
     }
 }

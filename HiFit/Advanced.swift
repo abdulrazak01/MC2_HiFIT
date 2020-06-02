@@ -40,11 +40,11 @@ class Advanced : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         TitleBegin?.text = titleLabel
         Times?.text = exerciseTime
         DescriptionTextAdvn?.text = descripts
-     
+        
         let buttonSelectorRadius:CGFloat = 20
         
         ButtonStart.layer.cornerRadius = buttonSelectorRadius
@@ -63,12 +63,12 @@ extension Advanced: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         
         let title = exercisesList[indexPath.row]
-            cell.labelTitle?.text = title.name
-            cell.imageWorkout?.image = UIImage(named: title.img)
-// if want to use detail text
-//            cell.detailTextLabel?.text = title.img
-            
-
+        cell.labelTitle?.text = title.name
+        cell.imageWorkout?.image = UIImage(named: title.img)
+        // if want to use detail text
+        //            cell.detailTextLabel?.text = title.img
+        
+        
         
         return cell
     }

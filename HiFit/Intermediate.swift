@@ -39,7 +39,7 @@ class Intermediate : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         TitleBegin?.text = titleLabel
         Times?.text = exerciseTime
         DescriptionTextInterm?.text = descripts
@@ -57,18 +57,18 @@ extension Intermediate: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exercisesList.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-
+        
         let title = exercisesList[indexPath.row]
-            cell.labelTitle?.text = title.name
-            cell.imageWorkout?.image = UIImage(named: title.img)
+        cell.labelTitle?.text = title.name
+        cell.imageWorkout?.image = UIImage(named: title.img)
         // if want to use detail text
         //            cell.detailTextLabel?.text = title.img
-
-
-
-                return cell
-}
+        
+        
+        
+        return cell
+    }
 }
