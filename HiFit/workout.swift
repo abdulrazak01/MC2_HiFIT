@@ -18,10 +18,12 @@ class workout {
     var time: String = ""
     var goTime: Int
     var Num: Int
+    var Status: String = ""
     var animation: String
 
     
-    init(image : String, WorkText: String, promptText: String, typeText: String, timer: String, goTimer: Int, Numb: Int, animationName : String){
+    init(image : String, WorkText: String, promptText: String, typeText: String, timer: String, goTimer: Int, Numb: Int, animationName : String, Statuss: String){
+
         
         workoutImage = image
         exercise = WorkText
@@ -30,6 +32,7 @@ class workout {
         time = timer
         goTime = goTimer
         Num = Numb
+        Status = Statuss
         animation = animationName
     }
 
