@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sRZ-tN-LjJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sRZ-tN-LjJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -949,40 +949,8 @@
                                     <constraint firstItem="bVp-jx-T8Q" firstAttribute="centerY" secondItem="MKx-9W-6cu" secondAttribute="centerY" id="rkv-RH-Kjw"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ejV-6d-8Fg">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ejV-6d-8Fg">
                                 <rect key="frame" x="20" y="782" width="374" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I25-Vf-NfT">
-                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="50"/>
-                                        <color key="backgroundColor" red="0.9403743148" green="0.69881671670000001" blue="0.6627287865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="169.5" id="8MU-Av-RSP"/>
-                                            <constraint firstAttribute="height" constant="50" id="V9S-uI-xAd"/>
-                                        </constraints>
-                                        <state key="normal" title="STOP">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="stopTimer:" destination="HrL-Be-TaV" eventType="touchUpInside" id="xZM-u5-6wz"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3V-lG-KuK">
-                                        <rect key="frame" x="200.5" y="0.0" width="173.5" height="50"/>
-                                        <color key="backgroundColor" red="0.36802178619999998" green="0.65846455100000001" blue="0.85493230819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="AK5-9H-i0n"/>
-                                            <constraint firstAttribute="width" constant="173.5" id="mMu-Fh-CN6"/>
-                                        </constraints>
-                                        <state key="normal" title="START">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="startTimer:" destination="HrL-Be-TaV" eventType="touchUpInside" id="HcX-Q9-ghP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="JD6-so-ztW">
                                 <rect key="frame" x="159.5" y="181" width="95" height="25"/>
@@ -1112,8 +1080,6 @@
                         <outlet property="promptWork" destination="aLx-Py-ezc" id="1eT-jf-3Lh"/>
                         <outlet property="redBtn" destination="JOz-FS-sDu" id="0rG-eR-Usy"/>
                         <outlet property="seconds" destination="Z0j-b3-M7M" id="Xn5-Jf-Xg9"/>
-                        <outlet property="startBtn" destination="X3V-lG-KuK" id="L8V-rc-agT"/>
-                        <outlet property="stopBtn" destination="I25-Vf-NfT" id="VJ3-Kn-TJg"/>
                         <outlet property="titleWork" destination="y03-BO-wkn" id="vGJ-cR-a0X"/>
                         <outlet property="typeWork" destination="Ktu-O4-Wq9" id="50y-0J-RTK"/>
                     </connections>
@@ -1246,7 +1212,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="X4l-Lz-CBO"/>
+        <segue reference="h1L-vW-UyI"/>
         <segue reference="Q5W-g1-hpG"/>
     </inferredMetricsTieBreakers>
     <resources>
