@@ -47,9 +47,9 @@ class ProgressBar: UIView, CAAnimationDelegate {
         let centerPoint = CGPoint(x: frame.width/2 , y: frame.height/2)
         let gradientMaskLayer = gradientMask()
         fgProgressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 30.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
-        fgProgressLayer.backgroundColor = UIColor.clear.cgColor
+        fgProgressLayer.backgroundColor = UIColor.green.cgColor
         fgProgressLayer.fillColor = nil
-        fgProgressLayer.strokeColor = UIColor.black.cgColor
+        fgProgressLayer.strokeColor = UIColor.green.cgColor
         fgProgressLayer.lineWidth = 5.0
         fgProgressLayer.strokeStart = 0.0
         fgProgressLayer.strokeEnd = 0.0
@@ -80,9 +80,9 @@ class ProgressBar: UIView, CAAnimationDelegate {
         let centerPoint = CGPoint(x: frame.width/2 , y: frame.height/2)
         let gradientMaskLayer = gradientMaskBg()
         bgProgressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 30.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
-        bgProgressLayer.backgroundColor = UIColor.clear.cgColor
+        bgProgressLayer.backgroundColor = UIColor.green.cgColor
         bgProgressLayer.fillColor = nil
-        bgProgressLayer.strokeColor = UIColor.black.cgColor
+        bgProgressLayer.strokeColor = UIColor.green.cgColor
         bgProgressLayer.lineWidth = 5.0
         bgProgressLayer.strokeStart = 0.0
         bgProgressLayer.strokeEnd = 1.0
