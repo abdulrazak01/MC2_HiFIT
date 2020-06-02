@@ -103,7 +103,9 @@ class ViewController: UIViewController, CountdownTimerDelegate{
       
         
         stopBtn.isEnabled = true
-        
+        // Rojak version was set to false, maybe need to change 
+        // stopBtn.isEnabled = false		
+        stopBtn.alpha = 0.5
         
       
 
