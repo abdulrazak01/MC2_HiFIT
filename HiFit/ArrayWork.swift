@@ -9,9 +9,9 @@
 
 import Foundation
 
-let warmUpDuration:Int = 30
-let exerciseDuration:Int = 30
-let restDuration:Int = 40
+let warmUpDuration:Int = 3
+let exerciseDuration:Int = 3
+let restDuration:Int = 4
 let coolDownDuration:Int = 30
 
 class ArrayWork{
