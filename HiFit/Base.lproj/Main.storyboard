@@ -1057,6 +1057,9 @@
                                 <rect key="frame" x="115" y="824" width="185" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Skip to Result (Demo Only)"/>
+                                <connections>
+                                    <segue destination="UTA-g7-Llq" kind="show" id="3vx-Ff-nSD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -1209,7 +1212,7 @@
         <!--Motivation-->
         <scene sceneID="52o-aM-D5t">
             <objects>
-                <viewController id="UTA-g7-Llq" customClass="Motivation" customModule="HiFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="UTA-g7-Llq" customClass="Motivation" customModule="HiFit" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yDs-Ph-jcR"/>
                         <viewControllerLayoutGuide type="bottom" id="0WF-kB-iDO"/>
@@ -1232,8 +1235,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="regular"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareButton:" destination="UTA-g7-Llq" eventType="touchUpInside" id="kzR-1U-jmt"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beachMan" translatesAutoresizingMaskIntoConstraints="NO" id="wWw-3r-i8P">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MotivationPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="wWw-3r-i8P">
                                 <rect key="frame" x="17" y="79" width="380" height="571"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="571" id="45D-1a-NgM"/>
@@ -1255,21 +1261,93 @@
                                     <segue destination="F6k-br-mtq" kind="show" id="ZJ8-NZ-R4m"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="donelogo" translatesAutoresizingMaskIntoConstraints="NO" id="330-bK-RjF">
+                                <rect key="frame" x="172" y="104" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="uaN-7g-K2O"/>
+                                    <constraint firstAttribute="width" constant="70" id="xEH-JD-ORW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’ve Done a Great Job!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTS-kP-iNY">
+                                <rect key="frame" x="86.5" y="187" width="241" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxS-9y-jsG">
+                                <rect key="frame" x="46" y="269" width="186" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="3RG-nX-kuU"/>
+                                    <constraint firstAttribute="height" constant="214" id="yuU-MF-eb2"/>
+                                </constraints>
+                                <string key="text">THE BODY
+ACHIEVES
+WHAT THE
+MIND
+BELIEVES</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Workouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhI-KC-pMe">
+                                <rect key="frame" x="46" y="544" width="130" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="CRg-oo-2Dv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya9-vz-f0Y">
+                                <rect key="frame" x="257" y="585" width="114" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="TOG-Z0-Pkv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Circuit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jph-dM-7us">
+                                <rect key="frame" x="46" y="585" width="85" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="gqB-gn-Xni"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ya9-vz-f0Y" secondAttribute="trailing" constant="23" id="5B1-0X-SX9"/>
                             <constraint firstItem="wWw-3r-i8P" firstAttribute="top" secondItem="EiB-Kn-XFZ" secondAttribute="top" constant="79" id="6ty-7R-v98"/>
+                            <constraint firstItem="ya9-vz-f0Y" firstAttribute="top" secondItem="jph-dM-7us" secondAttribute="top" id="8hm-S4-rqz"/>
+                            <constraint firstItem="330-bK-RjF" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="93V-bc-qwR"/>
+                            <constraint firstItem="qxS-9y-jsG" firstAttribute="top" secondItem="wWw-3r-i8P" secondAttribute="top" constant="190" id="E7j-eV-37M"/>
+                            <constraint firstItem="eTS-kP-iNY" firstAttribute="top" secondItem="330-bK-RjF" secondAttribute="bottom" constant="13" id="P08-Nh-s44"/>
                             <constraint firstItem="SJz-XE-KQU" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="QUs-ek-67i"/>
+                            <constraint firstItem="jph-dM-7us" firstAttribute="top" secondItem="zhI-KC-pMe" secondAttribute="bottom" id="QVp-l0-8zk"/>
+                            <constraint firstItem="330-bK-RjF" firstAttribute="top" secondItem="wWw-3r-i8P" secondAttribute="top" constant="25" id="Wao-a7-nsU"/>
+                            <constraint firstItem="jph-dM-7us" firstAttribute="leading" secondItem="qxS-9y-jsG" secondAttribute="leading" id="duM-NM-NHZ"/>
+                            <constraint firstItem="eTS-kP-iNY" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="gQk-1f-NN4"/>
+                            <constraint firstItem="zhI-KC-pMe" firstAttribute="top" secondItem="qxS-9y-jsG" secondAttribute="bottom" constant="61" id="gb0-k2-PWK"/>
+                            <constraint firstItem="qxS-9y-jsG" firstAttribute="leading" secondItem="EiB-Kn-XFZ" secondAttribute="leadingMargin" constant="26" id="hrl-1X-bCp"/>
                             <constraint firstItem="wWw-3r-i8P" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="i6b-xD-fJx"/>
+                            <constraint firstItem="zhI-KC-pMe" firstAttribute="leading" secondItem="qxS-9y-jsG" secondAttribute="leading" id="jg3-3s-EyD"/>
                             <constraint firstItem="SJz-XE-KQU" firstAttribute="top" secondItem="P4n-fa-Xtw" secondAttribute="bottom" constant="15" id="jh9-u1-SMb"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qxS-9y-jsG" secondAttribute="trailing" constant="20" symbolic="YES" id="qjh-Fx-Ud1"/>
                             <constraint firstItem="P4n-fa-Xtw" firstAttribute="top" secondItem="wWw-3r-i8P" secondAttribute="bottom" constant="41" id="sKg-ii-wkp"/>
                             <constraint firstItem="P4n-fa-Xtw" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="yny-Oh-Vpj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="XSK-oU-vyJ"/>
+                    <connections>
+                        <outlet property="imgView" destination="wWw-3r-i8P" id="2mx-v7-G3W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOv-zv-U2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="147"/>
+            <point key="canvasLocation" x="1589.8550724637682" y="146.65178571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t1l-SU-6cZ">
@@ -1292,13 +1370,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h1L-vW-UyI"/>
+        <segue reference="3vx-Ff-nSD"/>
+        <segue reference="EAs-vh-Lac"/>
         <segue reference="ZJ8-NZ-R4m"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="MotivationPhoto" width="380" height="571"/>
         <image name="SettingsIcon" width="35" height="35"/>
-        <image name="beachMan" width="1626.5" height="1084"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="donelogo" width="70" height="71"/>
         <image name="pushup" width="900" height="520"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>

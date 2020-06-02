@@ -19,6 +19,7 @@ class Motivation: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
         
+        imgView.layer.cornerRadius = 20
     }
     
     
