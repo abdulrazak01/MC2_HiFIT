@@ -91,7 +91,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         super.viewDidLoad()
         //startNow()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-
+ stopBtn.isEnabled = true
        
     
         //workT.delegate = self
@@ -175,7 +175,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
         
         stopBtn.isEnabled = true
-        stopBtn.alpha = 1.0
+       
         
         // MARK: Exercise Start
         if !countdownTimerDidStart {
@@ -247,8 +247,11 @@ class ViewController: UIViewController, CountdownTimerDelegate{
    }
     
     func updateExercise(){
+        
+        
         if exerciseNumber <= allExercise.list.count - 1{
             // MARK: Change Exercise Image
+           
             imageWorkout.image = UIImage(named:(allExercise.list[exerciseNumber].workoutImage))
             titleWork.text = allExercise.list[exerciseNumber].exercise
             typeWork.text = allExercise.list[exerciseNumber].typeExercise
@@ -262,22 +265,26 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             animationView.play()
             
             // Countdown Timer
+            
             countdownTimer.setTimer(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
             progressBar.setProgressBar(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
             //self.list[exerciseNumber].self.Status = "On"
             
-             startTimer(startBtn)
+             
             
             //workT.text = allExercise.list[exerciseNumber].exercise
             //typeT.text = allExercise.list[exerciseNumber].typeExercise
           
-           
+           startTimer(startBtn)
            
            
    updateUI()
+            
         }
     }
     func updateUI(){
+        
+        
          if typeWork.text == "Warm Up" {
             self.NumExercise.text = "1 Of 1"
         }
