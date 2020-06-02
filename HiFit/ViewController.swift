@@ -171,7 +171,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         // Maybe flag to start timer, hasTimerStart = true it'll continue as normal, if hadTimerStart = false, it'll change to true and timer start automatically
       
       
-        counterView.isHidden = false
+        
         
         stopBtn.isEnabled = true
         stopBtn.alpha = 1.0
@@ -306,25 +306,23 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     }
     func startNow(){
      
-              counterView.isHidden = false
-                  
-                  stopBtn.isEnabled = true
               
-                  
+                   
                   // MARK: Exercise Start
-                  if !countdownTimerDidStart {
-                      countdownTimer.start()
-                      progressBar.start()
-                      countdownTimerDidStart = true
-                      startBtn.setTitle("PAUSE",for: .normal)
-                  }
+       if !countdownTimerDidStart {
+                  countdownTimer.start()
+                  progressBar.start()
+                  countdownTimerDidStart = true
+                  startBtn.setTitle("PAUSE",for: .normal)
+              }
+              
+              else{
+                  countdownTimer.pause()
+                  progressBar.pause()
+                  countdownTimerDidStart = false
+                  startBtn.setTitle("RESUME",for: .normal)
+              }
                   
-                  else{
-                      countdownTimer.pause()
-                      progressBar.pause()
-                      countdownTimerDidStart = false
-                      startBtn.setTitle("RESUME",for: .normal)
-                  }
                   
                   // MARK: - Exercise Prompts
                   // Convert text prompt of type String into Array:[String]
