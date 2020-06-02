@@ -1034,6 +1034,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="stopTimer:" destination="HrL-Be-TaV" eventType="touchUpInside" id="rY6-57-8df"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMa-Sh-BxQ">
                                 <rect key="frame" x="275" y="558" width="84" height="84"/>
@@ -1045,6 +1048,9 @@
                                 <state key="normal" title="Resume">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="HrL-Be-TaV" eventType="touchUpInside" id="q17-PS-eB0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -1080,6 +1086,8 @@
                         <outlet property="promptWork" destination="aLx-Py-ezc" id="1eT-jf-3Lh"/>
                         <outlet property="redBtn" destination="JOz-FS-sDu" id="0rG-eR-Usy"/>
                         <outlet property="seconds" destination="Z0j-b3-M7M" id="Xn5-Jf-Xg9"/>
+                        <outlet property="startBtn" destination="VMa-Sh-BxQ" id="d7g-ow-aho"/>
+                        <outlet property="stopBtn" destination="JOz-FS-sDu" id="Uhh-wK-vAP"/>
                         <outlet property="titleWork" destination="y03-BO-wkn" id="vGJ-cR-a0X"/>
                         <outlet property="typeWork" destination="Ktu-O4-Wq9" id="50y-0J-RTK"/>
                     </connections>
@@ -1212,7 +1220,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h1L-vW-UyI"/>
+        <segue reference="X4l-Lz-CBO"/>
         <segue reference="Q5W-g1-hpG"/>
     </inferredMetricsTieBreakers>
     <resources>
