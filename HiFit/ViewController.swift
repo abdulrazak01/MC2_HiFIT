@@ -192,6 +192,19 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             startBtn.setTitle("RESUME",for: .normal)
         }
         
+        prompt()
+            
+    }
+    
+    @IBAction func NumberExer(_ sender: Any) {
+      
+       
+      exerciseNumber += 1
+       updateExercise()
+        
+   }
+    
+    public func prompt() {
         // MARK: - Exercise Prompts
         // Convert text prompt of type String into Array:[String]
         
@@ -214,7 +227,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         }
                 
         // Display Exercise Prompt Individually
-        var count = 0
+         var count = 0
         let speechSynthesizer = AVSpeechSynthesizer()   // Initialise voice
                 
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
@@ -233,18 +246,10 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             
             if count == filteredPromptArray.count-1 {
                 t.invalidate()
+                
             }
         })
-            
     }
-    
-    @IBAction func NumberExer(_ sender: Any) {
-      
-       
-      exerciseNumber += 1
-       updateExercise()
-        
-   }
     
     func updateExercise(){
         
@@ -307,6 +312,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     
     @IBAction func stopTimer(_ sender: UIButton) {
         display()
+        
         countdownTimer.stop()
         progressBar.stop()
         countdownTimerDidStart = false
