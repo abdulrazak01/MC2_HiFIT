@@ -414,7 +414,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pcI-2D-ylE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ca2-mR-ONo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U3-ed-jZw">
@@ -941,7 +941,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="bVp-jx-T8Q" firstAttribute="centerX" secondItem="MKx-9W-6cu" secondAttribute="centerX" id="E4Z-rK-klb"/>
                                     <constraint firstAttribute="height" constant="300" id="fOm-09-QYp"/>
@@ -1031,6 +1030,7 @@
                                     <constraint firstAttribute="height" constant="84" id="9Cx-70-T4O"/>
                                     <constraint firstAttribute="width" constant="84" id="nE0-rg-VxU"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
@@ -1045,12 +1045,18 @@
                                     <constraint firstAttribute="height" constant="84" id="mzT-JK-z2g"/>
                                     <constraint firstAttribute="width" constant="84" id="ssR-aQ-UjE"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Pause">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
                                     <action selector="startTimer:" destination="HrL-Be-TaV" eventType="touchUpInside" id="q17-PS-eB0"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL1-1m-woq">
+                                <rect key="frame" x="115" y="824" width="185" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Skip to Result (Demo Only)"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -1191,6 +1197,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FPV-WP-EhK"/>
                     <connections>
                         <outlet property="tblView" destination="F8g-C9-MtR" id="5kp-TX-eKE"/>
                     </connections>
@@ -1221,7 +1228,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="h1L-vW-UyI"/>
-        <segue reference="pKZ-Re-u48"/>
+        <segue reference="Q5W-g1-hpG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SettingsIcon" width="35" height="35"/>

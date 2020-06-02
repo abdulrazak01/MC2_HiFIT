@@ -9,10 +9,10 @@
 
 import Foundation
 
-let warmUpDuration:Int = 3
-let exerciseDuration:Int = 3
-let restDuration:Int = 4
-let coolDownDuration:Int = 30
+let warmUpDuration:Int = 20    // Default: 30
+let exerciseDuration:Int = 20
+let restDuration:Int = 30      // Beginnner Default: 40
+let coolDownDuration:Int = 20  // Default: 30
 
 class ArrayWork{
     var list = [workout]()

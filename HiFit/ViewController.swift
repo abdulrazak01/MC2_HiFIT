@@ -105,7 +105,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         stopBtn.isEnabled = true
         // Rojak version was set to false, maybe need to change 
         // stopBtn.isEnabled = false		
-        stopBtn.alpha = 0.5
+//        stopBtn.alpha = 0.5
         
       
 
@@ -182,14 +182,14 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             countdownTimer.start()
             progressBar.start()
             countdownTimerDidStart = true
-            startBtn.setTitle("PAUSE",for: .normal)
+            startBtn.setTitle("Pause",for: .normal)
         }
         
         else{
             countdownTimer.pause()
             progressBar.pause()
             countdownTimerDidStart = false
-            startBtn.setTitle("RESUME",for: .normal)
+            startBtn.setTitle("Resume",for: .normal)
         }
         
         prompt()
@@ -217,11 +217,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
                 filteredPromptArray.append(item)
             }
            if allExercise.list[exerciseNumber].typeExercise == "Rest" {
-                filteredPromptArray.append("Rest for 30 seconds")
-            filteredPromptArray.append(item)
-            }
-            if allExercise.list[exerciseNumber].typeExercise == "Cool Down" {
-                filteredPromptArray.append("Relax and chill")
+            filteredPromptArray.append("Rest for \(allExercise.list[exerciseNumber].goTime) seconds")
             filteredPromptArray.append(item)
             }
         }
