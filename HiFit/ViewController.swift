@@ -88,7 +88,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         button.layer.insertSublayer(gradient, at: 1)
     }
     
-    let speechSynthesizer = AVSpeechSynthesizer()
+    let speechService = SpeechService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -186,7 +186,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
-            speechSynthesizer.continueSpeaking()
+            speechService.resume()
         }
             
         else{
@@ -194,7 +194,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             progressBar.pause()
             countdownTimerDidStart = false
             startBtn.setTitle("Resume",for: .normal)
-            speechSynthesizer.pauseSpeaking(at: AVSpeechBoundary.immediate)
+            speechService.pause()
         }
         
         prompt()
@@ -242,7 +242,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             
             speechUtterance.rate = 0.45
             speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            self.speechSynthesizer.speak(speechUtterance)
+            self.speechService.speechSynthesizer.speak(speechUtterance)
             
             count += 1
             
@@ -311,7 +311,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
     }
     func stopSpeaking() {
-        speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate) // works one the storyboard, but not work when the storyboard change to another one.
+        speechService.stop()
+        // works one the storyboard, but not work when the storyboard change to another one.
     }
     
     @IBAction func skipToResult(_ sender: AnyObject) {

@@ -13,7 +13,6 @@ class Motivation: UIViewController {
     
     @IBOutlet weak var imgView: UIImageView!
 
-    let synthesizer = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,6 @@ class Motivation: UIViewController {
         
         imgView.layer.cornerRadius = 20
         
-        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
     }
     
     
