@@ -1372,6 +1372,7 @@ BELIEVES</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="wSa-mF-mc2"/>
         <segue reference="h1L-vW-UyI"/>
         <segue reference="ZJ8-NZ-R4m"/>
     </inferredMetricsTieBreakers>

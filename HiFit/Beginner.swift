@@ -35,7 +35,7 @@ class Beginner : UIViewController {
     let speechService = SpeechService()
     var titleLabel: String = ""
     var exerciseTime: String = ""
-    var descripts: String = "Beginner level workout are create for who never or just begin to do workout."
+    var descripts: String = "The Beginner level workout are create for who never or just begin to do workout."
     
     
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ class Beginner : UIViewController {
     }
     
     func speak() {
-        speechService.say("\(titleLabel) level has \(exerciseTime) to do the exercise,\(descripts)")
+        speechService.say("\(titleLabel) level has \(exercisesList.count) exercise to do with \(exerciseTime), \(descripts)")
     }
 
     @IBAction func buttonStart(_ sender: Any) {
