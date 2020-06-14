@@ -187,10 +187,10 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
             start()
-          
             if speechSynthesizer.isPaused {
-                 speechSynthesizer.continueSpeaking()
+                speechSynthesizer.continueSpeaking()
             }
+            
             
         } else{
             countdownTimer.pause()
@@ -198,28 +198,25 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             countdownTimerDidStart = false
             
             startBtn.setTitle("Resume",for: .normal)
-        pauses()
+      speechSynthesizer.pauseSpeaking(at: .immediate)
        
-        //if startBtn.titleLabel?.text as Any as! String == "Resume" {
+      //  if startBtn.titleLabel?.text as Any as! String == "Resume" {
            
          
         
-       // }
+       //}
     }
         
         }
     
-    func pauses() {
-         speechSynthesizer.pauseSpeaking(at: .immediate)
-        
-    }
+    
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         
-       
+        
     }
    
-    func start() {
+   func start() {
         if speechSynthesizer.isSpeaking {
             speechSynthesizer.pauseSpeaking(at: .immediate)
             
@@ -260,7 +257,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                 
                 count += 1
                 
-                if count == filteredPromptArray.count-1 || self.skipToResult {
+                if count == filteredPromptArray.count-1 || self.skipToResult || self.speechSynthesizer.isPaused{
                     t.invalidate()
                     
                 }
