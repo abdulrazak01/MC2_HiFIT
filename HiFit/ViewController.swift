@@ -38,8 +38,9 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     
     @IBOutlet weak var animationView: AnimationView!
     
-    @IBOutlet weak var redBtn: UIButton!
-    @IBOutlet weak var greenBtn: UIButton!
+// this outlet doesnt need anymore right? if yes please delete later
+//    @IBOutlet weak var redBtn: UIButton!
+//    @IBOutlet weak var greenBtn: UIButton!
     
     
     let allExercise = ArrayWork()   // Import list of exercises
@@ -113,8 +114,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
         counterView.isHidden = false
         
-        buttonStyle(button: redBtn, borderColor: #colorLiteral(red: 0.7607843137, green: 0, blue: 0.06666666667, alpha: 1), startGradientColor: #colorLiteral(red: 1, green: 0.4, blue: 0.5019607843, alpha: 1), endGradientColor: #colorLiteral(red: 0.9019607843, green: 0.02745098039, blue: 0.1019607843, alpha: 1))
-        buttonStyle(button: greenBtn, borderColor: #colorLiteral(red: 0.4862745098, green: 0.7294117647, blue: 0.262745098, alpha: 1), startGradientColor: #colorLiteral(red: 0.6039215686, green: 0.8784313725, blue: 0.2274509804, alpha: 1), endGradientColor: #colorLiteral(red: 0.3333333333, green: 0.6, blue: 0.09019607843, alpha: 1))
+        buttonStyle(button: stopBtn, borderColor: #colorLiteral(red: 0.7607843137, green: 0, blue: 0.06666666667, alpha: 1), startGradientColor: #colorLiteral(red: 1, green: 0.4, blue: 0.5019607843, alpha: 1), endGradientColor: #colorLiteral(red: 0.9019607843, green: 0.02745098039, blue: 0.1019607843, alpha: 1))
+        buttonStyle(button: startBtn, borderColor: #colorLiteral(red: 0.4862745098, green: 0.7294117647, blue: 0.262745098, alpha: 1), startGradientColor: #colorLiteral(red: 0.6039215686, green: 0.8784313725, blue: 0.2274509804, alpha: 1), endGradientColor: #colorLiteral(red: 0.3333333333, green: 0.6, blue: 0.09019607843, alpha: 1))
         
     }
     
@@ -321,13 +322,13 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     @IBAction func stopTimer(_ sender: UIButton) {
         display()
         
-        stopSpeaking()
         countdownTimer.stop()
         progressBar.stop()
         countdownTimerDidStart = false
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
+        stopSpeaking()
     }
     
 }

@@ -33,6 +33,7 @@ class Intermediate : UIViewController {
         List(img: "ShoulderStretch", name: "Shoulder Stretch")
     ]
     
+    let speechService = SpeechService()
     var titleLabel: String = ""
     var exerciseTime: String = ""
     var descripts: String = "This is intermediate level workout are create for who have basic knowladge to do workout."
@@ -49,6 +50,14 @@ class Intermediate : UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        speak()
+    }
+    func speak() {
+        speechService.say("\(titleLabel) level has \(exerciseTime) to do the exercise,\(descripts)")
+    }
+    @IBAction func buttonStart(_ sender: Any) {
+        speechService.stop()
     }
     
 }

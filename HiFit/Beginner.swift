@@ -32,10 +32,10 @@ class Beginner : UIViewController {
         List(img: "ShoulderStretch", name: "ShoulderStretch")
     ]
     
-    let synthesizer = AVSpeechSynthesizer()
+    let speechService = SpeechService()
     var titleLabel: String = ""
     var exerciseTime: String = ""
-    var descripts: String = "This is beginner level workout are create for who never or just begin to do workout."
+    var descripts: String = "Beginner level workout are create for who never or just begin to do workout."
     
     
     override func viewDidLoad() {
@@ -55,18 +55,11 @@ class Beginner : UIViewController {
     }
     
     func speak() {
-        let title = AVSpeechUtterance(string: titleLabel)
-        synthesizer.speak(title)
-        let times = AVSpeechUtterance(string: exerciseTime)
-        synthesizer.speak(times)
-        let descipt = AVSpeechUtterance(string: descripts)
-        synthesizer.speak(descipt)
+        speechService.say("\(titleLabel) level has \(exerciseTime) to do the exercise,\(descripts)")
     }
-    func stopSpeaking(){
-        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
-    }
-    func IBAction(_ sender: UIButton){
-        stopSpeaking()
+
+    @IBAction func buttonStart(_ sender: Any) {
+        speechService.stop()
     }
     
 }

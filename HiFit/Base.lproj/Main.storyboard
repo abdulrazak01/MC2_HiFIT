@@ -248,6 +248,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonStart:" destination="af1-dk-GPv" eventType="touchUpInside" id="cJI-Tz-210"/>
                                     <segue destination="HrL-Be-TaV" kind="show" id="X4l-Lz-CBO"/>
                                 </connections>
                             </button>
@@ -347,6 +348,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonStart:" destination="vyh-1Z-HBJ" eventType="touchUpInside" id="ytO-cR-10n"/>
                                     <segue destination="HrL-Be-TaV" kind="show" id="h1L-vW-UyI"/>
                                 </connections>
                             </button>
@@ -855,6 +857,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonStart:" destination="oXl-TF-dk8" eventType="touchUpInside" id="f4V-iC-rQB"/>
                                     <segue destination="HrL-Be-TaV" kind="show" id="EAs-vh-Lac"/>
                                 </connections>
                             </button>
@@ -1089,12 +1092,10 @@
                         <outlet property="NumExercise" destination="OeG-2K-SOl" id="ucX-7T-MXo"/>
                         <outlet property="animationView" destination="bVp-jx-T8Q" id="N4a-TI-IU7"/>
                         <outlet property="counterView" destination="JD6-so-ztW" id="9zs-1H-bZW"/>
-                        <outlet property="greenBtn" destination="VMa-Sh-BxQ" id="umz-wF-T1i"/>
                         <outlet property="imageWorkout" destination="iGf-Fe-hAu" id="xbB-5P-TZW"/>
                         <outlet property="minutes" destination="EIi-6g-6P1" id="cTw-pZ-sHC"/>
                         <outlet property="progressBar" destination="MKx-9W-6cu" id="hK3-71-oNC"/>
                         <outlet property="promptWork" destination="aLx-Py-ezc" id="1eT-jf-3Lh"/>
-                        <outlet property="redBtn" destination="JOz-FS-sDu" id="0rG-eR-Usy"/>
                         <outlet property="seconds" destination="Z0j-b3-M7M" id="Xn5-Jf-Xg9"/>
                         <outlet property="startBtn" destination="VMa-Sh-BxQ" id="d7g-ow-aho"/>
                         <outlet property="stopBtn" destination="JOz-FS-sDu" id="Uhh-wK-vAP"/>
@@ -1371,7 +1372,6 @@ BELIEVES</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3vx-Ff-nSD"/>
         <segue reference="h1L-vW-UyI"/>
         <segue reference="ZJ8-NZ-R4m"/>
     </inferredMetricsTieBreakers>
