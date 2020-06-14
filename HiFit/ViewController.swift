@@ -259,7 +259,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                 
                 if count == filteredPromptArray.count-1 || self.skipToResult || self.speechSynthesizer.isPaused{
                     t.invalidate()
-                    
+                    self.speechSynthesizer.stopSpeaking(at: .immediate)
                 }
             })
            
