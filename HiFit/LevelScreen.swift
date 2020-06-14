@@ -77,6 +77,7 @@ class LevelScreen : UIViewController {
         }
         
         // TODO: Are we using this code? Line 80-82
+        // bran: yes, of course
         BeginLabel?.text = beginTitle
         IntermediateLabel?.text = IntermTitle
         AdvancedLabel?.text = AdvnTitle

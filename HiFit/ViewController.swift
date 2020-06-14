@@ -87,6 +87,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         button.layer.insertSublayer(gradient, at: 1)
     }
     
+    let speechSynthesizer = AVSpeechSynthesizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //startNow()
@@ -183,6 +185,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
+            speechSynthesizer.continueSpeaking()
         }
             
         else{
@@ -190,6 +193,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             progressBar.pause()
             countdownTimerDidStart = false
             startBtn.setTitle("Resume",for: .normal)
+            speechSynthesizer.pauseSpeaking(at: AVSpeechBoundary.immediate)
         }
         
         prompt()
@@ -204,7 +208,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
     }
     
-    let speechSynthesizer = AVSpeechSynthesizer()
+    
     public func prompt() {
         // MARK: - Exercise Prompts
         // Convert text prompt of type String into Array:[String]
@@ -305,14 +309,19 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
         
     }
+    func stopSpeaking() {
+        speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate) // works one the storyboard, but not work when the storyboard change to another one.
+    }
+    
     @IBAction func skipToResult(_ sender: AnyObject) {
-        speechSynthesizer.stopSpeaking(at: .immediate)  // FIXME: Not Working
+        stopSpeaking()
     }
     
     
     @IBAction func stopTimer(_ sender: UIButton) {
         display()
         
+        stopSpeaking()
         countdownTimer.stop()
         progressBar.stop()
         countdownTimerDidStart = false
@@ -320,7 +329,6 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
     }
-    
     
 }
 

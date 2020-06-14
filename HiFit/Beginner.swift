@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class Beginner : UIViewController {
     
@@ -31,6 +32,7 @@ class Beginner : UIViewController {
         List(img: "ShoulderStretch", name: "ShoulderStretch")
     ]
     
+    let synthesizer = AVSpeechSynthesizer()
     var titleLabel: String = ""
     var exerciseTime: String = ""
     var descripts: String = "This is beginner level workout are create for who never or just begin to do workout."
@@ -48,6 +50,23 @@ class Beginner : UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        speak()
+    }
+    
+    func speak() {
+        let title = AVSpeechUtterance(string: titleLabel)
+        synthesizer.speak(title)
+        let times = AVSpeechUtterance(string: exerciseTime)
+        synthesizer.speak(times)
+        let descipt = AVSpeechUtterance(string: descripts)
+        synthesizer.speak(descipt)
+    }
+    func stopSpeaking(){
+        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
+    func IBAction(_ sender: UIButton){
+        stopSpeaking()
     }
     
 }
