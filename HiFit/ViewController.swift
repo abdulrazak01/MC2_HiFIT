@@ -50,7 +50,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         
         
     }
-    
+    weak var delegate: ViewController!
     var countdownTimerDidStart = false
     
     
@@ -66,6 +66,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     var selectedSecs = 0
     let speechSynthesizer = AVSpeechSynthesizer()
     var skipToResult:Bool = false
+    
     
     
     fileprivate func buttonStyle(button: UIButton, borderColor: CGColor, startGradientColor: UIColor, endGradientColor: UIColor) {
@@ -186,33 +187,44 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
             start()
-             speechSynthesizer.continueSpeaking()
+          
+            if speechSynthesizer.isPaused {
+                 speechSynthesizer.continueSpeaking()
+            }
             
         } else{
             countdownTimer.pause()
             progressBar.pause()
             countdownTimerDidStart = false
+            
             startBtn.setTitle("Resume",for: .normal)
         pauses()
        
         //if startBtn.titleLabel?.text as Any as! String == "Resume" {
            
+         
         
-        //}
+       // }
     }
         
         }
     
     func pauses() {
          speechSynthesizer.pauseSpeaking(at: .immediate)
-    }
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         
     }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        
+       
+    }
+   
     func start() {
         if speechSynthesizer.isSpeaking {
-            speechSynthesizer.stopSpeaking(at: .immediate)
+            speechSynthesizer.pauseSpeaking(at: .immediate)
+            
         }
+    
         else {
             let promptString = allExercise.list[exerciseNumber].prompt
             let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
@@ -248,8 +260,9 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                 
                 count += 1
                 
-                if count == filteredPromptArray.count-1 || self.speechSynthesizer.isPaused || self.skipToResult {
+                if count == filteredPromptArray.count-1 || self.skipToResult {
                     t.invalidate()
+                    
                 }
             })
            
