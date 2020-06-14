@@ -64,9 +64,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     
     
     var selectedSecs = 0
-    
-    
-    
+    let speechSynthesizer = AVSpeechSynthesizer()
+    var skipToResult:Bool = false
     
     
     fileprivate func buttonStyle(button: UIButton, borderColor: CGColor, startGradientColor: UIColor, endGradientColor: UIColor) {
@@ -183,17 +182,18 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
-        }
-            
-        else{
+            prompt()
+        } else{
             countdownTimer.pause()
             progressBar.pause()
             countdownTimerDidStart = false
             startBtn.setTitle("Resume",for: .normal)
+            speechSynthesizer.pauseSpeaking(at: .immediate)
         }
         
-        prompt()
-        
+        if startBtn.titleLabel?.text as Any as! String == "Resume" {
+            speechSynthesizer.continueSpeaking()
+        }
     }
     
     @IBAction func NumberExer(_ sender: Any) {
@@ -204,7 +204,6 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
     }
     
-    let speechSynthesizer = AVSpeechSynthesizer()
     public func prompt() {
         // MARK: - Exercise Prompts
         // Convert text prompt of type String into Array:[String]
@@ -241,9 +240,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             
             count += 1
             
-            if count == filteredPromptArray.count-1 {
+            if count == filteredPromptArray.count-1 || self.speechSynthesizer.isPaused || self.skipToResult {
                 t.invalidate()
-                
             }
         })
     }
@@ -306,7 +304,12 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
     }
     @IBAction func skipToResult(_ sender: AnyObject) {
+        countdownTimer.stop()
+        progressBar.stop()
+        countdownTimerDidStart = false
         speechSynthesizer.stopSpeaking(at: .immediate)  // FIXME: Not Working
+        skipToResult = true
+        
     }
     
     
@@ -319,6 +322,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
+        speechSynthesizer.stopSpeaking(at: .immediate)
     }
     
     
