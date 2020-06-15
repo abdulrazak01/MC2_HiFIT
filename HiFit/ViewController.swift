@@ -28,6 +28,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     @IBOutlet weak var counterView: UIStackView!
     @IBOutlet weak var stopBtn: UIButton!
     @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var skip: UIButton!
     
     @IBOutlet weak var workT: UITextField!
     @IBOutlet weak var typeT: UITextField!
@@ -37,12 +38,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     //public var completion: ((String, String) -> Void)?
     
     @IBOutlet weak var animationView: AnimationView!
-    
-// this outlet doesnt need anymore right? if yes please delete later
-//    @IBOutlet weak var redBtn: UIButton!
-//    @IBOutlet weak var greenBtn: UIButton!
-    
-    
+
     let allExercise = ArrayWork()   // Import list of exercises
     var exerciseNumber: Int = 0
     //var list = [workout]()
@@ -116,7 +112,10 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         
         buttonStyle(button: stopBtn, borderColor: #colorLiteral(red: 0.6784313725, green: 0.01568627451, blue: 0.07058823529, alpha: 1), startGradientColor: #colorLiteral(red: 0.8549019608, green: 0.1882352941, blue: 0.3058823529, alpha: 1), endGradientColor: #colorLiteral(red: 0.7764705882, green: 0.1098039216, blue: 0.2, alpha: 1))
         buttonStyle(button: startBtn, borderColor: #colorLiteral(red: 0.3320430013, green: 0.7472464243, blue: 0.07450980392, alpha: 1), startGradientColor: #colorLiteral(red: 0.537254902, green: 0.7882352941, blue: 0.1921568627, alpha: 1), endGradientColor: #colorLiteral(red: 0.3294117647, green: 0.6117647059, blue: 0.07058823529, alpha: 1))
-        
+        stopBtn.titleLabel?.adjustsFontForContentSizeCategory = true
+        startBtn.titleLabel?.adjustsFontForContentSizeCategory = true
+        skip.titleLabel?.adjustsFontForContentSizeCategory = true
+//        startBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
     }
     
     
@@ -126,7 +125,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     
     class speech{
         
-    
+        
     }
     
     
@@ -178,7 +177,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         // Maybe flag to start timer, hasTimerStart = true it'll continue as normal, if hadTimerStart = false, it'll change to true and timer start automatically
         
         
-       
+        
         
         stopBtn.isEnabled = true
         
@@ -194,26 +193,23 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                 speechSynthesizer.continueSpeaking()
             }
             // speechService.resume() // Syabran changes
-        }
-            
-            
         } else{
             countdownTimer.pause()
             progressBar.pause()
             countdownTimerDidStart = false
             
             startBtn.setTitle("Resume",for: .normal)
-      speechSynthesizer.pauseSpeaking(at: .immediate)
-       
-      //  if startBtn.titleLabel?.text as Any as! String == "Resume" {
-           
-         
-        
-       //}
-    }
-        
-            // speechService.pause()    // Syabran changes
+            speechSynthesizer.pauseSpeaking(at: .immediate)
+            
+            //  if startBtn.titleLabel?.text as Any as! String == "Resume" {
+            
+            
+            
+            //}
         }
+        
+        // speechService.pause()    // Syabran changes
+    }
     
     
     
@@ -221,13 +217,13 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         
         
     }
-   
-   func start() {
+    
+    func start() {
         if speechSynthesizer.isSpeaking {
             speechSynthesizer.pauseSpeaking(at: .immediate)
             
         }
-    
+            
         else {
             let promptString = allExercise.list[exerciseNumber].prompt
             let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
@@ -268,7 +264,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                     self.speechSynthesizer.stopSpeaking(at: .immediate)
                 }
             })
-           
+            
         }
     }
     @IBAction func NumberExer(_ sender: Any) {
@@ -390,6 +386,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         countdownTimerDidStart = false
         speechSynthesizer.stopSpeaking(at: .immediate)  // FIXME: Not Working
         skipToResult = true
+        
         
         // stopSpeaking() // Syabran changes
     }
