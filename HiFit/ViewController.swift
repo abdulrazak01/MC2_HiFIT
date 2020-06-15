@@ -181,16 +181,17 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         
         
         // MARK: Exercise Start
+        //start()
         if !countdownTimerDidStart {
             countdownTimer.start()
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
-            start()
-            if speechSynthesizer.isPaused {
-                speechSynthesizer.continueSpeaking()
-            }
             
+            if speechSynthesizer.isPaused{
+                speechSynthesizer.continueSpeaking()
+            
+            }
             
         } else{
             countdownTimer.pause()
@@ -199,6 +200,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             
             startBtn.setTitle("Resume",for: .normal)
       speechSynthesizer.pauseSpeaking(at: .immediate)
+            speechSynthesizer.pauseSpeaking(at: .word)
        
       //  if startBtn.titleLabel?.text as Any as! String == "Resume" {
            
@@ -212,13 +214,14 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        
+       
         
     }
    
    func start() {
         if speechSynthesizer.isSpeaking {
             speechSynthesizer.pauseSpeaking(at: .immediate)
+             speechSynthesizer.pauseSpeaking(at: .word)
             
         }
     
@@ -257,10 +260,11 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                 
                 count += 1
                 
-                if count == filteredPromptArray.count-1 || self.skipToResult || self.speechSynthesizer.isPaused{
+                if count == filteredPromptArray.count-0 || self.skipToResult   {
                     t.invalidate()
-                    self.speechSynthesizer.stopSpeaking(at: .immediate)
+                    
                 }
+               
             })
            
         }
@@ -309,9 +313,11 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             
             count += 1
             
-            if count == filteredPromptArray.count-1 || self.speechSynthesizer.isPaused || self.skipToResult {
+            if count == filteredPromptArray.count-1 || self.skipToResult {
                 t.invalidate()
             }
+            
+           
         })
     }
     
@@ -343,7 +349,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             
             //workT.text = allExercise.list[exerciseNumber].exercise
             //typeT.text = allExercise.list[exerciseNumber].typeExercise
-            
+             start()
             startTimer(startBtn)
             
             
