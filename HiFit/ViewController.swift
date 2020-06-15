@@ -235,6 +235,49 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             }
         }
         
+//        for prompt in filteredPromptArray {
+//            let xSeconds = 4.0
+//            DispatchQueue.main.asyncAfter(deadline: .now() + xSeconds) {
+//                self.promptWork.text = prompt
+//            }
+//        }
+        var count = 0
+        
+        print("total: \(filteredPromptArray.count)")
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {timer in
+            if self.countdownTimerDidStart == false {
+                print("stop at: \(count)")
+                timer.invalidate()
+            }
+            if count == filteredPromptArray.count-1 {
+                timer.invalidate()
+            }
+
+            if self.countdownTimerDidStart {
+                self.promptWork.text = filteredPromptArray[count]
+                self.speechService.say(filteredPromptArray[count])
+                
+                let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
+                speechUtterance.rate = 0.45
+                speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                self.speechSynthesizer.speak(speechUtterance)
+            
+            }
+            count += 1
+        })
+        /*
+        for i in 1...filteredPromptArray.count {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(i)) {
+//                print("hello \(i)")
+                print(filteredPromptArray[i-1])
+                self.promptWork.text = filteredPromptArray[i-1]
+            }
+        }
+        */
+//        self.mystring.text = "some word"
+
+
+        /*
         // Display Exercise Prompt Individually
         var count = 0
         
@@ -261,8 +304,9 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                 self.speechSynthesizer.stopSpeaking(at: .immediate)
             }
         })
+ */
     }
-    
+    /*
     func start() {
         if speechSynthesizer.isSpeaking {
             speechSynthesizer.pauseSpeaking(at: .immediate)
@@ -272,7 +316,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             sayPrompt()
         }
     }
-    
+    */
     @IBAction func NumberExer(_ sender: Any) {
         
         
@@ -338,11 +382,12 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         
         
     }
+    /*
     func stopSpeaking() {
         speechService.stop()    
         // works one the storyboard, but not work when the storyboard change to another one.
     }
-    
+    */
     @IBAction func skipToResult(_ sender: AnyObject) {
         countdownTimer.stop()
         progressBar.stop()
@@ -366,6 +411,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         speechSynthesizer.stopSpeaking(at: .immediate)
         startBtn.setTitle("Resume",for: .normal)
         // stopSpeaking() // Syabran changes
+        speechService.stop()
     }
     
 }
