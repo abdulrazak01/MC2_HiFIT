@@ -34,9 +34,10 @@ class Advanced : UIViewController {
         List(img: "Plank", name: "Plank")
     ]
     
+    let speechService = SpeechService()
     var titleLabel: String = ""
     var exerciseTime: String = ""
-    var descripts: String = "This is advanced level workout are create for who has a good knowledge and routinely do workout."
+    var descripts: String = "The advanced level workout are create for who has a good knowledge and routinely do workout."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,14 @@ class Advanced : UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        speak()
+    }
+    func speak() {
+        speechService.say("\(titleLabel) level has \(exercisesList.count) exercise to do with \(exerciseTime), \(descripts)")
+    }
+    @IBAction func buttonStart(_ sender: Any) {
+        speechService.stop()
     }
     
 }

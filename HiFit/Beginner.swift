@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class Beginner : UIViewController {
     
@@ -31,9 +32,10 @@ class Beginner : UIViewController {
         List(img: "ShoulderStretch", name: "ShoulderStretch")
     ]
     
+    let speechService = SpeechService()
     var titleLabel: String = ""
     var exerciseTime: String = ""
-    var descripts: String = "This is beginner level workout are create for who never or just begin to do workout."
+    var descripts: String = "The Beginner level workout are create for who never or just begin to do workout."
     
     
     override func viewDidLoad() {
@@ -48,6 +50,16 @@ class Beginner : UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        speak()
+    }
+    
+    func speak() {
+        speechService.say("\(titleLabel) level has \(exercisesList.count) exercise to do with \(exerciseTime), \(descripts)")
+    }
+
+    @IBAction func buttonStart(_ sender: Any) {
+        speechService.stop()
     }
     
 }

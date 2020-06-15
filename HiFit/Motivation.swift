@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class Motivation: UIViewController {
     
     @IBOutlet weak var imgView: UIImageView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,9 +22,10 @@ class Motivation: UIViewController {
         self.navigationController?.navigationBar.layoutIfNeeded()
         
         imgView.layer.cornerRadius = 20
+        
     }
     
-    
+      
     
     
    @IBAction func shareButton(_ sender: Any) {

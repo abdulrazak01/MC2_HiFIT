@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "Settings Icon@2x.png",
+      "filename" : "Settings Icon 2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Settings Icon@3x.png",
+      "filename" : "Settings Icon 3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
