@@ -33,6 +33,8 @@ class LevelScreen : UIViewController {
     var AdvnTitle: String = "Advanced"
     var AdvnTimes: String = "21 minutes minimum"
     
+    let speechService = SpeechService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,6 +99,12 @@ class LevelScreen : UIViewController {
         ExercisesBeginnerLabel?.attributedText = levelText(labelText: BeginTimes, color: #colorLiteral(red: 0.1411764706, green: 0.6156862745, blue: 0.831372549, alpha: 1))
         ExercisesIntermLabel?.attributedText = levelText(labelText: IntermTimes, color: #colorLiteral(red: 0.3176470588, green: 0.7019607843, blue: 0.3333333333, alpha: 1))
         ExercisesAdvnLabel?.attributedText = levelText(labelText: AdvnTimes, color: #colorLiteral(red: 0.9450980392, green: 0.2392156863, blue: 0.2823529412, alpha: 1))
+        
+        speak()
+    }
+    
+    func speak() {
+        speechService.say("Each level has a different type of workout and durations, for beginner with 16 minutes minimum, intermediate with 18 minutes minimum, and advanced 21 minutes minimum.")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -140,6 +148,8 @@ class LevelScreen : UIViewController {
             vc?.titleLabel = AdvnTitle
             vc?.exerciseTime = AdvnTimes
         }
+        
+        speechService.stop()
     }
     
 }
