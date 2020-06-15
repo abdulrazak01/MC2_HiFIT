@@ -114,8 +114,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
         counterView.isHidden = false
         
-        buttonStyle(button: stopBtn, borderColor: #colorLiteral(red: 0.7607843137, green: 0, blue: 0.06666666667, alpha: 1), startGradientColor: #colorLiteral(red: 1, green: 0.4, blue: 0.5019607843, alpha: 1), endGradientColor: #colorLiteral(red: 0.9019607843, green: 0.02745098039, blue: 0.1019607843, alpha: 1))
-        buttonStyle(button: startBtn, borderColor: #colorLiteral(red: 0.4862745098, green: 0.7294117647, blue: 0.262745098, alpha: 1), startGradientColor: #colorLiteral(red: 0.6039215686, green: 0.8784313725, blue: 0.2274509804, alpha: 1), endGradientColor: #colorLiteral(red: 0.3333333333, green: 0.6, blue: 0.09019607843, alpha: 1))
+        buttonStyle(button: stopBtn, borderColor: #colorLiteral(red: 0.6784313725, green: 0.01568627451, blue: 0.07058823529, alpha: 1), startGradientColor: #colorLiteral(red: 0.8549019608, green: 0.1882352941, blue: 0.3058823529, alpha: 1), endGradientColor: #colorLiteral(red: 0.7764705882, green: 0.1098039216, blue: 0.2, alpha: 1))
+        buttonStyle(button: startBtn, borderColor: #colorLiteral(red: 0.3320430013, green: 0.7472464243, blue: 0.07450980392, alpha: 1), startGradientColor: #colorLiteral(red: 0.537254902, green: 0.7882352941, blue: 0.1921568627, alpha: 1), endGradientColor: #colorLiteral(red: 0.3294117647, green: 0.6117647059, blue: 0.07058823529, alpha: 1))
         
     }
     
@@ -160,7 +160,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         countdownTimerDidStart = false
         //stopBtn.isEnabled = false
         //stopBtn.alpha = 0.5
-        startBtn.setTitle("START",for: .normal)
+        startBtn.setTitle("Start",for: .normal)
         exerciseNumber += 1
         updateExercise()
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -328,7 +328,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         countdownTimerDidStart = false
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
-        startBtn.setTitle("START",for: .normal)
+        startBtn.setTitle("Resume",for: .normal)
         stopSpeaking()
     }
     
