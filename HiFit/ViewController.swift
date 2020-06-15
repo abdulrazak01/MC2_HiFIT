@@ -423,7 +423,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         countdownTimerDidStart = false
         // FIXME: Not Working
       
-         self.speechSynthesizer.stopSpeaking(at: .immediate)
+         
                self.speechSynthesizer.pauseSpeaking(at: .immediate)
         
         skipToResult = true
@@ -440,7 +440,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
-        self.speechSynthesizer.stopSpeaking(at: .immediate)
+        
         self.speechSynthesizer.pauseSpeaking(at: .immediate)
         // FIXME: Not Working
     
