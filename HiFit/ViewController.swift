@@ -30,35 +30,21 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var skip: UIButton!
     
-    @IBOutlet weak var workT: UITextField!
-    @IBOutlet weak var typeT: UITextField!
     @IBOutlet weak var promptWork: UILabel!
     @IBOutlet weak var typeWork: UILabel!
     
-    //public var completion: ((String, String) -> Void)?
-    
     @IBOutlet weak var animationView: AnimationView!
-
+    
     let allExercise = ArrayWork()   // Import list of exercises
     var exerciseNumber: Int = 0
-    //var list = [workout]()
     
-    @IBAction func shareButton(_ sender: Any) {
-        
-        
-    }
     weak var delegate: ViewController!
     var countdownTimerDidStart = false
     
-    
     lazy var countdownTimer: CountdownTimer = {
-        
         let countdownTimer = CountdownTimer()
         return countdownTimer
     }()
-    
-    
-    
     
     var selectedSecs = 0
     let speechSynthesizer = AVSpeechSynthesizer()
@@ -88,26 +74,13 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //startNow()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         stopBtn.isEnabled = true
         speechSynthesizer.delegate = self
-        
-        //workT.delegate = self
-        //typeT.delegate = self
         updateExercise()
         updateUI()
         countdownTimer.delegate = self
-        
-        
-        
         stopBtn.isEnabled = true
-        // Rojak version was set to false, maybe need to change 
-        // stopBtn.isEnabled = false		
-        //        stopBtn.alpha = 0.5
-        
-        
-        
         counterView.isHidden = false
         
         buttonStyle(button: stopBtn, borderColor: #colorLiteral(red: 0.6784313725, green: 0.01568627451, blue: 0.07058823529, alpha: 1), startGradientColor: #colorLiteral(red: 0.8549019608, green: 0.1882352941, blue: 0.3058823529, alpha: 1), endGradientColor: #colorLiteral(red: 0.7764705882, green: 0.1098039216, blue: 0.2, alpha: 1))
@@ -115,7 +88,6 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         stopBtn.titleLabel?.adjustsFontForContentSizeCategory = true
         startBtn.titleLabel?.adjustsFontForContentSizeCategory = true
         skip.titleLabel?.adjustsFontForContentSizeCategory = true
-//        startBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
     }
     
     
@@ -123,64 +95,28 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         return .lightContent
     }
     
-    class speech{
-        
-        
-    }
-    
-    
     func countdownTime(time: (minutes: String, seconds: String)) {
-        
         minutes.text = time.minutes
         seconds.text = time.seconds
-        
     }
     
     func display(){
-        /* if let workText = workT.text , !workText.isEmpty ,
-         let typeText = typeT.text, !typeText.isEmpty{
-         
-         
-         //completion?(workText,typeText)
-         
-         
-         
-         }*/
-        
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let secondVc = storyboard.instantiateViewController(withIdentifier: "Result") as! Result
         present(secondVc, animated: true)
     }
     
     func countdownTimerDone() {
-        
-        //display()
-        //counterView.isHidden = true
-        //messageLabel.isHidden = false
         stopBtn.isEnabled = true
-        
         countdownTimerDidStart = false
-        //stopBtn.isEnabled = false
-        //stopBtn.alpha = 0.5
         startBtn.setTitle("Start",for: .normal)
         exerciseNumber += 1
         updateExercise()
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        
     }
     
-    
-    
-    
     @IBAction func startTimer(_ sender: UIButton) {
-        
-        // Maybe flag to start timer, hasTimerStart = true it'll continue as normal, if hadTimerStart = false, it'll change to true and timer start automatically
-        
-        
-        
-        
         stopBtn.isEnabled = true
-        
         
         // MARK: Exercise Start
         if !countdownTimerDidStart {
@@ -188,13 +124,11 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
-//            start()
             sayPrompt()
             if speechSynthesizer.isPaused {
                 speechSynthesizer.continueSpeaking()
             }
             speechIsStopped = true
-            // speechService.resume() // Syabran changes
         } else{
             countdownTimer.pause()
             progressBar.pause()
@@ -202,22 +136,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             
             startBtn.setTitle("Resume",for: .normal)
             speechSynthesizer.pauseSpeaking(at: .immediate)
-            
-            //  if startBtn.titleLabel?.text as Any as! String == "Resume" {
-            
-            
-            
-            //}
         }
-        
-        // speechService.pause()    // Syabran changes
-    }
-    
-    
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        
-        
     }
     
     fileprivate func sayPrompt() {
@@ -238,11 +157,11 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         var count = 0
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {timer in
             if count == filteredPromptArray.count-1 || !self.countdownTimerDidStart {
-                self.speechService.pause()
+                count = 0
                 timer.invalidate()
             } else {
                 self.promptWork.text = filteredPromptArray[count]
-
+                
                 // NOTE: replacing this with speechservice.say will cause it not to work if voice over accessibility turn off or the pressing pause doesn't immediately stop the text, seems there's a instruction delay
                 let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
                 speechUtterance.rate = 0.45
@@ -252,25 +171,19 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             count += 1
         })
     }
-
+    
     @IBAction func NumberExer(_ sender: Any) {
-        
-        
         exerciseNumber += 1
         updateExercise()
-        
     }
     
     func updateExercise(){
-        
-        
         if exerciseNumber <= allExercise.list.count - 1{
             // MARK: Change Exercise Image
             
             imageWorkout.image = UIImage(named:(allExercise.list[exerciseNumber].workoutImage))
             titleWork.text = allExercise.list[exerciseNumber].exercise
             typeWork.text = allExercise.list[exerciseNumber].typeExercise
-            //            promptWork.text = allExercise.list[exerciseNumber].prompt
             
             let animation = Animation.named(allExercise.list[exerciseNumber].animation)
             animationView.animation = animation
@@ -283,23 +196,14 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             
             countdownTimer.setTimer(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
             progressBar.setProgressBar(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
-            //self.list[exerciseNumber].self.Status = "On"
-            
-            
-            
-            //workT.text = allExercise.list[exerciseNumber].exercise
-            //typeT.text = allExercise.list[exerciseNumber].typeExercise
             
             startTimer(startBtn)
             
-            
             updateUI()
-            
         }
     }
+    
     func updateUI(){
-        
-        
         if typeWork.text == "Warm Up" {
             self.NumExercise.text = "1 Of 1"
         }
@@ -314,27 +218,15 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         else if typeWork.text == "Cool Down" {
             self.NumExercise.text = "1 Of 1"
         }
-        // NumExercise.text = "\(exerciseNumber + 1)/\(allExercise.list.count)"
-        
-        
     }
-    /*
-    func stopSpeaking() {
-        speechService.stop()    
-        // works one the storyboard, but not work when the storyboard change to another one.
-    }
-    */
+    
     @IBAction func skipToResult(_ sender: AnyObject) {
         countdownTimer.stop()
         progressBar.stop()
         countdownTimerDidStart = false
-        speechSynthesizer.stopSpeaking(at: .immediate)  // FIXME: Not Working
+        speechSynthesizer.stopSpeaking(at: .immediate)
         skipToResult = true
-        
-        
-        // stopSpeaking() // Syabran changes
     }
-    
     
     @IBAction func stopTimer(_ sender: UIButton) {
         display()
@@ -346,10 +238,8 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         stopBtn.alpha = 0.5
         speechSynthesizer.stopSpeaking(at: .immediate)
         startBtn.setTitle("Resume",for: .normal)
-        // stopSpeaking() // Syabran changes
         speechService.stop()
     }
-    
 }
 
 
