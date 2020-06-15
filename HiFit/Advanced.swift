@@ -36,7 +36,7 @@ class Advanced : UIViewController {
     
     var titleLabel: String = ""
     var exerciseTime: String = ""
-    var descripts: String = "This is advanced level workout are create for who has a good knowledge and routinely do workout."
+    var descripts: String = "This is advanced level. Created for who has a good knowledge and routinely do workout."
     
     override func viewDidLoad() {
         super.viewDidLoad()

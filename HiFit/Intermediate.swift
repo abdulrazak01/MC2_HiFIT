@@ -35,7 +35,7 @@ class Intermediate : UIViewController {
     
     var titleLabel: String = ""
     var exerciseTime: String = ""
-    var descripts: String = "This is intermediate level workout are create for who have basic knowladge to do workout."
+    var descripts: String = "This workout level is created for who have basic knowladge to do workout."
     
     override func viewDidLoad() {
         super.viewDidLoad()
