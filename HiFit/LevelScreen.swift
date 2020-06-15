@@ -25,13 +25,13 @@ class LevelScreen : UIViewController {
     @IBOutlet var buttonLevels: [UIButton]!
     
     var beginTitle: String = "Beginner"
-    var BeginTimes: String = "16:00 minutes minimum"
+    var BeginTimes: String = "16 minutes minimum"
     
     var IntermTitle: String = "Intermediate"
-    var IntermTimes: String = "18:00 minutes minimum"
+    var IntermTimes: String = "18 minutes minimum"
     
     var AdvnTitle: String = "Advanced"
-    var AdvnTimes: String = "21:00 minutes minimum"
+    var AdvnTimes: String = "21 minutes minimum"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +77,7 @@ class LevelScreen : UIViewController {
         }
         
         // TODO: Are we using this code? Line 80-82
+        // bran: yes, of course
         BeginLabel?.text = beginTitle
         IntermediateLabel?.text = IntermTitle
         AdvancedLabel?.text = AdvnTitle

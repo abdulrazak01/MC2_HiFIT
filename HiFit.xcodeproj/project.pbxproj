@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22964C242482A4530052301F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22964C232482A4530052301F /* Result.swift */; };
+		22D7493224936A6B00783F85 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7493124936A6B00783F85 /* SpeechService.swift */; };
 		3D910A1F246B856200B27D6D /* ArrayWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D910A1E246B856200B27D6D /* ArrayWork.swift */; };
 		3D910A21246B85A100B27D6D /* workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D910A20246B85A100B27D6D /* workout.swift */; };
 		75397687247D154400BA06D2 /* Intermediate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397686247D154400BA06D2 /* Intermediate.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		22964C232482A4530052301F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		22D7493124936A6B00783F85 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		3D910A1E246B856200B27D6D /* ArrayWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayWork.swift; sourceTree = "<group>"; };
 		3D910A20246B85A100B27D6D /* workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workout.swift; sourceTree = "<group>"; };
 		75397686247D154400BA06D2 /* Intermediate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intermediate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				7558FEBA2486BE3000EEAD5A /* Motivation.swift */,
+				22D7493124936A6B00783F85 /* SpeechService.swift */,
 				B6C7B6FA1EA8DB9F008B31A6 /* ViewController.swift */,
 				91D57C98246E9EA90047DF44 /* LevelScreen.swift */,
 				91ECEAF12474D2DA007535AD /* Beginner.swift */,
@@ -301,6 +304,7 @@
 				3D910A21246B85A100B27D6D /* workout.swift in Sources */,
 				7558FEBB2486BE3000EEAD5A /* Motivation.swift in Sources */,
 				910503B1248504F0001F2DE5 /* TableViewCell.swift in Sources */,
+				22D7493224936A6B00783F85 /* SpeechService.swift in Sources */,
 				B66EF1DC1EA9E75C00649824 /* CountdownTimer.swift in Sources */,
 				3D910A1F246B856200B27D6D /* ArrayWork.swift in Sources */,
 				7539768B247D1B7200BA06D2 /* Settings.swift in Sources */,

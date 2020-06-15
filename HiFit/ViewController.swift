@@ -38,8 +38,9 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     
     @IBOutlet weak var animationView: AnimationView!
     
-    @IBOutlet weak var redBtn: UIButton!
-    @IBOutlet weak var greenBtn: UIButton!
+// this outlet doesnt need anymore right? if yes please delete later
+//    @IBOutlet weak var redBtn: UIButton!
+//    @IBOutlet weak var greenBtn: UIButton!
     
     
     let allExercise = ArrayWork()   // Import list of exercises
@@ -86,6 +87,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         gradient.colors = [ startGradientColor.cgColor, endGradientColor.cgColor ]
         button.layer.insertSublayer(gradient, at: 1)
     }
+    
+    let speechService = SpeechService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,6 +186,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
+            speechService.resume()
         }
             
         else{
@@ -190,6 +194,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             progressBar.pause()
             countdownTimerDidStart = false
             startBtn.setTitle("Resume",for: .normal)
+            speechService.pause()
         }
         
         prompt()
@@ -204,7 +209,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
     }
     
-    let speechSynthesizer = AVSpeechSynthesizer()
+    
     public func prompt() {
         // MARK: - Exercise Prompts
         // Convert text prompt of type String into Array:[String]
@@ -237,7 +242,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             
             speechUtterance.rate = 0.45
             speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            self.speechSynthesizer.speak(speechUtterance)
+            self.speechService.speechSynthesizer.speak(speechUtterance)
             
             count += 1
             
@@ -305,8 +310,13 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
         
     }
+    func stopSpeaking() {
+        speechService.stop()
+        // works one the storyboard, but not work when the storyboard change to another one.
+    }
+    
     @IBAction func skipToResult(_ sender: AnyObject) {
-        speechSynthesizer.stopSpeaking(at: .immediate)  // FIXME: Not Working
+        stopSpeaking()
     }
     
     
@@ -319,8 +329,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
         startBtn.setTitle("Resume",for: .normal)
+        stopSpeaking()
     }
-    
     
 }
 
