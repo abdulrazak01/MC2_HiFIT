@@ -22,7 +22,7 @@ class Motivation: UIViewController {
         imgView.layer.cornerRadius = 20
     }
     
-    
+      
     
     
    @IBAction func shareButton(_ sender: Any) {
