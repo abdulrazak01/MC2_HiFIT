@@ -25,7 +25,7 @@ class Motivation: UIViewController {
         
     }
     
-    
+      
     
     
    @IBAction func shareButton(_ sender: Any) {
