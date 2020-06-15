@@ -53,6 +53,7 @@ class Intermediate : UIViewController {
         tableView.dataSource = self
         
         speak()
+        configTextStyle()
     }
     func speak() {
         speechService.say("\(titleLabel) level has \(exercisesList.count) exercises to do, \(descripts)")
