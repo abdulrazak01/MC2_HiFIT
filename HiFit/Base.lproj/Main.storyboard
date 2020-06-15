@@ -302,6 +302,7 @@
                         <outlet property="DescriptionTextInterm" destination="aUh-HY-AvG" id="IkD-I9-McS"/>
                         <outlet property="Times" destination="NlJ-dS-kRH" id="pux-WR-XkN"/>
                         <outlet property="TitleBegin" destination="2WS-wm-vQK" id="oAa-hE-0UK"/>
+                        <outlet property="labelExercise" destination="Tds-HD-qF2" id="xo5-zt-CFE"/>
                         <outlet property="tableView" destination="xDf-Z6-u8Z" id="bDO-jx-nyj"/>
                     </connections>
                 </viewController>
@@ -403,6 +404,7 @@
                         <outlet property="DescriptionTextBegin" destination="63e-br-Xxh" id="niN-MC-09e"/>
                         <outlet property="Times" destination="3iw-1c-89M" id="RgI-O4-q8E"/>
                         <outlet property="TitleBegin" destination="fOG-sp-Qyx" id="gUx-De-c2R"/>
+                        <outlet property="labelExercise" destination="gxC-Jc-Qay" id="lxw-Pm-TxI"/>
                         <outlet property="tableView" destination="w1i-WC-FNQ" id="YLM-CQ-xbb"/>
                     </connections>
                 </viewController>
@@ -913,6 +915,7 @@
                         <outlet property="DescriptionTextAdvn" destination="H5h-30-LDF" id="SZe-Pf-x7V"/>
                         <outlet property="Times" destination="7pP-UM-WD6" id="AiZ-Ci-PwR"/>
                         <outlet property="TitleBegin" destination="doL-Xa-tZJ" id="h9E-fk-Xoz"/>
+                        <outlet property="labelExercise" destination="yqz-9F-h47" id="z8Y-aA-lZZ"/>
                         <outlet property="tableView" destination="g19-eM-8OS" id="ZUb-Vo-dku"/>
                     </connections>
                 </viewController>
@@ -1414,7 +1417,7 @@ BELIEVES</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="X4l-Lz-CBO"/>
+        <segue reference="EAs-vh-Lac"/>
         <segue reference="ZJ8-NZ-R4m"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.027721267189999999" green="0.53595805169999999" blue="0.74120813610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

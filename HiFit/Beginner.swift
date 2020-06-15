@@ -16,6 +16,7 @@ class Beginner : UIViewController {
     @IBOutlet weak var Times: UILabel!
     @IBOutlet weak var DescriptionTextBegin: UILabel!
     @IBOutlet weak var ButtonStart: UIButton!
+    @IBOutlet weak var labelExercise: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     struct List {
@@ -52,14 +53,29 @@ class Beginner : UIViewController {
         tableView.dataSource = self
         
         speak()
+        configTextStyle()
     }
     
     func speak() {
         speechService.say("\(titleLabel) level has \(exercisesList.count) exercises to do, \(descripts)")
     }
-
+    
     @IBAction func buttonStart(_ sender: Any) {
         speechService.stop()
+    }
+    
+    func configTextStyle(){
+        TitleBegin.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        TitleBegin.adjustsFontForContentSizeCategory = true
+        
+        Times.font = UIFont.preferredFont(forTextStyle: .headline)
+        Times.adjustsFontForContentSizeCategory = true
+        
+        DescriptionTextBegin.font = UIFont.preferredFont(forTextStyle: .body)
+        DescriptionTextBegin.adjustsFontForContentSizeCategory = true
+        
+        labelExercise.font = UIFont.preferredFont(forTextStyle: .headline)
+        labelExercise.adjustsFontForContentSizeCategory = true
     }
     
 }

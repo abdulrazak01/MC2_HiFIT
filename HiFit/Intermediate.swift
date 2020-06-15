@@ -15,6 +15,7 @@ class Intermediate : UIViewController {
     @IBOutlet weak var Times: UILabel!
     @IBOutlet weak var DescriptionTextInterm: UILabel!
     @IBOutlet weak var ButtonStart: UIButton!
+    @IBOutlet weak var labelExercise: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     struct List {
@@ -59,7 +60,19 @@ class Intermediate : UIViewController {
     @IBAction func buttonStart(_ sender: Any) {
         speechService.stop()
     }
-    
+    func configTextStyle(){
+        TitleBegin.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        TitleBegin.adjustsFontForContentSizeCategory = true
+        
+        Times.font = UIFont.preferredFont(forTextStyle: .headline)
+        Times.adjustsFontForContentSizeCategory = true
+        
+        DescriptionTextInterm.font = UIFont.preferredFont(forTextStyle: .body)
+        DescriptionTextInterm.adjustsFontForContentSizeCategory = true
+        
+        labelExercise.font = UIFont.preferredFont(forTextStyle: .headline)
+        labelExercise.adjustsFontForContentSizeCategory = true
+    }
 }
 
 extension Intermediate: UITableViewDelegate, UITableViewDataSource {
