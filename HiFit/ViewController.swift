@@ -189,14 +189,14 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             startBtn.setTitle("Pause",for: .normal)
             
                 speechSynthesizer.continueSpeaking()
-          
+            animationView.play()
         
             
         } else{
             countdownTimer.pause()
             progressBar.pause()
             countdownTimerDidStart = false
-            
+            animationView.pause()
             startBtn.setTitle("Resume",for: .normal)
            
       if self.speechSynthesizer.isSpeaking{
@@ -261,10 +261,13 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                 
                 count += 1
                 
-                if count == filteredPromptArray.count-0 || self.skipToResult   {
+                if count == filteredPromptArray.count-0 || self.skipToResult {
                     t.invalidate()
+                }
+                if self.speechSynthesizer.isPaused{
                     
                 }
+               
                
             })
            
@@ -339,6 +342,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             animationView.loopMode = .loop
             animationView.animationSpeed = 1
             animationView.play()
+            
             
             // Countdown Timer
             
