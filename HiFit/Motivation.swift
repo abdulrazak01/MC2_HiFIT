@@ -26,6 +26,8 @@ class Motivation: UIViewController {
         self.navigationController?.navigationBar.layoutIfNeeded()
         
         imgView.layer.cornerRadius = 20
+        shareButton.layer.cornerRadius = 20
+        doneButton.layer.cornerRadius = 20
         
         shareButton.titleLabel?.adjustsFontForContentSizeCategory = true
         
