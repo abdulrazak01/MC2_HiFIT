@@ -235,88 +235,24 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             }
         }
         
-//        for prompt in filteredPromptArray {
-//            let xSeconds = 4.0
-//            DispatchQueue.main.asyncAfter(deadline: .now() + xSeconds) {
-//                self.promptWork.text = prompt
-//            }
-//        }
         var count = 0
-        
-        print("total: \(filteredPromptArray.count)")
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {timer in
-            if self.countdownTimerDidStart == false {
-                print("stop at: \(count)")
+            if count == filteredPromptArray.count-1 || !self.countdownTimerDidStart {
+                self.speechService.pause()
                 timer.invalidate()
-            }
-            if count == filteredPromptArray.count-1 {
-                timer.invalidate()
-            }
-
-            if self.countdownTimerDidStart {
+            } else {
                 self.promptWork.text = filteredPromptArray[count]
-                self.speechService.say(filteredPromptArray[count])
-                
+
+                // NOTE: replacing this with speechservice.say will cause it not to work if voice over accessibility turn off or the pressing pause doesn't immediately stop the text, seems there's a instruction delay
                 let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
                 speechUtterance.rate = 0.45
                 speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                 self.speechSynthesizer.speak(speechUtterance)
-            
             }
             count += 1
         })
-        /*
-        for i in 1...filteredPromptArray.count {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(i)) {
-//                print("hello \(i)")
-                print(filteredPromptArray[i-1])
-                self.promptWork.text = filteredPromptArray[i-1]
-            }
-        }
-        */
-//        self.mystring.text = "some word"
-
-
-        /*
-        // Display Exercise Prompt Individually
-        var count = 0
-        
-        // Initialise voice
-        
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
-            self.promptWork.text = filteredPromptArray[count]
-            
-            // Voice Prompt
-            // TODO: What to do if audio didn't finish instruction and exercise completed
-            
-            let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
-            DispatchQueue.main.async {
-                speechUtterance.rate = 0.45
-                speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                self.speechSynthesizer.speak(speechUtterance)
-            }
-            
-            
-            count += 1
-            
-            if count == filteredPromptArray.count-1 || self.skipToResult || self.speechSynthesizer.isPaused{
-                t.invalidate()
-                self.speechSynthesizer.stopSpeaking(at: .immediate)
-            }
-        })
- */
     }
-    /*
-    func start() {
-        if speechSynthesizer.isSpeaking {
-            speechSynthesizer.pauseSpeaking(at: .immediate)
-        }
-            
-        else {
-            sayPrompt()
-        }
-    }
-    */
+
     @IBAction func NumberExer(_ sender: Any) {
         
         
