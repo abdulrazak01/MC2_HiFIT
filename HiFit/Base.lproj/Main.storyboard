@@ -243,6 +243,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonStart:" destination="af1-dk-GPv" eventType="touchUpInside" id="fzw-3o-aEZ"/>
                                     <segue destination="HrL-Be-TaV" kind="show" id="X4l-Lz-CBO"/>
                                 </connections>
                             </button>
@@ -350,6 +351,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonStart:" destination="vyh-1Z-HBJ" eventType="touchUpInside" id="8Sa-u4-XyF"/>
                                     <segue destination="HrL-Be-TaV" kind="show" id="h1L-vW-UyI"/>
                                 </connections>
                             </button>
@@ -859,6 +861,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonStart:" destination="oXl-TF-dk8" eventType="touchUpInside" id="ZYg-Ai-QOr"/>
                                     <segue destination="HrL-Be-TaV" kind="show" id="EAs-vh-Lac"/>
                                 </connections>
                             </button>
@@ -1411,7 +1414,7 @@ BELIEVES</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h1L-vW-UyI"/>
+        <segue reference="EAs-vh-Lac"/>
         <segue reference="ZJ8-NZ-R4m"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.027721267189999999" green="0.53595805169999999" blue="0.74120813610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
