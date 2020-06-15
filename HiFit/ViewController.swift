@@ -13,7 +13,7 @@ import AVFoundation
 import AudioToolbox
 import Lottie
 
-class ViewController: UIViewController, CountdownTimerDelegate{
+class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesizerDelegate{
     
     // MARK: - Outlets
     
@@ -51,7 +51,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
         
     }
-    
+    weak var delegate: ViewController!
     var countdownTimerDidStart = false
     
     
@@ -65,8 +65,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
     
     
     var selectedSecs = 0
-    
-    
+    let speechSynthesizer = AVSpeechSynthesizer()
+    var skipToResult:Bool = false
     
     
     
@@ -95,7 +95,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         //startNow()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         stopBtn.isEnabled = true
-        
+        speechSynthesizer.delegate = self
         
         //workT.delegate = self
         //typeT.delegate = self
@@ -124,7 +124,10 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         return .lightContent
     }
     
+    class speech{
+        
     
+    }
     
     
     func countdownTime(time: (minutes: String, seconds: String)) {
@@ -175,7 +178,7 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         // Maybe flag to start timer, hasTimerStart = true it'll continue as normal, if hadTimerStart = false, it'll change to true and timer start automatically
         
         
-        
+       
         
         stopBtn.isEnabled = true
         
@@ -186,21 +189,88 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
-            speechService.resume()
+            start()
+            if speechSynthesizer.isPaused {
+                speechSynthesizer.continueSpeaking()
+            }
+            // speechService.resume() // Syabran changes
         }
             
-        else{
+            
+        } else{
             countdownTimer.pause()
             progressBar.pause()
             countdownTimerDidStart = false
+            
             startBtn.setTitle("Resume",for: .normal)
-            speechService.pause()
-        }
+      speechSynthesizer.pauseSpeaking(at: .immediate)
+       
+      //  if startBtn.titleLabel?.text as Any as! String == "Resume" {
+           
+         
         
-        prompt()
+       //}
+    }
+        
+            // speechService.pause()    // Syabran changes
+        }
+    
+    
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        
         
     }
+   
+   func start() {
+        if speechSynthesizer.isSpeaking {
+            speechSynthesizer.pauseSpeaking(at: .immediate)
+            
+        }
     
+        else {
+            let promptString = allExercise.list[exerciseNumber].prompt
+            let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
+            
+            var filteredPromptArray: [String] = []  // generate array consist of individual prompts
+            for item in promptArray {
+                if item != ""{
+                    filteredPromptArray.append(item)
+                }
+                if allExercise.list[exerciseNumber].typeExercise == "Rest" {
+                    filteredPromptArray.append("Rest for \(allExercise.list[exerciseNumber].goTime) seconds")
+                    filteredPromptArray.append(item)
+                }
+            }
+            
+            // Display Exercise Prompt Individually
+            var count = 0
+            
+            // Initialise voice
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
+                self.promptWork.text = filteredPromptArray[count]
+                
+                // Voice Prompt
+                // TODO: What to do if audio didn't finish instruction and exercise completed
+                
+                let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
+                DispatchQueue.main.async {
+                    speechUtterance.rate = 0.45
+                    speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                    self.speechSynthesizer.speak(speechUtterance)
+                }
+                
+                
+                count += 1
+                
+                if count == filteredPromptArray.count-1 || self.skipToResult || self.speechSynthesizer.isPaused{
+                    t.invalidate()
+                    self.speechSynthesizer.stopSpeaking(at: .immediate)
+                }
+            })
+           
+        }
+    }
     @IBAction func NumberExer(_ sender: Any) {
         
         
@@ -246,9 +316,8 @@ class ViewController: UIViewController, CountdownTimerDelegate{
             
             count += 1
             
-            if count == filteredPromptArray.count-1 {
+            if count == filteredPromptArray.count-1 || self.speechSynthesizer.isPaused || self.skipToResult {
                 t.invalidate()
-                
             }
         })
     }
@@ -311,12 +380,18 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         
     }
     func stopSpeaking() {
-        speechService.stop()
+        speechService.stop()    
         // works one the storyboard, but not work when the storyboard change to another one.
     }
     
     @IBAction func skipToResult(_ sender: AnyObject) {
-        stopSpeaking()
+        countdownTimer.stop()
+        progressBar.stop()
+        countdownTimerDidStart = false
+        speechSynthesizer.stopSpeaking(at: .immediate)  // FIXME: Not Working
+        skipToResult = true
+        
+        // stopSpeaking() // Syabran changes
     }
     
     
@@ -328,8 +403,9 @@ class ViewController: UIViewController, CountdownTimerDelegate{
         countdownTimerDidStart = false
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
+        speechSynthesizer.stopSpeaking(at: .immediate)
         startBtn.setTitle("Resume",for: .normal)
-        stopSpeaking()
+        // stopSpeaking() // Syabran changes
     }
     
 }

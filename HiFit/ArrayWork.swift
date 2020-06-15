@@ -9,7 +9,7 @@
 
 import Foundation
 
-let warmUpDuration:Int = 20    // Default: 30
+let warmUpDuration:Int = 30    // Default: 30
 let exerciseDuration:Int = 20
 let restDuration:Int = 15      // Beginner Default: 40
 let coolDownDuration:Int = 20  // Default: 30
