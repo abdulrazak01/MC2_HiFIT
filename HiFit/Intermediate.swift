@@ -54,7 +54,7 @@ class Intermediate : UIViewController {
         speak()
     }
     func speak() {
-        speechService.say("\(titleLabel) level has \(exercisesList.count) exercise to do with \(exerciseTime), \(descripts)")
+        speechService.say("\(titleLabel) level has \(exercisesList.count) exercises to do, \(descripts)")
     }
     @IBAction func buttonStart(_ sender: Any) {
         speechService.stop()
