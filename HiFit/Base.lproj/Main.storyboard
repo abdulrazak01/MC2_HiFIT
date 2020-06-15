@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sRZ-tN-LjJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sRZ-tN-LjJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -1271,6 +1271,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="regular"/>
                                 </state>
                                 <connections>
+                                    <action selector="shareBtn:" destination="UTA-g7-Llq" eventType="touchUpInside" id="DLL-rJ-9gF"/>
                                     <action selector="shareButton:" destination="UTA-g7-Llq" eventType="touchUpInside" id="kzR-1U-jmt"/>
                                 </connections>
                             </button>
@@ -1377,7 +1378,9 @@ BELIEVES</string>
                     </view>
                     <navigationItem key="navigationItem" id="XSK-oU-vyJ"/>
                     <connections>
+                        <outlet property="doneButton" destination="SJz-XE-KQU" id="dK8-8m-QSM"/>
                         <outlet property="imgView" destination="wWw-3r-i8P" id="2mx-v7-G3W"/>
+                        <outlet property="shareButton" destination="P4n-fa-Xtw" id="eDd-Gv-zSz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOv-zv-U2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

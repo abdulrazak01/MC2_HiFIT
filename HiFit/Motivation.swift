@@ -11,6 +11,10 @@ import AVFoundation
 
 class Motivation: UIViewController {
     
+    @IBOutlet weak var shareButton: UIButton!
+    
+    @IBOutlet weak var doneButton: UIButton!
+    
     @IBOutlet weak var imgView: UIImageView!
 
     
@@ -23,6 +27,9 @@ class Motivation: UIViewController {
         
         imgView.layer.cornerRadius = 20
         
+        shareButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        doneButton.titleLabel?.adjustsFontForContentSizeCategory = true
     }
     
       
@@ -33,6 +40,9 @@ class Motivation: UIViewController {
           activityVC.popoverPresentationController?.sourceView = self.view
           self.present(activityVC, animated: true, completion: nil)
           
+    imgView.layer.cornerRadius = 20
+    
+    
       }
     
 }
