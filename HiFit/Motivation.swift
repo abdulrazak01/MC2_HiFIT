@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class Motivation: UIViewController {
     
+    @IBOutlet weak var shareButton: UIButton!
+    
+    @IBOutlet weak var doneButton: UIButton!
+    
     @IBOutlet weak var imgView: UIImageView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,9 +26,15 @@ class Motivation: UIViewController {
         self.navigationController?.navigationBar.layoutIfNeeded()
         
         imgView.layer.cornerRadius = 20
+        shareButton.layer.cornerRadius = 20
+        doneButton.layer.cornerRadius = 20
+        
+        shareButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        doneButton.titleLabel?.adjustsFontForContentSizeCategory = true
     }
     
-    
+      
     
     
    @IBAction func shareButton(_ sender: Any) {
@@ -30,6 +42,9 @@ class Motivation: UIViewController {
           activityVC.popoverPresentationController?.sourceView = self.view
           self.present(activityVC, animated: true, completion: nil)
           
+    imgView.layer.cornerRadius = 20
+    
+    
       }
     
 }

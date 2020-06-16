@@ -15,6 +15,7 @@ class Advanced : UIViewController {
     @IBOutlet weak var Times: UILabel!
     @IBOutlet weak var DescriptionTextAdvn: UILabel!
     @IBOutlet weak var ButtonStart: UIButton!
+    @IBOutlet weak var labelExercise: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     struct List {
@@ -34,9 +35,10 @@ class Advanced : UIViewController {
         List(img: "Plank", name: "Plank")
     ]
     
+    let speechService = SpeechService()
     var titleLabel: String = ""
     var exerciseTime: String = ""
-    var descripts: String = "This is advanced level workout are create for who has a good knowledge and routinely do workout."
+    var descripts: String = "The advanced level workout are create for who has a good knowledge and routinely do workout."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +53,29 @@ class Advanced : UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        speak()
+        configTextStyle()
     }
-    
+    func speak() {
+        speechService.say("\(titleLabel) level has \(exercisesList.count) exercises to do, \(descripts)")
+    }
+    @IBAction func buttonStart(_ sender: Any) {
+        speechService.stop()
+    }
+    func configTextStyle(){
+        TitleBegin.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        TitleBegin.adjustsFontForContentSizeCategory = true
+        
+        Times.font = UIFont.preferredFont(forTextStyle: .headline)
+        Times.adjustsFontForContentSizeCategory = true
+        
+        DescriptionTextAdvn.font = UIFont.preferredFont(forTextStyle: .body)
+        DescriptionTextAdvn.adjustsFontForContentSizeCategory = true
+        
+        labelExercise.font = UIFont.preferredFont(forTextStyle: .headline)
+        labelExercise.adjustsFontForContentSizeCategory = true
+    }
 }
 extension Advanced: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

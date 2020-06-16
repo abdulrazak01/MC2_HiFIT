@@ -49,7 +49,7 @@ class Settings : UIViewController {
         if sender.isSelected {
             sender.layer.borderWidth = 0
             sender.tintColor = UIColor.clear // remove blue button background
-            sender.applyGradient(colors: [ #colorLiteral(red: 0.5098039216, green: 0.8431372549, blue: 0.5254901961, alpha: 1) , #colorLiteral(red: 0.3058823529, green: 0.6941176471, blue: 0.3215686275, alpha: 1) ], radius: buttonRadius)
+            sender.applyGradient(colors: [ #colorLiteral(red: 0.537254902, green: 0.7882352941, blue: 0.1921568627, alpha: 1) , #colorLiteral(red: 0.3294117647, green: 0.6117647059, blue: 0.07058823529, alpha: 1) ], radius: buttonRadius)
         } else {
             sender.layer.borderWidth = 1
             // only remove sublayer with the name "gradient"
