@@ -20,9 +20,10 @@ class workout {
     var Num: Int
     var Status: String = ""
     var animation: String
+    var sum : Int
     
     
-    init(image : String, WorkText: String, promptText: String, typeText: String, timer: String, goTimer: Int, Numb: Int, animationName : String, Statuss: String){
+    init(image : String, WorkText: String, promptText: String, typeText: String, timer: String, goTimer: Int, Numb: Int, animationName : String, Statuss: String , sums : Int){
         
         
         workoutImage = image
@@ -34,6 +35,7 @@ class workout {
         Num = Numb
         Status = Statuss
         animation = animationName
+        sum = sums
     }
     
 }
