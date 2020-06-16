@@ -46,7 +46,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     var exerciseNumber: Int = 0
     //var list = [workout]()
     
-   
+    
     @IBAction func shareButton(_ sender: Any) {
         
         
@@ -126,7 +126,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     
     class speech{
         
-    
+        
     }
     
     
@@ -178,7 +178,7 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         // Maybe flag to start timer, hasTimerStart = true it'll continue as normal, if hadTimerStart = false, it'll change to true and timer start automatically
         
         
-       
+        
         
         stopBtn.isEnabled = true
         
@@ -193,11 +193,11 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             
             
             
-                speechSynthesizer.continueSpeaking()
+            speechSynthesizer.continueSpeaking()
             
             
             animationView.play()
-        
+            
             
         } else{
             countdownTimer.pause()
@@ -205,106 +205,106 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             countdownTimerDidStart = false
             animationView.pause()
             startBtn.setTitle("Resume",for: .normal)
-          
-               speechSynthesizer.pauseSpeaking(at: .immediate)
-            speechSynthesizer.pauseSpeaking(at: .word)
-        
-      if self.speechSynthesizer.isSpeaking{
-                    speechSynthesizer.pauseSpeaking(at: .immediate)
-                }
             
-      //  if startBtn.titleLabel?.text as Any as! String == "Resume" {
-           
-         
-        
-       //}
-    }
-        
+            speechSynthesizer.pauseSpeaking(at: .immediate)
+            speechSynthesizer.pauseSpeaking(at: .word)
+            
+            if self.speechSynthesizer.isSpeaking{
+                speechSynthesizer.pauseSpeaking(at: .immediate)
+            }
+            
+            //  if startBtn.titleLabel?.text as Any as! String == "Resume" {
+            
+            
+            
+            //}
         }
+        
+    }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
         //start()
-          promptWork.text = utterance.speechString
+        promptWork.text = utterance.speechString
         
         
-       }
+    }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-       self.speechSynthesizer.pauseSpeaking(at: .immediate)
+        self.speechSynthesizer.pauseSpeaking(at: .immediate)
         self.speechSynthesizer.pauseSpeaking(at: .word)
         
         
     }
-   
-   func start() {
+    
+    func start() {
         if speechSynthesizer.isSpeaking {
             speechSynthesizer.pauseSpeaking(at: .immediate)
-             speechSynthesizer.pauseSpeaking(at: .word)
+            speechSynthesizer.pauseSpeaking(at: .word)
             
             
         }
-    
+            
         else {
-          
-           let promptString = allExercise.list[exerciseNumber].prompt
-           let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
-           
-           var filteredPromptArray: [String] = []  // generate array consist of individual prompts
-           for item in promptArray {
-               if item != ""{
-                   filteredPromptArray.append(item)
-               }
-               if allExercise.list[exerciseNumber].typeExercise == "Rest" {
-                   filteredPromptArray.append("Rest for \(allExercise.list[exerciseNumber].goTime) seconds")
-                   filteredPromptArray.append(item)
-               }
-           }
-           
-           // Display Exercise Prompt Individually
+            
+            let promptString = allExercise.list[exerciseNumber].prompt
+            let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
+            
+            var filteredPromptArray: [String] = []  // generate array consist of individual prompts
+            for item in promptArray {
+                if item != ""{
+                    filteredPromptArray.append(item)
+                }
+                if allExercise.list[exerciseNumber].typeExercise == "Rest" {
+                    filteredPromptArray.append("Rest for \(allExercise.list[exerciseNumber].goTime) seconds")
+                    filteredPromptArray.append(item)
+                }
+            }
+            
+            // Display Exercise Prompt Individually
             
             
-           var count = 0
-           
-           // Initialise voice
+            var count = 0
+            
+            // Initialise voice
             Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
-               self.promptWork.text = filteredPromptArray[count]
-               
-               // Voice Prompt
-               // TODO: What to do if audio didn't finish instruction and exercise completed
+                self.promptWork.text = filteredPromptArray[count]
                 
-               let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
-            
-               
-                 
-                   speechUtterance.rate = 0.45
-                   speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                   self.speechSynthesizer.speak(speechUtterance)
-               
-               
-              
-              count += 1
-            if  count == filteredPromptArray.count-0 || self.skipToResult || self.speechSynthesizer.isPaused  {
-                                          t.invalidate()
+                // Voice Prompt
+                // TODO: What to do if audio didn't finish instruction and exercise completed
                 
-                if self.speechSynthesizer.isPaused {
-                count == count
-                                            Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
-                                            let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
-                                            
-                                                self.speechSynthesizer.speak(speechUtterance)
-                                            count += 1
-                                                
-                                            if  self.skipToResult  || self.speechSynthesizer.isPaused {
-                                                t.invalidate()}
-                    })
-
-                                    }
-             }
-            
-          
-              
-         
-           })
+                let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
+                
+                
+                
+                speechUtterance.rate = 0.45
+                speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                self.speechSynthesizer.speak(speechUtterance)
+                
+                
+                
+                count += 1
+                if  count == filteredPromptArray.count-0 || self.skipToResult || self.speechSynthesizer.isPaused  {
+                    t.invalidate()
+                    
+                    if self.speechSynthesizer.isPaused {
+//                        count == count
+                        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
+                            let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
+                            
+                            self.speechSynthesizer.speak(speechUtterance)
+                            count += 1
+                            
+                            if  self.skipToResult  || self.speechSynthesizer.isPaused {
+                                t.invalidate()}
+                        })
+                        
+                    }
+                }
+                
+                
+                
+                
+            })
         }
     }
     @IBAction func NumberExer(_ sender: Any) {
@@ -314,50 +314,51 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         updateExercise()
         
     }
-    
-    public func prompt() {
-        // MARK: - Exercise Prompts
-        // Convert text prompt of type String into Array:[String]
-        
-        let promptString = allExercise.list[exerciseNumber].prompt
-        let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
-        
-        var filteredPromptArray: [String] = []  // generate array consist of individual prompts
-        for item in promptArray {
-            if item != ""{
-                filteredPromptArray.append(item)
-            }
-            if allExercise.list[exerciseNumber].typeExercise == "Rest" {
-                filteredPromptArray.append("Rest for \(allExercise.list[exerciseNumber].goTime) seconds")
-                filteredPromptArray.append(item)
-            }
-        }
-        
-        // Display Exercise Prompt Individually
-        var count = 0
-        
-        // Initialise voice
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
-            self.promptWork.text = filteredPromptArray[count]
-            
-            // Voice Prompt
-            // TODO: What to do if audio didn't finish instruction and exercise completed
-            
-            let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
-            
-            speechUtterance.rate = 0.45
-            speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            self.speechSynthesizer.speak(speechUtterance)
-            
-            count += 1
-            
-            if count == filteredPromptArray.count-1 || self.skipToResult {
-                t.invalidate()
-            }
-            
-           
-        })
-    }
+
+//    function prompt not used
+//    public func prompt() {
+//        // MARK: - Exercise Prompts
+//        // Convert text prompt of type String into Array:[String]
+//
+//        let promptString = allExercise.list[exerciseNumber].prompt
+//        let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
+//
+//        var filteredPromptArray: [String] = []  // generate array consist of individual prompts
+//        for item in promptArray {
+//            if item != ""{
+//                filteredPromptArray.append(item)
+//            }
+//            if allExercise.list[exerciseNumber].typeExercise == "Rest" {
+//                filteredPromptArray.append("Rest for \(allExercise.list[exerciseNumber].goTime) seconds")
+//                filteredPromptArray.append(item)
+//            }
+//        }
+//
+//        // Display Exercise Prompt Individually
+//        var count = 0
+//
+//        // Initialise voice
+//        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
+//            self.promptWork.text = filteredPromptArray[count]
+//
+//            // Voice Prompt
+//            // TODO: What to do if audio didn't finish instruction and exercise completed
+//
+//            let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
+//
+//            speechUtterance.rate = 0.45
+//            speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+//            self.speechSynthesizer.speak(speechUtterance)
+//
+//            count += 1
+//
+//            if count == filteredPromptArray.count-1 || self.skipToResult {
+//                t.invalidate()
+//            }
+//
+//
+//        })
+//    }
     
     func updateExercise(){
         
@@ -388,9 +389,9 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             
             //workT.text = allExercise.list[exerciseNumber].exercise
             //typeT.text = allExercise.list[exerciseNumber].typeExercise
-             // start()
+            // start()
             startTimer(startBtn)
-           
+            
             start()
             updateUI()
             
@@ -422,9 +423,9 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         progressBar.stop()
         countdownTimerDidStart = false
         // FIXME: Not Working
-      
-         
-               self.speechSynthesizer.pauseSpeaking(at: .immediate)
+        
+        
+        self.speechSynthesizer.pauseSpeaking(at: .immediate)
         
         skipToResult = true
         
@@ -443,10 +444,10 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         
         self.speechSynthesizer.pauseSpeaking(at: .immediate)
         // FIXME: Not Working
-    
-            
-    
-
+        
+        
+        
+        
     }
     
     
