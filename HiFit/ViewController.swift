@@ -160,46 +160,57 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         self.speechSynthesizer.pauseSpeaking(at: .word)
     }
     
-    
-
     //FIXME: Refactor Start
+    fileprivate func sayPrompt() {
+        // Display Exercise Prompt Individually
+        var count = 0
+        
+        // Initialise voice
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
+            /* Pseudocode
+             - Only update/display if speaking
+             - count increase only increment if finish speaking the sentence
+             - else count retain current number (probably need another variable to store last count before
+             self.skipToResult, self.speechSynthesizer.isPaused is pressed??)
+             - if counter finish only invalidate
+             */
+            
+            
+            self.promptWork.text = self.promptArray[count]
+            
+            
+            // Voice Prompt
+            let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: self.promptArray[count])
+            speechUtterance.rate = 0.45
+            speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            
+            // FIXME: Duplicate Code
+            self.speechSynthesizer.speak(speechUtterance)
+            count += 1
+            if  count == self.promptArray.count-0 || self.skipToResult || self.speechSynthesizer.isPaused  {
+                t.invalidate()
+                
+                
+                if self.speechSynthesizer.isPaused {
+                    Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
+                        let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: self.promptArray[count])
+                        
+                        // FIXME: Duplicate code
+                        self.speechSynthesizer.speak(speechUtterance)
+                        count += 1
+                        if count == self.promptArray.count-0  || self.skipToResult  || self.speechSynthesizer.isPaused {
+                            t.invalidate()}
+                    })
+                }
+            }
+        })
+    }
+    
     func start() {
         if speechSynthesizer.isSpeaking {
             speechSynthesizer.pauseSpeaking(at: .word)
         } else {
-            // Display Exercise Prompt Individually
-            var count = 0
-            
-            // Initialise voice
-            Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
-                self.promptWork.text = self.promptArray[count]
-
-                
-                // Voice Prompt
-                let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: self.promptArray[count])
-                speechUtterance.rate = 0.45
-                speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                
-                // FIXME: Duplicate Code
-                self.speechSynthesizer.speak(speechUtterance)
-                count += 1
-                if  count == self.promptArray.count-0 || self.skipToResult || self.speechSynthesizer.isPaused  {
-                    t.invalidate()
-                    
-                    
-                    if self.speechSynthesizer.isPaused {
-                        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
-                            let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: self.promptArray[count])
-                            
-                            // FIXME: Duplicate code
-                            self.speechSynthesizer.speak(speechUtterance)
-                            count += 1
-                            if count == self.promptArray.count-0  || self.skipToResult  || self.speechSynthesizer.isPaused {
-                                t.invalidate()}
-                        })
-                    }
-                }
-            })
+            sayPrompt()
         }
     }
     
