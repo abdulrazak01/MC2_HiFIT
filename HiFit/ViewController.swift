@@ -57,7 +57,6 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        stopBtn.isEnabled = true
         speechSynthesizer.delegate = self
         updateExercise()
         updateUI()
@@ -221,16 +220,11 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     func updateUI(){
         if typeWork.text == "Warm Up" {
             self.NumExercise.text = "1 Of 1"
-        }
-        else if typeWork.text == "Exercise" {
-            
+        } else if typeWork.text == "Exercise" {
             NumExercise.text = "\(allExercise.list[exerciseNumber].Num + 1) Of \(7)"
-        }
-        else if typeWork.text == "Rest" {
-            
+        } else if typeWork.text == "Rest" {
             NumExercise.text = "\(allExercise.list[exerciseNumber].Num + 1) Of \(7)"
-        }
-        else if typeWork.text == "Cool Down" {
+        } else if typeWork.text == "Cool Down" {
             self.NumExercise.text = "1 Of 1"
         }
     }
