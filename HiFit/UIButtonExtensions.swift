@@ -43,5 +43,11 @@ extension UIButton
             layer.insertSublayer(gradientLayer, at: 0)
         }
     }
+    
+    func dynamicFont(textStyles: UIFont, weight: UIFont.Weight, dynamicType: Bool ) {
+        let style = textStyles.with(weight: weight)
+        self.titleLabel?.font = UIFontMetrics.default.scaledFont(for: style)
+        self.titleLabel?.adjustsFontForContentSizeCategory = dynamicType
+    }
 }
 
