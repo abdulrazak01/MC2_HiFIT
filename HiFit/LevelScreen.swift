@@ -12,7 +12,6 @@ import UIKit
 class LevelScreen : UIViewController {
     
     
-    @IBOutlet weak var hello: UILabel!
     @IBOutlet weak var levelBeginner: UIButton!
     @IBOutlet weak var levelIntermediate: UIButton!
     @IBOutlet weak var levelAdvanced: UIButton!
@@ -41,7 +40,6 @@ class LevelScreen : UIViewController {
         
         self.navigationController?.navigationBar.topItem?.title = "Workout Levels"
         
-        hello.dynamicFont(textStyles: .largeTitle, weight: .bold, dynamicType: true)
         
         /*
          Thanks the following resource for helping rounded edge drop shadow and Sketch to XCode shadow

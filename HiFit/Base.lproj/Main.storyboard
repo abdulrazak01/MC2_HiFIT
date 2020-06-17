@@ -196,7 +196,6 @@
                         <outlet property="ExercisesBeginnerLabel" destination="4xA-2W-Cag" id="LYL-HI-dhF"/>
                         <outlet property="ExercisesIntermLabel" destination="tmH-I7-oK2" id="08T-El-FYh"/>
                         <outlet property="IntermediateLabel" destination="eKk-dX-IX7" id="zZa-Di-sZp"/>
-                        <outlet property="hello" destination="ext-Xg-hC0" id="VEH-hk-Oqe"/>
                         <outlet property="levelAdvanced" destination="6vc-y7-Dg0" id="K19-Ic-095"/>
                         <outlet property="levelBeginner" destination="m4p-xr-zyQ" id="RbA-id-9vq"/>
                         <outlet property="levelIntermediate" destination="f3A-ho-7Cv" id="TZj-UP-XtY"/>
