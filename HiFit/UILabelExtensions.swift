@@ -7,6 +7,7 @@
 //
 import UIKit
 
+// Dependencies: UIFontExtensions.swift
 extension UILabel {
     func dynamicFont(textStyles: UIFont, weight: UIFont.Weight, dynamicType: Bool ) {
         let style = textStyles.with(weight: weight)
