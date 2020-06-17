@@ -52,26 +52,6 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
     var speechIsStopped:Bool = false
     
     
-    fileprivate func buttonStyle(button: UIButton, borderColor: CGColor, startGradientColor: UIColor, endGradientColor: UIColor) {
-        button.layer.backgroundColor = UIColor.systemBackground.cgColor // resets Storyboard Button Color to SystemBackgroundColor
-        
-        let border = CALayer()
-        border.frame = button.layer.bounds
-        border.cornerRadius = 42
-        border.backgroundColor = UIColor.systemBackground.cgColor
-        border.borderColor = borderColor
-        border.borderWidth = 1
-        button.layer.insertSublayer(border, at: 0)
-        
-        let gradient = CAGradientLayer()
-        gradient.cornerRadius = 39
-        gradient.frame = CGRect(x: 3, y: 3, width: 78, height: 78)
-        gradient.colors = [ startGradientColor.cgColor, endGradientColor.cgColor ]
-        button.layer.insertSublayer(gradient, at: 1)
-    }
-    
-    
-    
     let speechService = SpeechService()
     
     override func viewDidLoad() {
@@ -89,11 +69,11 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         stopBtn.roundButtonOutline(borderColor: #colorLiteral(red: 0.6784313725, green: 0.01568627451, blue: 0.07058823529, alpha: 1))
         stopBtn.roundButtonGradient(startGradientColor: #colorLiteral(red: 0.8549019608, green: 0.1882352941, blue: 0.3058823529, alpha: 1), endGradientColor: #colorLiteral(red: 0.7764705882, green: 0.1098039216, blue: 0.2, alpha: 1))
         stopBtn.dynamicFont(textStyles: .subhead, weight: .bold, dynamicType: true)
-
+        
         startBtn.roundButtonOutline(borderColor: #colorLiteral(red: 0.3320430013, green: 0.7472464243, blue: 0.07450980392, alpha: 1))
         startBtn.roundButtonGradient(startGradientColor: #colorLiteral(red: 0.3320430013, green: 0.7472464243, blue: 0.07450980392, alpha: 1), endGradientColor: #colorLiteral(red: 0.3294117647, green: 0.6117647059, blue: 0.07058823529, alpha: 1))
         startBtn.dynamicFont(textStyles: .subhead, weight: .bold, dynamicType: true)
-
+        
         skip.dynamicFont(textStyles: .subhead, weight: .regular, dynamicType: true)
         
         titleWork.dynamicFont(textStyles: .largeTitle, weight: .bold, dynamicType: true)
@@ -134,62 +114,32 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("Pause",for: .normal)
-            
-            
-            
             speechSynthesizer.continueSpeaking()
-            
-            
             animationView.play()
-            
-            
-        } else{
+        } else {
             countdownTimer.pause()
             progressBar.pause()
             countdownTimerDidStart = false
             animationView.pause()
             startBtn.setTitle("Resume",for: .normal)
-            
-            speechSynthesizer.pauseSpeaking(at: .immediate)
             speechSynthesizer.pauseSpeaking(at: .word)
             
             if self.speechSynthesizer.isSpeaking{
                 speechSynthesizer.pauseSpeaking(at: .immediate)
             }
-            
-            //  if startBtn.titleLabel?.text as Any as! String == "Resume" {
-            
-            
-            
-            //}
         }
-        
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
-        //start()
-        promptWork.text = utterance.speechString
-        
-        
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        self.speechSynthesizer.pauseSpeaking(at: .immediate)
+        //        promptWork.text = utterance.speechString
+        
         self.speechSynthesizer.pauseSpeaking(at: .word)
-        
-        
     }
     
     func start() {
         if speechSynthesizer.isSpeaking {
-            speechSynthesizer.pauseSpeaking(at: .immediate)
             speechSynthesizer.pauseSpeaking(at: .word)
-            
-            
-        }
-            
-        else {
-            
+        } else {
             let promptString = allExercise.list[exerciseNumber].prompt
             let promptArray = promptString.split(usingRegex: #"\d+\.\s+|\n"#)   // removes numbered list and whitespace
             
@@ -205,8 +155,6 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             }
             
             // Display Exercise Prompt Individually
-            
-            
             var count = 0
             
             // Initialise voice
@@ -214,24 +162,16 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                 self.promptWork.text = filteredPromptArray[count]
                 
                 // Voice Prompt
-                // TODO: What to do if audio didn't finish instruction and exercise completed
-                
                 let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
-                
-                
-                
                 speechUtterance.rate = 0.45
                 speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                 self.speechSynthesizer.speak(speechUtterance)
-                
-                
                 
                 count += 1
                 if  count == filteredPromptArray.count-0 || self.skipToResult || self.speechSynthesizer.isPaused  {
                     t.invalidate()
                     
                     if self.speechSynthesizer.isPaused {
-//                        count == count
                         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {t in
                             let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: filteredPromptArray[count])
                             
@@ -241,13 +181,8 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
                             if count == filteredPromptArray.count-0  || self.skipToResult  || self.speechSynthesizer.isPaused {
                                 t.invalidate()}
                         })
-                        
                     }
                 }
-                
-                
-                
-                
             })
         }
     }
@@ -273,24 +208,12 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
             animationView.animationSpeed = 1
             animationView.play()
             
-            
             // Countdown Timer
-            
             countdownTimer.setTimer(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
             progressBar.setProgressBar(minutes: 0, seconds: allExercise.list[exerciseNumber].goTime)
-            //self.list[exerciseNumber].self.Status = "On"
             
-            
-            
-            //workT.text = allExercise.list[exerciseNumber].exercise
-            //typeT.text = allExercise.list[exerciseNumber].typeExercise
-            // start()
             startTimer(startBtn)
-            
             start()
-            
-            // startTimer(startBtn)
-            
             updateUI()
         }
     }
@@ -316,12 +239,9 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         countdownTimer.stop()
         progressBar.stop()
         countdownTimerDidStart = false
-        // FIXME: Not Working
-        
         
         self.speechSynthesizer.pauseSpeaking(at: .immediate)
         
-        // speechSynthesizer.stopSpeaking(at: .immediate)
         skipToResult = true
     }
     
@@ -333,17 +253,10 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         countdownTimerDidStart = false
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
-        // startBtn.setTitle("START",for: .normal)
         
         self.speechSynthesizer.pauseSpeaking(at: .immediate)
-        // FIXME: Not Working
         
-        
-        
-        
-        // speechSynthesizer.stopSpeaking(at: .immediate)
         startBtn.setTitle("Resume",for: .normal)
-        // speechService.stop()
     }
 }
 
