@@ -88,6 +88,8 @@ class ViewController: UIViewController, CountdownTimerDelegate,AVSpeechSynthesiz
         stopBtn.titleLabel?.adjustsFontForContentSizeCategory = true
         startBtn.titleLabel?.adjustsFontForContentSizeCategory = true
         skip.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        titleWork.dynamicFont(textStyles: .largeTitle, weight: .bold, dynamicType: true)
     }
     
     
