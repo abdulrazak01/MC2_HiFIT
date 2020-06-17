@@ -76,12 +76,12 @@
                                     <segue destination="oXl-TF-dk8" kind="show" identifier="AdvancedSegue" id="1Yh-HJ-B0V"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ext-Xg-hC0">
-                                <rect key="frame" x="37" y="133" width="93" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ext-Xg-hC0">
+                                <rect key="frame" x="37" y="133" width="84.5" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="tzg-ou-LIn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" red="0.16078431372549018" green="0.16470588235294117" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -196,6 +196,7 @@
                         <outlet property="ExercisesBeginnerLabel" destination="4xA-2W-Cag" id="LYL-HI-dhF"/>
                         <outlet property="ExercisesIntermLabel" destination="tmH-I7-oK2" id="08T-El-FYh"/>
                         <outlet property="IntermediateLabel" destination="eKk-dX-IX7" id="zZa-Di-sZp"/>
+                        <outlet property="hello" destination="ext-Xg-hC0" id="VEH-hk-Oqe"/>
                         <outlet property="levelAdvanced" destination="6vc-y7-Dg0" id="K19-Ic-095"/>
                         <outlet property="levelBeginner" destination="m4p-xr-zyQ" id="RbA-id-9vq"/>
                         <outlet property="levelIntermediate" destination="f3A-ho-7Cv" id="TZj-UP-XtY"/>
@@ -1417,7 +1418,8 @@ BELIEVES</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="X4l-Lz-CBO"/>
+        <segue reference="wSa-mF-mc2"/>
+        <segue reference="h1L-vW-UyI"/>
         <segue reference="ZJ8-NZ-R4m"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.027721267189999999" green="0.53595805169999999" blue="0.74120813610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

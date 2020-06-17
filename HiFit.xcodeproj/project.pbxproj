@@ -14,6 +14,10 @@
 		75397687247D154400BA06D2 /* Intermediate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397686247D154400BA06D2 /* Intermediate.swift */; };
 		75397689247D156100BA06D2 /* Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75397688247D156100BA06D2 /* Advanced.swift */; };
 		7539768B247D1B7200BA06D2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539768A247D1B7200BA06D2 /* Settings.swift */; };
+		754AAD6F2499B0D5000902C2 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754AAD6E2499B0D4000902C2 /* UIViewExtensions.swift */; };
+		754AAD712499B1A9000902C2 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754AAD702499B1A9000902C2 /* UIButtonExtensions.swift */; };
+		754AAD732499C0B5000902C2 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754AAD722499C0B5000902C2 /* UIFontExtensions.swift */; };
+		754AAD772499CC19000902C2 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754AAD762499CC19000902C2 /* UILabelExtensions.swift */; };
 		7558FEBB2486BE3000EEAD5A /* Motivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558FEBA2486BE3000EEAD5A /* Motivation.swift */; };
 		7576A609248508CA0027994B /* Rest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7576A608248508CA0027994B /* Rest.json */; };
 		7587129F2482DBE500D27FF9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7587129E2482DBE500D27FF9 /* Lottie */; };
@@ -48,6 +52,10 @@
 		75397686247D154400BA06D2 /* Intermediate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intermediate.swift; sourceTree = "<group>"; };
 		75397688247D156100BA06D2 /* Advanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advanced.swift; sourceTree = "<group>"; };
 		7539768A247D1B7200BA06D2 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		754AAD6E2499B0D4000902C2 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		754AAD702499B1A9000902C2 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		754AAD722499C0B5000902C2 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
+		754AAD762499CC19000902C2 /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		7558FEBA2486BE3000EEAD5A /* Motivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.swift; sourceTree = "<group>"; };
 		7576A608248508CA0027994B /* Rest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Rest.json; sourceTree = "<group>"; };
 		758712A12482DC7900D27FF9 /* Jumping Jack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Jumping Jack.json"; sourceTree = "<group>"; };
@@ -173,6 +181,10 @@
 			children = (
 				B66EF1D81EA9E6E300649824 /* CustomColors.swift */,
 				910503B0248504F0001F2DE5 /* TableViewCell.swift */,
+				754AAD6E2499B0D4000902C2 /* UIViewExtensions.swift */,
+				754AAD702499B1A9000902C2 /* UIButtonExtensions.swift */,
+				754AAD722499C0B5000902C2 /* UIFontExtensions.swift */,
+				754AAD762499CC19000902C2 /* UILabelExtensions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -309,10 +321,14 @@
 				3D910A1F246B856200B27D6D /* ArrayWork.swift in Sources */,
 				7539768B247D1B7200BA06D2 /* Settings.swift in Sources */,
 				91D57C99246E9EA90047DF44 /* LevelScreen.swift in Sources */,
+				754AAD772499CC19000902C2 /* UILabelExtensions.swift in Sources */,
 				B66EF1DE1EA9E76500649824 /* ProgressBar.swift in Sources */,
 				75397689247D156100BA06D2 /* Advanced.swift in Sources */,
 				B66EF1D91EA9E6E300649824 /* CustomColors.swift in Sources */,
+				754AAD712499B1A9000902C2 /* UIButtonExtensions.swift in Sources */,
+				754AAD732499C0B5000902C2 /* UIFontExtensions.swift in Sources */,
 				B6C7B6F91EA8DB9F008B31A6 /* AppDelegate.swift in Sources */,
+				754AAD6F2499B0D5000902C2 /* UIViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
