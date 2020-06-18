@@ -17,6 +17,17 @@ class Motivation: UIViewController {
     
     @IBOutlet weak var imgView: UIImageView!
 
+    @IBOutlet weak var doneText: UILabel!
+    
+    @IBOutlet weak var motivationText: UILabel!
+    
+    @IBOutlet weak var workoutText: UILabel!
+    
+    @IBOutlet weak var circuitText: UILabel!
+    
+    @IBOutlet weak var minutesText: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +43,18 @@ class Motivation: UIViewController {
         shareButton.titleLabel?.adjustsFontForContentSizeCategory = true
         
         doneButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        doneText.dynamicFont(textStyles: .title2, weight: .regular, dynamicType: true)
+        
+        motivationText.dynamicFont(textStyles: .largeTitle, weight: .regular, dynamicType: true)
+        
+        workoutText.dynamicFont(textStyles: .title2, weight: .regular, dynamicType: true)
+        
+        circuitText.dynamicFont(textStyles: .title2, weight: .regular, dynamicType: true)
+        
+        minutesText.dynamicFont(textStyles: .title2, weight: .regular, dynamicType: true)
+        
+        
     }
     
       
