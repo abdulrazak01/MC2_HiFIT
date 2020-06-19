@@ -46,15 +46,35 @@ class Motivation: UIViewController {
         
         doneText.dynamicFont(textStyles: .title2, weight: .regular, dynamicType: true)
         
-        motivationText.dynamicFont(textStyles: .largeTitle, weight: .regular, dynamicType: true)
+        motivationText.dynamicFont(textStyles: .largeTitle, weight: .bold, dynamicType: true)
         
-        workoutText.dynamicFont(textStyles: .title2, weight: .regular, dynamicType: true)
+        workoutText.dynamicFont(textStyles: .title2, weight: .bold, dynamicType: true)
         
-        circuitText.dynamicFont(textStyles: .title2, weight: .regular, dynamicType: true)
+        circuitText.dynamicFont(textStyles: .title2, weight: .bold, dynamicType: true)
         
-        minutesText.dynamicFont(textStyles: .title2, weight: .regular, dynamicType: true)
+        minutesText.dynamicFont(textStyles: .title2, weight: .bold, dynamicType: true)
         
+        //square.and.arrow.up
+//        let timeSymbolAttachment = NSTextAttachment()
+//                   timeSymbolAttachment.image = UIImage(systemName: "timer",
+//                                                        withConfiguration: UIImage.SymbolConfiguration(weight: .bold))?.withTintColor(color)
+//                   let label = NSMutableAttributedString(string: "")
+//                   label.append(NSAttributedString(attachment: timeSymbolAttachment))
+//                   label.append(NSAttributedString(string: " \(labelText)"))
         
+        let attachmentImage = NSTextAttachment()
+        attachmentImage.image = UIImage(systemName: "square.and.arrow.up", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))?.withTintColor(.systemBackground)
+        
+        let attachmentString = NSAttributedString(attachment: attachmentImage)
+        let label = NSMutableAttributedString(string: "")
+        label.append(attachmentString)
+        let text = NSMutableAttributedString(string: " Share")
+        label.append(text)
+
+        shareButton.setAttributedTitle(label, for: .normal)
+        shareButton.dynamicFont(textStyles: .title2, weight: .bold, dynamicType: true)
+        
+        doneButton.dynamicFont(textStyles: .title2, weight: .bold, dynamicType: true)
     }
     
       

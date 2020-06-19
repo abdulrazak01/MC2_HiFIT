@@ -12,6 +12,7 @@ import UIKit
 class LevelScreen : UIViewController {
     
     
+    @IBOutlet weak var hello: UILabel!
     @IBOutlet weak var levelBeginner: UIButton!
     @IBOutlet weak var levelIntermediate: UIButton!
     @IBOutlet weak var levelAdvanced: UIButton!
@@ -39,7 +40,7 @@ class LevelScreen : UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.topItem?.title = "Workout Levels"
-        
+        hello.dynamicFont(textStyles: .largeTitle, weight: .bold, dynamicType: true)
         
         /*
          Thanks the following resource for helping rounded edge drop shadow and Sketch to XCode shadow
@@ -84,6 +85,9 @@ class LevelScreen : UIViewController {
         BeginLabel?.text = beginTitle
         IntermediateLabel?.text = IntermTitle
         AdvancedLabel?.text = AdvnTitle
+        BeginLabel.dynamicFont(textStyles: .title2, weight: .bold, dynamicType: true)
+        IntermediateLabel.dynamicFont(textStyles: .title2, weight: .bold, dynamicType: true)
+        AdvancedLabel.dynamicFont(textStyles: .title2, weight: .bold, dynamicType: true)
         
         // Workout Levels Descriptions
         func levelText(labelText: String, color: UIColor) -> NSAttributedString {
@@ -100,6 +104,9 @@ class LevelScreen : UIViewController {
         ExercisesBeginnerLabel?.attributedText = levelText(labelText: BeginTimes, color: #colorLiteral(red: 0.1411764706, green: 0.6156862745, blue: 0.831372549, alpha: 1))
         ExercisesIntermLabel?.attributedText = levelText(labelText: IntermTimes, color: #colorLiteral(red: 0.3176470588, green: 0.7019607843, blue: 0.3333333333, alpha: 1))
         ExercisesAdvnLabel?.attributedText = levelText(labelText: AdvnTimes, color: #colorLiteral(red: 0.9450980392, green: 0.2392156863, blue: 0.2823529412, alpha: 1))
+        ExercisesBeginnerLabel.dynamicFont(textStyles: .body, weight: .regular, dynamicType: true)
+        ExercisesIntermLabel.dynamicFont(textStyles: .body, weight: .regular, dynamicType: true)
+        ExercisesAdvnLabel.dynamicFont(textStyles: .body, weight: .regular, dynamicType: true)
         
         speak()
     }

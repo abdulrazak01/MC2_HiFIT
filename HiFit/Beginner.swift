@@ -46,8 +46,12 @@ class Beginner : UIViewController {
         Times?.text = exerciseTime
         DescriptionTextBegin?.text = descripts
         
+        TitleBegin.dynamicFont(textStyles: .largeTitle, weight: .bold, dynamicType: true)
+        
         let buttonSelectorRadius:CGFloat = 20
         ButtonStart.layer.cornerRadius = buttonSelectorRadius
+        
+        ButtonStart.dynamicFont(textStyles: .title3, weight: .bold, dynamicType: true)
         
         tableView.delegate = self
         tableView.dataSource = self

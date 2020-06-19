@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sRZ-tN-LjJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sRZ-tN-LjJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -20,6 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4p-xr-zyQ">
                                 <rect key="frame" x="37" y="265" width="340" height="115"/>
+                                <accessibility key="accessibilityConfiguration" label="Beginner Workout"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="340" id="k9B-us-sKu"/>
                                     <constraint firstAttribute="height" constant="115" id="lXJ-Zl-HLw"/>
@@ -40,6 +41,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-ho-7Cv">
                                 <rect key="frame" x="37" y="400" width="340" height="115"/>
+                                <accessibility key="accessibilityConfiguration" label="Intermediate Workout"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="4yf-9j-hH1"/>
                                     <constraint firstAttribute="width" constant="340" id="dvB-Kc-ohK"/>
@@ -51,6 +53,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="odo-ja-wOp">
                                 <rect key="frame" x="317" y="447.5" width="15" height="19"/>
                                 <color key="tintColor" red="0.19607843137254902" green="0.47058823529411764" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="fuM-RX-m4J"/>
                                     <constraint firstAttribute="width" constant="15" id="z86-X0-wX8"/>
@@ -68,6 +74,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vc-y7-Dg0">
                                 <rect key="frame" x="37" y="535" width="340" height="115"/>
+                                <accessibility key="accessibilityConfiguration" label="Advanced Workout"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="340" id="BEw-8a-g5o"/>
                                     <constraint firstAttribute="height" constant="115" id="mFp-t6-Igs"/>
@@ -90,7 +97,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="1Uz-1S-mA0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="textColor" red="0.1137260869" green="0.1137235835" blue="0.1137269512" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -106,6 +113,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ohw-Qz-Z2f">
                                 <rect key="frame" x="317" y="312.5" width="15" height="19"/>
                                 <color key="tintColor" red="0.027721267189999999" green="0.53595805169999999" blue="0.74120813610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="drb-ke-ISE"/>
                                     <constraint firstAttribute="height" constant="22" id="qwX-6u-aeV"/>
@@ -133,6 +144,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kCC-kX-jnH">
                                 <rect key="frame" x="317" y="582.5" width="15" height="19"/>
                                 <color key="tintColor" red="0.78431372549019607" green="0.11764705882352941" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="SnR-TM-Te4"/>
                                     <constraint firstAttribute="height" constant="22" id="XRN-nb-TPj"/>
@@ -142,6 +157,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8V-mE-ZRH">
                                 <rect key="frame" x="343" y="58" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="Settings"/>
                                 <state key="normal" image="SettingsIcon"/>
                                 <connections>
                                     <segue destination="PS5-tB-fBC" kind="show" id="sU3-3Z-Wlj"/>
@@ -196,6 +212,7 @@
                         <outlet property="ExercisesBeginnerLabel" destination="4xA-2W-Cag" id="LYL-HI-dhF"/>
                         <outlet property="ExercisesIntermLabel" destination="tmH-I7-oK2" id="08T-El-FYh"/>
                         <outlet property="IntermediateLabel" destination="eKk-dX-IX7" id="zZa-Di-sZp"/>
+                        <outlet property="hello" destination="ext-Xg-hC0" id="s80-pb-vAV"/>
                         <outlet property="levelAdvanced" destination="6vc-y7-Dg0" id="K19-Ic-095"/>
                         <outlet property="levelBeginner" destination="m4p-xr-zyQ" id="RbA-id-9vq"/>
                         <outlet property="levelIntermediate" destination="f3A-ho-7Cv" id="TZj-UP-XtY"/>
@@ -329,17 +346,17 @@
                                 <color key="textColor" red="0.16078431369999999" green="0.1647058824" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercises times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iw-1c-89M">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercises times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iw-1c-89M">
                                 <rect key="frame" x="30" y="147" width="286" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.0" green="0.54117647058823526" blue="0.74120813610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63e-br-Xxh">
                                 <rect key="frame" x="30" y="189" width="361" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="textColor" red="0.1137260869" green="0.1137235835" blue="0.1137269512" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1272,7 +1289,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title=" Share" image="square.and.arrow.up" catalog="system">
+                                <state key="normal" title=" Share">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="regular"/>
                                 </state>
@@ -1304,9 +1321,9 @@
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="donelogo" translatesAutoresizingMaskIntoConstraints="NO" id="330-bK-RjF">
                                 <rect key="frame" x="172" y="104" width="70" height="70"/>
-                                <accessibility key="accessibilityConfiguration">
+                                <accessibility key="accessibilityConfiguration" label="Trophy Icon">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
-                                    <bool key="isElement" value="NO"/>
+                                    <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="uaN-7g-K2O"/>
@@ -1320,10 +1337,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxS-9y-jsG">
-                                <rect key="frame" x="46" y="269" width="186" height="214"/>
+                                <rect key="frame" x="46" y="269" width="186" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="186" id="3RG-nX-kuU"/>
-                                    <constraint firstAttribute="height" constant="214" id="yuU-MF-eb2"/>
                                 </constraints>
                                 <string key="text">THE BODY
 ACHIEVES
@@ -1335,7 +1351,7 @@ BELIEVES</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Workouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhI-KC-pMe">
-                                <rect key="frame" x="46" y="544" width="119.5" height="41"/>
+                                <rect key="frame" x="46" y="535" width="119.5" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="CRg-oo-2Dv"/>
                                 </constraints>
@@ -1344,7 +1360,7 @@ BELIEVES</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya9-vz-f0Y">
-                                <rect key="frame" x="266" y="585" width="105" height="41"/>
+                                <rect key="frame" x="266" y="576" width="105" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="TOG-Z0-Pkv"/>
                                 </constraints>
@@ -1353,7 +1369,7 @@ BELIEVES</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Circuit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jph-dM-7us">
-                                <rect key="frame" x="46" y="585" width="77" height="41"/>
+                                <rect key="frame" x="46" y="576" width="77" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="gqB-gn-Xni"/>
                                 </constraints>
@@ -1375,13 +1391,14 @@ BELIEVES</string>
                             <constraint firstItem="330-bK-RjF" firstAttribute="top" secondItem="wWw-3r-i8P" secondAttribute="top" constant="25" id="Wao-a7-nsU"/>
                             <constraint firstItem="jph-dM-7us" firstAttribute="leading" secondItem="qxS-9y-jsG" secondAttribute="leading" id="duM-NM-NHZ"/>
                             <constraint firstItem="eTS-kP-iNY" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="gQk-1f-NN4"/>
-                            <constraint firstItem="zhI-KC-pMe" firstAttribute="top" secondItem="qxS-9y-jsG" secondAttribute="bottom" constant="61" id="gb0-k2-PWK"/>
+                            <constraint firstItem="zhI-KC-pMe" firstAttribute="top" secondItem="qxS-9y-jsG" secondAttribute="top" constant="266" id="gb0-k2-PWK"/>
                             <constraint firstItem="qxS-9y-jsG" firstAttribute="leading" secondItem="EiB-Kn-XFZ" secondAttribute="leadingMargin" constant="26" id="hrl-1X-bCp"/>
                             <constraint firstItem="wWw-3r-i8P" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="i6b-xD-fJx"/>
                             <constraint firstItem="zhI-KC-pMe" firstAttribute="leading" secondItem="qxS-9y-jsG" secondAttribute="leading" id="jg3-3s-EyD"/>
                             <constraint firstItem="SJz-XE-KQU" firstAttribute="top" secondItem="P4n-fa-Xtw" secondAttribute="bottom" constant="15" id="jh9-u1-SMb"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qxS-9y-jsG" secondAttribute="trailing" constant="20" symbolic="YES" id="qjh-Fx-Ud1"/>
                             <constraint firstItem="P4n-fa-Xtw" firstAttribute="top" secondItem="wWw-3r-i8P" secondAttribute="bottom" constant="41" id="sKg-ii-wkp"/>
+                            <constraint firstItem="zhI-KC-pMe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qxS-9y-jsG" secondAttribute="bottom" constant="61" id="v7Q-3m-C7I"/>
                             <constraint firstItem="P4n-fa-Xtw" firstAttribute="centerX" secondItem="EiB-Kn-XFZ" secondAttribute="centerX" id="yny-Oh-Vpj"/>
                         </constraints>
                     </view>
